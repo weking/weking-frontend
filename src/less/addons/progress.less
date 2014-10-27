@@ -1,0 +1,70 @@
+// Block:           Progress
+// Description:     Defines styles for progress bars
+//
+// Component:       `progress`
+//
+// Element:         `progress__bar`
+//
+// Modifiers:       `progress--primary`
+//                  `progress--secondary`
+//                  `progress--blue`
+//                  `progress--green`
+//                  `progress--red`
+//                  `progress--orange`
+//                  `progress--black`
+//                  `progress--vert`
+//                  `progress--thin`
+//
+// Markup:
+//
+// <div class="progress">
+//   <div class="progress__bar" style="width: 10%"></div>
+// </div>
+//
+// ========================================================================
+
+// Progress
+.progress-gen(@color) {
+	background: fade(@color, 50%);
+	.progress__bar {background: @color;}
+}
+
+/* Progress Bar
+   ==================================== */
+.progress {
+	height: 4px;
+	margin: (@font-line-height - 4px )/2 0;
+	position: relative;
+	.progress-gen(@gray);
+	
+	&__bar {
+		float: left;
+		width: 0;
+		max-width: 100%;
+		height: 100%;
+	}
+	
+	&--primary {.progress-gen(@primary);}
+	&--secondary {.progress-gen(@secondary);}
+	&--blue {.progress-gen(@blue);}
+	&--green {.progress-gen(@green);}
+	&--red {.progress-gen(@red);}
+	&--orange {.progress-gen(@orange);}
+	&--black {.progress-gen(@black);}
+	
+	// Vertical
+	&--vert {
+		width: 4px;
+		height: @font-line-height*10;
+		float: left;
+		margin: 0 (@font-line-height - 4px )/2;
+		
+		.progress__bar {
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			height: 0;
+			max-height: 100%;
+		}
+	}
+}

@@ -1,0 +1,47 @@
+// Block:           Infobox
+// Description:     Defines styles for information messages
+//
+// Component:       `infobox`
+//
+// Modifiers:       `infobox--primary`
+//                  `infobox--secondary`
+//                  `infobox--blue`
+//                  `infobox--green`
+//                  `infobox--red`
+//                  `infobox--orange`
+//                  `infobox--black`
+//
+// Markup:
+//
+// <div class="infobox">
+//     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia autem iusto eos doloribus repellat a nam labore. Quae, explicabo accusamus beatae dignissimos aliquid molestiae asperiores! Ipsam, at animi deserunt quos!
+// </div>
+//
+// <div class="infobox infobox--primary">
+//     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia autem iusto eos doloribus repellat a nam labore. Quae, explicabo accusamus beatae dignissimos aliquid molestiae asperiores! Ipsam, at animi deserunt quos!
+// </div>
+//
+// ========================================================================
+
+// Infobox
+.infobox-gen(@color) {
+	background: @color;
+	color: darken(@color, 35%);
+}
+
+/* Infoboxes
+   ==================================== */
+.infobox {
+	padding: @font-line-height;
+	margin: 0 0 @font-line-height;
+	.lh-border-radius(@basic-radius);
+	.infobox-gen(@gray);
+	
+	&--primary {.infobox-gen(@primary);}
+	&--secondary {.infobox-gen(@secondary);}
+	&--blue {.infobox-gen(@blue);}	
+	&--green {.infobox-gen(@green);}
+	&--red {.infobox-gen(@red);}
+	&--orange {.infobox-gen(@orange);}
+	&--black {.infobox-gen(@black);}
+}

@@ -1,0 +1,51 @@
+/* GRIDS */
+.show-grid [class*="col"] .inner {
+	background-color: #eee;
+	text-align: center;
+	min-height: 48px;
+	line-height: 48px;
+	outline: 1px solid #ccc;
+}
+.show-grid [class*="col"] .inner:hover {
+	background-color: #ddd;
+}
+.show-grid [class*="col"] [class*="col"] .inner {
+	background-color: #ccc;
+}
+.show-grid [class*="col"] [class*="col"] [class*="col"] .inner {
+	background-color: #999;
+}
+
+.demo {
+	padding: 48px 24px 24px;
+	margin: 24px 0;
+	outline: 1px solid #ddd;
+background: #fff;
+	position: relative;
+}
+.demo:after {
+	content: "Example";
+	position: absolute;
+	top: 12px;
+	left: 24px;
+	font-size: 12px;
+	font-weight: bold;
+	color: #bbb;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+/* Debug vertical rythm */
+
+body {
+	background-image: -moz-linear-gradient(bottom, rgba(240, 162, 196, 0.50) 5%, rgba(240, 162, 196, 0) 5%);
+	background-image: -webkit-linear-gradient(bottom, rgba(240, 162, 196, 0.50) 5%, rgba(240, 162, 196, 0) 5%);
+	background-image: linear-gradient(to top, rgba(240, 162, 196, 0.50) 5%, rgba(240, 162, 196, 0) 5%);
+	-moz-background-size: 100% 24px;
+	-o-background-size: 100% 24px;
+	-webkit-background-size: 100% 24px;
+	background-size: 100% 24px;
+	background-position: left top;
+
+	padding-top: 72px;
+}

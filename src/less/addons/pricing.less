@@ -1,0 +1,147 @@
+// Block:           Pricing Table
+// Description:
+//
+// Component:       `pricing`
+//
+// Element:         `pricing__plan`
+//                  `pricing__plan__header`
+//                  `pricing__plan__heading`
+//                  `pricing__plan__price`
+//                  `pricing__plan__list`
+//
+// Modifiers:       `pricing__plan--primary`
+//                  `pricing__plan--secondary`
+//                  `pricing__plan--blue`
+//                  `pricing__plan--green`
+//                  `pricing__plan--red`
+//                  `pricing__plan--orange`
+//                  `pricing__plan--black`
+//                  `pricing__plan--optimal`
+//
+// Markup:
+// <div class="pricing row">
+//
+//   <!-- Default -->
+//   <div class="pricing__plan col__sm-4">
+//     <div class="pricing__plan__header">
+//       <h3 class="pricing__plan__heading">Personal</h3>
+//       <span class="pricing__plan__price">$5 <span>per month</span></span>
+//     </div>
+//
+//     <ul class="pricing__plan__list">
+//       <li>Free setup</li>
+//       <li>Custom sub-domain</li>
+//       <li>Standard customer support</li>
+//       <li>1GB file storage</li>
+//       <li>1 database</li>
+//       <li>Unlimited bandwidth</li>
+//     </ul>
+//
+//     <a href="#" class="btn btn--radius btn--xl">Choose</a>
+//   </div>
+// </div>
+//
+// ========================================================================
+
+/* Pricing table
+   ==================================== */
+.pricing {
+	margin: 0 auto @font-line-height;
+	text-align: center;
+	
+	&__plan {
+		background: darken(@white, 3%);
+
+		// Header
+		&__header {
+			background: lighten(@black, 35%);
+			color: @white;
+		}
+
+		// Heading
+		&__heading {
+			margin: 0;
+			padding: @font-line-height 0;
+			font-weight: normal;
+			text-transform: uppercase;
+		}
+
+		// Price label
+		&__price {
+			.font(@font-line-height*3);
+			display: block;
+			padding: @font-line-height 0;
+			background: lighten(@black, 20%);
+
+			span {
+				display: block;
+				text-transform: uppercase;
+				.font;
+				font-weight: 400;
+				color: @white;
+			}
+		}
+
+		// List of features
+		&__list {
+			list-style-type: none;
+			padding: 0;
+			text-align: center;
+			
+			li {
+				padding: @font-line-height/2 - 0.5px 0;
+				border-bottom: 1px solid @gray;
+			}
+		}
+		
+		// Colors
+
+		// primary
+		&--primary {
+			.pricing__plan__header {background: @primary;}
+			.pricing__plan__price {background: darken(@primary, 20%);}
+		}
+		
+		// secondary
+		&--secondary {
+			.pricing__plan__header {background: @secondary;}
+			.pricing__plan__price {background: darken(@secondary, 20%);}
+		}
+		
+		// Blue
+		&--blue {
+			.pricing__plan__header {background: @blue;}
+			.pricing__plan__price {background: darken(@blue, 20%);}
+		}
+		
+		// Green
+		&--green {
+			.pricing__plan__header {background: @green;}
+			.pricing__plan__price {background: darken(@green, 20%);}
+		}
+		
+		// Red
+		&--red {
+			.pricing__plan__header {background: @red;}
+			.pricing__plan__price {background: darken(@red, 20%);}
+		}
+		
+		// Orange
+		&--orange {
+			.pricing__plan__header {background: @orange;}
+			.pricing__plan__price {background: darken(@orange, 20%);}
+		}
+		
+		// Black
+		&--black {
+			.pricing__plan__header {background: darken(@black, 13%);}
+			.pricing__plan__price {background: darken(@black, 20%);}
+		}
+
+		// Optimal plan
+		&--optimal {
+			.lh-transform(~"scale(1.05)");
+		}
+	}
+
+}

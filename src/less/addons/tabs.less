@@ -1,0 +1,100 @@
+// Component:       Tabs
+// Description:     Collapsible content panels
+//
+// Block:           `tabs`
+//
+// Elements:        `accordion__item`
+//                  `accordion__item__heading`
+//                  `accordion__item__trigger`
+//                  `accordion__item__content`
+//
+// Uses:            Menu
+//
+// Markup:
+// <div class="tabs">
+//   <nav class="menu">
+//     <div class="menu__header">
+//       <a href="#" class="menu__brand">Brand</a>
+//       <label class="btn menu__burger" for="menu__trigger">Show menu</label>
+//     </div>
+//
+//     <input type="checkbox" id="menu__trigger" class="menu__trigger">
+//
+//     <ul class="menu__ul">
+//       <li class="menu__active"><a href="#">Home</a></li>
+//       <li class="menu__parent">
+//         <a href="#">Services</a>
+//         <ul class="menu__ul--dropdown">
+//           <li><a href="#">Service 1</a></li>
+//           <li class="menu__parent">
+//             <a href="#">Service 2</a>
+//             <ul>
+//               <li><a href="#">Service 2.1</a></li>
+//               <li><a href="#">Service 2.2</a></li>
+//               <li><a href="#">Service 2.3</a></li>
+//             </ul>
+//           </li>
+//           <li><a href="#">Service 3</a></li>
+//         </ul>
+//       </li>
+//       <li><a href="#">Blog</a></li>
+//       <li><a href="#">About Us</a></li>
+//       <li><a href="#">Contact Us</a></li>
+//     </ul>
+//   </nav>
+//   <div class="accordion__item">
+//     <label class="accordion__item__heading btn btn--flat" for="accordion__item-1">Panel 1</label>
+//     <input id="accordion__item-1" class="accordion__trigger" name="radio" type="radio" />
+//     <div class="accordion__item__content">
+//       ...
+//     </div>
+//   </div>
+// ...
+// </div>
+// ========================================================================
+
+/* ACCORDION
+   ==================================== */
+.accordion {
+
+	&__item {
+		margin-bottom: 8px;
+
+		// Heading
+		&__heading {
+			margin: 0;
+			display: block;
+			height: @font-line-height*2;
+		}
+
+		// Content
+		&__content {
+			// Hide item content by default
+			display: none;
+			padding: 7px 8px;
+			background: @white;
+			border: 1px solid @gray;
+			.lh-border-bottom-left-radius(@basic-radius);
+			.lh-border-bottom-right-radius(@basic-radius);
+		}
+
+	}
+
+	// Hide checkboxes and radio-buttons
+	&__trigger {
+		display: none;
+
+		&:checked + .accordion__item {
+			// Show item content when trigger is checked
+			.accordion__item__content {
+				display: block;
+			}
+
+			.accordion__item__heading {
+				.lh-border-bottom-left-radius(0);
+				.lh-border-bottom-right-radius(0);
+			}
+		}
+	}
+
+}

@@ -1,0 +1,324 @@
+// Component:       Menu
+// Description:     Provides a responsive, fluid and nestable grid system
+//
+// Blocks:          `menu`
+//
+// Elements:        `menu__ul`
+//                  `menu__li`
+//                  `menu__a`
+//                  `menu__active`
+//                  `menu__brand`
+//                  `menu__parent`
+//                  `menu__burger`
+//                  `menu__trigger`
+//
+// Modifiers:       `menu--vert`
+//                  `menu--droptop`
+//                  `menu--dropleft`
+//                  `menu--primary'
+//                  `menu--secondary'
+//                  `menu--black'
+//                  `menu--flat'
+//                  `menu--fixed-top`
+//                  `menu--fixed-bottom`
+//                  `menu__ul--dropdown`
+//
+// Markup:
+//
+// <!-- MENU -->
+// <nav class="menu">
+//   <div class="menu__header">
+//     <a href="#" class="menu__a menu__brand">Brand</a>
+//     <label class="btn menu__burger" for="menu__trigger">Show menu</label>
+//   </div>
+//
+//   <input type="checkbox" id="menu__trigger" class="menu__trigger">
+//
+//   <ul class="menu__ul">
+//     <li class="menu__active"><a class="menu__a" href="#">Home</a></li>
+//     <li class="menu__parent">
+//       <a class="menu__a" href="#">Services</a>
+//       <ul class="menu__ul--dropdown">
+//         <li><a class="menu__a" href="#">Service 1</a></li>
+//         <li class="menu__parent">
+//           <a class="menu__a" href="#">Service 2</a>
+//           <ul>
+//             <li><a class="menu__a" href="#">Service 2.1</a></li>
+//             <li><a class="menu__a" href="#">Service 2.2</a></li>
+//             <li><a class="menu__a" href="#">Service 2.3</a></li>
+//           </ul>
+//         </li>
+//         <li><a class="menu__a" href="#">Service 3</a></li>
+//       </ul>
+//     </li>
+//     <li><a class="menu__a" href="#">Blog</a></li>
+//     <li><a class="menu__a" href="#">About Us</a></li>
+//     <li><a class="menu__a" href="#">Contact Us</a></li>
+//   </ul>
+// </nav>
+//
+// ========================================================================
+
+// Menu generator
+.menu-gen(@menu-bg, @menu-color, @sub-menu-bg: @menu-bg, @sub-menu-color: @menu-color) {
+	background: @menu-bg;
+
+	.menu__brand {color: @menu-color !important}
+
+	.menu__ul {
+		.menu__a {
+			color: fade(@menu-color, 60%);
+		}
+
+		// Active state & Brand link
+		.menu__li:hover > .menu__a, .menu__active > .menu__a {
+			color: @menu-color;
+		}
+
+		@media (min-width: @screen-md) {
+			&--dropdown {
+				background: @sub-menu-bg;
+
+				.menu__a {
+					color: fade(@sub-menu-color, 60%);
+				}
+
+				.menu__li:hover, .menu__active {
+					background: darken(@sub-menu-bg, 6%);
+
+					> .menu__a {
+						color: @sub-menu-color;
+					}
+				}
+			}
+
+			.menu__li:hover, .menu__active {
+				> .menu__a {
+					border-color: @menu-color;
+				}
+			}
+		}
+	}
+}
+
+/* ====================================
+   MENU
+   ==================================== */
+.menu {
+	.z-depth-1;
+	.lh-border-radius(@menu-radius);
+	.menu-gen(@menu-bg, @menu-color, @sub-menu-bg, @sub-menu-color);
+	.clearfix;
+
+	// Menu header
+	&__header {
+		.clearfix;
+	}
+
+	// Brand - Menu Heading
+	&__brand {
+		text-transform: uppercase;
+		font-weight: 900;
+		float: left;
+	}
+
+	// Burger
+	&__burger {
+		float: right;
+		margin: (@font-line-height*2 - @font-line-height*1.5 - 6px) 16px;
+	}
+
+	// Trigger
+	&__trigger {
+		display: none;
+
+		&:checked + .menu__ul {
+			display: block;
+		}
+	}
+
+	&__ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		display: none;
+
+		// Dropdowns
+		&--dropdown {
+			display: none;
+			padding-left: 16px;
+		}
+	}
+
+	&__li {
+		position: relative;
+		display: block;
+		vertical-align: middle;
+
+		// Show Sub-menu
+		&:hover > .menu__ul--dropdown {display: block}
+	}
+
+	&__a {
+		padding: 0 16px;
+		text-decoration: none;
+		line-height: @font-line-height*2;
+		display: block;
+		white-space: nowrap;
+		font-weight: 700;
+
+		.menu__parent > &:after {content: " \25BE"; line-height: 50%;}
+	}
+
+	// Fixed menus
+	&--fixed-top {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 999;
+		.lh-border-radius(0);
+	}
+	&--fixed-bottom {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		z-index: 999;
+		.lh-border-radius(0);
+	}
+	
+	// Colors
+	&--primary {
+		.menu-gen(@primary, @white, @sub-menu-bg, @sub-menu-color);
+	}
+
+	&--secondary {
+		.menu-gen(@secondary, @white, @sub-menu-bg, @sub-menu-color);
+	}
+
+	&--black {
+		.menu-gen(@black, @white, @sub-menu-bg, @sub-menu-color);
+	}
+	
+	// Flat menu (without shadow)
+	&--flat {
+		.z-depth-0;
+	}
+	
+	// Responsive menu
+	@media (min-width: @screen-md) {
+		// Header
+		&__header {
+			float: left;
+		}
+
+		// Burger
+		&__burger {
+			display: none;
+		}
+
+		&__ul {
+			display: block;
+			float: left;
+
+			// Dropdowns
+			&--dropdown {
+				padding: 0;
+				position: absolute;
+				top: 100%;
+				left: 0;
+				z-index: 10;
+				display: none;
+				.lh-border-radius(0);
+				.z-depth-1;
+
+				.menu__li {
+					display: block !important;
+				}
+
+				.menu__a {
+					line-height:@font-line-height*2;
+					border-bottom: 0 none !important;
+
+				}
+
+				.menu__parent > .menu__a:after {content: " \25B8";}
+
+				& & {
+					left: 100%; top: 0;
+				}
+			}
+		}
+
+		&__li {
+			display: inline-block;
+		}
+
+		&__a {
+			line-height: @font-line-height*2 - 3px;
+			border-bottom: 3px solid transparent;
+		}
+
+		// Vertical menu
+		&--vert {
+
+			.menu__header, .menu__ul {
+				float: none;
+				width: 100%;
+			}
+
+			.menu__li {
+				width: 100%;
+			}
+
+			.menu__parent > a:after, {content: ' \25B8';}
+
+			.menu__a {
+				line-height: @font-line-height*2;
+				border: 0 none;
+			}
+
+			.menu__ul--dropdown {left: 100%; top: 0;}
+
+		}
+
+		// DropTop
+		&--droptop {
+			.menu__ul--dropdown {
+				top:auto;
+				bottom:100%;
+				.z-depth-1('top');
+
+				.menu__ul--dropdown {
+					bottom:0 !important;
+				}
+
+				.menu__parent > .menu__a:after, {content: ' \25B8';}
+			}
+
+			.menu__parent > .menu__a:after {content: " \25B4"}
+		}
+
+		// DropLeft
+		&--dropleft {
+			.menu__ul--dropdown {
+				right: 0;
+
+				.menu__ul--dropdown {
+					left: auto;
+					right: 100%;
+				}
+			}
+
+			&.menu--vert {
+				.menu__ul--dropdown {
+					left: auto;
+					right: 100%;
+					bottom: 0;
+				}
+			}
+		}
+
+	}
+}

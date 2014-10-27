@@ -1,0 +1,117 @@
+// Component:       Table
+// Description:     Collapsible content panels
+//
+// Block:           `table`
+//
+// Elements:        `table__responsive`
+//                  `table__caption`
+//                  `table__odd`
+//
+// Modifiers:       `table--all-borders'
+//                  `table--hr-borders'
+//                  `table--condensed'
+//                  `table--striped`
+//                  `table--primary'
+//                  `table--secondary`
+//                  `table--black`
+//
+// Markup:
+// <div class="table__responsive">
+//   <table class="table">
+//     <thead>
+//       <tr>
+//         <th>Name</th>
+//         <th>Email</th>
+//         <th>Phone</th>
+//         <th>Mobile</th>
+//       </tr>
+//     </thead>
+//     <tbody>
+//       <tr><td>Gary Coleman</td><td>gary.coleman21@example.com</td><td>(398)-332-5385</td><td>(888)-677-3719</td></tr>
+//       <tr><td>Rose Parker</td><td>rose.parker16@example.com</td><td>(293)-873-2247</td><td>(216)-889-4933</td></tr>
+//       <tr><td>Chloe Nelson</td><td>chloe.nelson18@example.com</td><td>(957)-213-3499</td><td>(207)-516-4474</td></tr>
+//       <tr><td>Eric Bell</td><td>eric.bell16@example.com</td><td>(897)-762-9782</td><td>(565)-627-3002</td></tr>
+//       <tr><td>Douglas Hayes</td><td>douglas.hayes92@example.com</td><td>(231)-391-6269</td><td>(790)-838-2130</td></tr>
+//     </tbody>
+//   </table>
+// </div>
+//
+// ========================================================================
+
+/* ====================================
+   TABLES
+   ==================================== */
+.table-gen(@table-bg, @table-color) {
+	border: 1px solid darken(@table-bg, 15%);
+	color: @table-color;
+
+	td, th {border-left: 1px solid darken(@table-bg, 15%);}
+	thead {background: darken(@table-bg, 10%); color: darken(@table-color, 10%);}
+	tbody {background-color: lighten(@table-bg, 10%);}
+
+	// All borders & Only horizontal borders
+	&--all-borders, &--hr-borders {td, th {border-bottom: 1px solid darken(@table-bg, 15%);}}
+	
+	// Striped
+	&__odd td, &--striped tbody tr:nth-child(2n-1) td, &--hover tbody tr:hover td {background-color: darken(@table-bg, 5%);}
+}
+
+.table {
+	empty-cells: show;
+	margin-bottom: @font-line-height;
+	.table-gen(@table-bg, @table-color);
+
+	&__caption {
+		.font(@font-size*0.85);
+		font-style: italic;
+		padding: @font-line-height 0;
+		text-align: center;
+	}
+	
+	td, th {
+		.font;
+		padding: @font-line-height/2;
+		margin: 0;
+		overflow: visible;
+		
+		&:first-child {border-left-width: 0;}
+	}
+	
+	thead {
+		text-align: left;
+		vertical-align: bottom;
+		
+		td, th {line-height: @font-line-height - 2px;}
+	}
+	
+	// All borders
+	&--all-borders {
+		tbody > tr:last-child td {border-bottom-width: 0;}
+		tbody { td, th {line-height: @font-line-height - 1px;} }
+	}
+	
+	// Only horizontal borders
+	&--hr-borders {
+		td, th {border-width: 0 0 1px 0 !important;}
+		tbody > tr:last-child td {border-bottom-width: 0;}
+		tbody { td, th {line-height: @font-line-height - 1px;} }
+	}
+	
+	// Condensed table
+	&--condensed {td, th {padding: 0 @font-line-height/2;}}
+	
+	// Colors
+	&--primary {.table-gen(@primary, @white);}
+	&--secondary {.table-gen(@secondary, @white);}
+	&--black {.table-gen(@black, @white);}
+}
+
+.table__responsive {
+	width: 100%;
+	overflow-x: auto;
+	margin-bottom: @font-line-height;
+
+	.table {
+		margin-bottom: 0;
+	}
+}

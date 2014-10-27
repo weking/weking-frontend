@@ -1,0 +1,1263 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Weking demo</title>
+
+	<link rel="stylesheet" href="../dist/css/weking.min.css">
+	<link rel="stylesheet" href="demo.css">
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+</head>
+<body>
+	
+	<div class="container">
+
+		<h1>Weking Demo</h1>
+
+		<!-- BASE -->
+		<div id="base">
+			<h2>Typography</h2>
+
+			<h3>Headings</h3>
+
+			<hr/>
+
+			<h1>Heading 1</h1>
+			<h2>Heading 2</h2>
+			<h3>Heading 3</h3>
+			<h4>Heading 4</h4>
+			<h5>Heading 5</h5>
+			<h6>Heading 6</h6>
+
+			<h3>Paragraph</h3>
+
+			<p>Lorem ipsum <a href="#">dolor sit amet</a>, consectetur adipisicing elit. Optio nostrum ad consequuntur dolorem blanditiis maiores necessitatibus nesciunt animi aut inventore atque doloremque ea maxime ex rerum consectetur voluptate laudantium eveniet repellat soluta reiciendis nobis facilis voluptas fugit at amet possimus dicta illo cum aliquam adipisci tenetur nisi provident expedita culpa ducimus harum vitae quibusdam tempore alias. Accusamus vel accusantium debitis fugiat omnis magnam. Ab fugiat quam sed cupiditate blanditiis deleniti!</p>
+
+			<hr>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, nihil, voluptatibus placeat veritatis ducimus maiores vero iste ipsam deserunt voluptas ullam porro ut aperiam quasi quo magni excepturi neque quae.</p>
+
+			<h3>Blockquote</h3>
+
+			<blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor sint in earum cupiditate nulla nesciunt alias voluptatem similique facere veritatis minima pariatur obcaecati debitis necessitatibus id maiores doloribus culpa officia.<br><strong>Someone great</strong></blockquote>
+
+			<h3>Some elements</h3>
+
+			<p>The <a href="#">link element</a> example<br>
+			The <strong>strong element</strong> example<br>
+			The <em>em element</em> example<br>
+			The <abbr title="Abbreviation">abbr element</abbr> example<br>
+			The <kbd>kbd element</kbd> example<br>
+			The <mark>mark element</mark> example<br>
+			The <small>small element</small> example<br>
+			The <del>del element</del> example<br>
+			The <sub>sub element</sub> example<br>
+			The <sup>sup element</sup> example</p>
+
+			<h3>Lists</h3>
+
+			<div class="row">
+				<div class="col__sm-4">
+					<h3>Unordered List</h3>
+					<ul>
+						<li>list item 1</li>
+						<li>list item 1
+							<ul>
+								<li>list item 2</li>
+								<li>list item 2
+									<ul>
+										<li>list item 3</li>
+										<li>list item 3</li>
+									</ul>
+								</li>
+								<li>list item 2</li>
+								<li>list item 2</li>
+							</ul>
+						</li>
+						<li>list item 1</li>
+						<li>list item 1</li>
+					</ul>
+				</div>
+
+				<div class="col__sm-4">
+					<h3>Ordered List</h3>
+					<ol>
+						<li>list item 1</li>
+						<li>list item 1
+							<ol>
+								<li>list item 2</li>
+								<li>list item 2
+									<ol>
+										<li>list item 3</li>
+										<li>list item 3</li>
+									</ol>
+								</li>
+								<li>list item 2</li>
+								<li>list item 2</li>
+							</ol>
+						</li>
+						<li>list item 1</li>
+						<li>list item 1</li>
+					</ol>
+				</div>
+
+				<div class="col__sm-4">
+					<h3>Definition Lists</h3>
+					<dl>
+						<dt>Definition term</dt>
+						<dd>Definition description</dd>
+						<dt>Definition term</dt>
+						<dd>Definition description</dd>
+						<dd>Definition description</dd>
+						<dt>Definition term</dt>
+						<dt>Definition term</dt>
+						<dd>Definition description</dd>
+					</dl>
+				</div>
+			</div>
+
+			<h3>Code</h3>
+
+			<p>For example, <code>&lt;section&gt;</code> should be wrapped as inline.</p>
+	<pre>/**
+	 * fullscreenForm.js v1.0.0
+	 * http://www.codrops.com
+	 *
+	 * Licensed under the MIT license.
+	 * http://www.opensource.org/licenses/mit-license.php
+	 *
+	 * Copyright 2014, Codrops
+	 * http://www.codrops.com
+	 */
+	;( function( window ) {
+
+		'use strict';
+
+		var support = { animations : Modernizr.cssanimations },
+			animEndEventNames = { 'WebkitAnimation' : 'webkitAnimationEnd', 'OAnimation' : 'oAnimationEnd', 'msAnimation' : 'MSAnimationEnd', 'animation' : 'animationend' },
+			// animation end event name
+			animEndEventName = animEndEventNames[ Modernizr.prefixed( 'animation' ) ];
+
+		/**
+		 * extend obj function
+		 */
+		function extend( a, b ) {
+			for( var key in b ) {
+				if( b.hasOwnProperty( key ) ) {
+					a[key] = b[key];
+				}
+			}
+			return a;
+		}</pre>
+
+			<h3>Image Styles</h3>
+			<div class="demo">
+				<div class="row">
+					<div class="col__sm-6">
+						<img src="http://lorempixel.com/240/240/" class="img--polaroid" alt="">
+					</div>
+					<div class="col__sm-6">
+						<img src="http://lorempixel.com/240/240/" class="img--radius" alt="">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<hr/>
+
+		<!-- GRIDS -->
+		<div id="grids">
+			<h2>Grids</h2>
+
+			<h3>Simple grids</h3>
+			<div class="show-grid">
+
+				<div class="row">
+					<div class="col__sm-12">
+						<div class="inner">.col__sm-12</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col__sm-6">
+						<div class="inner">.col__sm-6</div>
+					</div>
+					<div class="col__sm-6">
+						<div class="inner">.col__sm-6</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col__sm-8">
+						<div class="inner">.col__sm-8</div>
+					</div>
+					<div class="col__sm-4">
+						<div class="inner">.col__sm-4</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col__sm-4">
+						<div class="inner">.col__sm-4</div>
+					</div>
+					<div class="col__sm-4">
+						<div class="inner">.col__sm-4</div>
+					</div>
+					<div class="col__sm-4">
+						<div class="inner">.col__sm-4</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col__sm-3">
+						<div class="inner">.col__sm-3</div>
+					</div>
+					<div class="col__sm-3">
+						<div class="inner">.col__sm-3</div>
+					</div>
+					<div class="col__sm-3">
+						<div class="inner">.col__sm-3</div>
+					</div>
+					<div class="col__sm-3">
+						<div class="inner">.col__sm-3</div>
+					</div>
+				</div>
+
+			</div>
+
+			<h3>Mobile Grids</h3>
+			<div class="show-grid">
+				<div class="row">
+					<div class="col__sm-3 col__xs-6">
+						<div class="inner">.col__sm-3.col__xs-6</div>
+					</div>
+					<div class="col__sm-3 col__xs-6">
+						<div class="inner">.col__sm-3.col__xs-6</div>
+					</div>
+					<div class="col__sm-3 col__xs-6">
+						<div class="inner">.col__sm-3.col__xs-6</div>
+					</div>
+					<div class="col__sm-3 col__xs-6">
+						<div class="inner">.col__sm-3.col__xs-6</div>
+					</div>
+				</div>
+			</div>
+
+			<h3>Offset</h3>
+			<div class="show-grid">
+				<div class="row">
+					<div class="col__xs-8 col__xs--offset-4">
+						<div class="inner">.col__xs-8.col__xs--offset-4</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col__xs-4 col__xs--offset-8">
+						<div class="inner">.col__xs-4.col__xs--offset-8</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<hr/>
+
+		<!-- FORMS -->
+		<div id="forms">
+
+			<h2>Forms</h2>
+
+			<form class="form" action="#">
+				<legend>A compact inline form</legend>
+
+				<input class="form__control" type="text" placeholder="Username">
+				<input class="form__control" type="password" placeholder="Password">
+
+				<label>
+					<input id="default-remember" type="checkbox"> Remember me
+				</label>
+
+				<button type="submit" class="btn btn--primary">Sign in</button>
+			</form>
+
+			<form class="form form--stacked" action="#">
+				<legend>Stacked Form</legend>
+
+				<label for="stacked-name">Your name</label>
+				<input class="form__control" id="stacked-name" type="text" placeholder="Your name">
+
+				<label for="stacked-email">Your E-mail</label>
+				<input class="form__control" id="stacked-email" type="email" placeholder="user@example.com">
+
+				<label for="stacked-text">Your Message</label>
+				<textarea class="form__control" id="stacked-text"></textarea>
+
+				<label>
+					<input id="stacked-copy" type="checkbox"> Send me copy
+				</label>
+
+				<button type="submit" class="btn btn--primary">Submit</button>
+			</form>
+
+			<h3>Aligned Form</h3>
+			<form class="form form--aligned" action="#">
+				<div>
+					<label class="col__sm-2" for="aligned-email">E-mail</label>
+					<input class="form__control" id="aligned-email" type="email" placeholder="user@example.com">
+				</div>
+				<div>
+					<label class="col__sm-2" for="aligned-name">Username</label>
+					<input class="form__control" id="aligned-name" type="text" placeholder="Username">
+				</div>
+				<div>
+					<label class="col__sm-2" for="aligned-password">Password</label>
+					<input class="form__control" id="aligned-password" type="password" placeholder="Password">
+				</div>
+				<div class="controls col__sm--offset-2">
+					<label>
+						<input id="aligned-cb" type="checkbox"> I've read the terms and conditions
+					</label>
+				</div>
+				<div class="controls col__sm--offset-2">
+					<button type="submit" class="btn btn--primary">Submit</button>
+				</div>
+			</form>
+
+			<h3>Form Elements</h3>
+
+			<form class="form form--stacked" action="#">
+				<fieldset class="row">
+					<legend>Input fields</legend>
+
+					<div class="col__sm-4">
+						<label for="text-field">Text</label>
+						<input class="form__control" type="text" name="text-field" id="text-field" placeholder="Your Name">
+
+						<label for="email-field">E-mail</label>
+						<input class="form__control" type="email" name="email-field" id="email-field" placeholder="JohnDoe@company.com">
+
+						<label for="url-field">URL</label>
+						<input class="form__control" type="url" name="url-field" id="url-field" placeholder="http://example.com/">
+
+						<label for="number-field">Number</label>
+						<input class="form__control" type="number" name="number-field" id="number-field" step="1" value="0">
+					</div>
+
+					<div class="col__sm-4">
+						<label for="date-field">Date</label>
+						<input class="form__control" id="date-field" name="date-field" type="date" value="2015-01-01">
+
+						<label for="time-field">Time</label>
+						<input class="form__control" type="time" name="time-field" id="time-field" value="10:24">
+
+						<label for="file-field">File</label>
+						<input class="form__control" type="file" name="file-field" id="file-field" size="14">
+
+						<label for="textarea-field">Textarea</label>
+						<textarea class="form__control" name="textarea-field" id="textarea-field"></textarea>
+					</div>
+
+					<div class="col__sm-4">
+						<label for="select-field1">Select</label>
+						<select class="form__control" name="select-field1" id="select-field1">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+						</select>
+
+						<label for="select-field2">Select (multiple)</label>
+						<select class="form__control" name="select-field2" id="select-field2" multiple>
+							<option value="1">Option 1</option>
+							<option value="2">Option 2</option>
+							<option value="3">Option 3</option>
+							<option value="4">Option 4</option>
+							<option value="5">Option 5</option>
+							<option value="6">Option 6</option>
+							<option value="7">Option 7</option>
+							<option value="8">Option 8</option>
+							<option value="9">Option 9</option>
+							<option value="10">Option 10</option>
+							<option value="11">Option 11</option>
+							<option value="12">Option 12</option>
+							<option value="13">Option 13</option>
+							<option value="14">Option 14</option>
+							<option value="15">Option 15</option>
+							<option value="16">Option 16</option>
+							<option value="17">Option 17</option>
+							<option value="18">Option 18</option>
+							<option value="19">Option 19</option>
+							<option value="20">Option 20</option>
+						</select>
+					</div><a href="#">Home</a>
+				</fieldset>
+
+				<fieldset class="row">
+					<div class="col__sm-3">
+						<legend>Basic Radios</legend>
+						<label><input type="radio" name="demo-radio"> Radio 1</label>
+						<label><input type="radio" name="demo-radio"> Radio 2</label>
+						<label><input type="radio" name="demo-radio"> Radio 3</label>
+						<label><input type="radio" name="demo-radio"> Radio 4</label>
+					</div>
+					<div class="col__sm-3">
+						<legend>Basic Checkboxes</legend>
+						<label><input type="checkbox" name="demo-checkbox"> Checkbox 1</label>
+						<label><input type="checkbox" name="demo-checkbox"> Checkbox 2</label>
+						<label><input type="checkbox" name="demo-checkbox"> Checkbox 3</label>
+						<label><input type="checkbox" name="demo-checkbox"> Checkbox 4</label>
+					</div>
+
+					<div class="col__sm-3">
+						<legend>Styled Radios</legend>
+						<label><input type="radio" name="demo-radio-styled" class="radio"> <span></span> Radio 1</label>
+						<label><input type="radio" name="demo-radio-styled" class="radio"> <span></span> Radio 2</label>
+						<label><input type="radio" name="demo-radio-styled" class="radio"> <span></span> Radio 3</label>
+						<label><input type="radio" name="demo-radio-styled" class="radio"> <span></span> Radio 4</label>
+					</div>
+					<div class="col__sm-3">
+						<legend>Styled Checkboxes</legend>
+						<label><input type="checkbox" name="demo-checkbox-styled" class="checkbox"> <span></span> Checkbox 1</label>
+						<label><input type="checkbox" name="demo-checkbox-styled" class="checkbox"> <span></span> Checkbox 2</label>
+						<label><input type="checkbox" name="demo-checkbox-styled" class="checkbox partial"> <span></span> Partial Checkbox 1</label>
+						<label><input type="checkbox" name="demo-checkbox-styled" class="checkbox partial"> <span></span> Partial Checkbox 2</label>
+					</div>
+				</fieldset>
+
+				<fieldset class="row">
+					<div class="col__sm-4">
+						<legend>Input Sizes</legend>
+						<input class="form__control form__control--xs" type="text" placeholder="Extra Small Input">
+						<input class="form__control form__control--sm" type="text" placeholder="Small Input">
+						<input class="form__control" type="text" placeholder="Normal Input">
+						<input class="form__control form__control--lg" type="text" placeholder="Large Input">
+						<input class="form__control form__control--xl" type="text" placeholder="Extra Large Input">
+					</div>
+
+					<div class="col__sm-4">
+						<legend>Special Controls</legend>
+						<input class="form__control" type="text" value="Disabled Input" disabled>
+						<input class="form__control" type="text" placeholder="Read-Only Input" readonly>
+					</div>
+
+					<div class="col__sm-4">
+						<legend>Radius Input</legend>
+						<input class="form__control form__control--radius" type="text" class="radius" placeholder="Radius Input">
+					</div>
+				</fieldset>
+			</form>
+
+			<h2>Buttons</h2>
+			<button class="btn btn--primary">Primary Button</button> <button class="btn btn--secondary">Secondary Button</button> <button class="btn">Simple Gray Button</button> <button class="btn btn--blue">Blue Button</button> <button class="btn btn--green">Green Button</button> <button class="btn btn--red">Red Button</button> <button class="btn btn--orange">Orange Button</button> <button class="btn btn--black">Black Button</button>
+
+			<h3>Sizes</h3>
+			<button class="btn btn--xs">Extra Small Button</button> <button class="btn btn--sm">Small Button</button> <button class="btn">Regular Button</button> <button class="btn btn--lg">Large Button</button> <button class="btn btn--xl">Extra Large Button</button> <button class="btn btn--red btn--radius">Radius Button</button>
+
+			<h3>Ghost buttons</h3>
+
+			<button class="btn btn--primary btn--ghost">Primary Button</button> <button class="btn btn--secondary btn--ghost">Secondary Button</button> <button class="btn btn--ghost">Simple Gray Button</button> <button class="btn btn--blue btn--ghost">Blue Button</button> <button class="btn btn--green btn--ghost">Green Button</button> <button class="btn btn--red btn--ghost">Red Button</button> <button class="btn btn--orange btn--ghost">Orange Button</button> <button class="btn btn--black btn--ghost">Black Button</button>
+
+			<h3>Flat buttons</h3>
+
+			<button class="btn btn--flat btn--primary">Primary Button</button> <button class="btn btn--flat btn--secondary">Secondary Button</button> <button class="btn btn--flat">Simple Gray Button</button> <button class="btn btn--flat btn--blue">Blue Button</button> <button class="btn btn--flat btn--green">Green Button</button> <button class="btn btn--btn--flat red">Red Button</button> <button class="btn btn--flat btn--orange">Orange Button</button> <button class="btn btn--flat btn--black">Black Button</button>
+
+			<h3>Link Buttons</h3>
+			<a href="#" class="btn btn--xs">Link 1</a>
+			<a href="#" class="btn btn--sm">Link 2</a>
+			<a href="#" class="btn">Link 3</a>
+			<a href="#" class="btn btn--lg">Link 4</a>
+			<a href="#" class="btn btn--xl">Link 5</a>
+
+		</div>
+
+		<hr/>
+
+		<!-- TABLES -->
+		<div id="tables">
+			<h2>Table</h2>
+
+			<h3>Simple table with vertical borders</h3>
+
+			<div class="table__responsive">
+				<table class="table">
+					<thead>
+					<tr>
+						<th>Name</th>
+						<th>Email</th>
+						<th>Phone</th>
+						<th>Mobile</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr><td>Gary Coleman</td><td>gary.coleman21@example.com</td><td>(398)-332-5385</td><td>(888)-677-3719</td></tr>
+					<tr><td>Rose Parker</td><td>rose.parker16@example.com</td><td>(293)-873-2247</td><td>(216)-889-4933</td></tr>
+					<tr><td>Chloe Nelson</td><td>chloe.nelson18@example.com</td><td>(957)-213-3499</td><td>(207)-516-4474</td></tr>
+					<tr><td>Eric Bell</td><td>eric.bell16@example.com</td><td>(897)-762-9782</td><td>(565)-627-3002</td></tr>
+					<tr><td>Douglas Hayes</td><td>douglas.hayes92@example.com</td><td>(231)-391-6269</td><td>(790)-838-2130</td></tr>
+					</tbody>
+				</table>
+			</div>
+
+			<h3>Table with all borders</h3>
+
+			<table class="table table--all-borders">
+				<thead>
+				<tr>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Phone</th>
+					<th>Mobile</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr><td>Gary Coleman</td><td>gary.coleman21@example.com</td><td>(398)-332-5385</td><td>(888)-677-3719</td></tr>
+				<tr><td>Rose Parker</td><td>rose.parker16@example.com</td><td>(293)-873-2247</td><td>(216)-889-4933</td></tr>
+				<tr><td>Chloe Nelson</td><td>chloe.nelson18@example.com</td><td>(957)-213-3499</td><td>(207)-516-4474</td></tr>
+				<tr><td>Eric Bell</td><td>eric.bell16@example.com</td><td>(897)-762-9782</td><td>(565)-627-3002</td></tr>
+				<tr><td>Douglas Hayes</td><td>douglas.hayes92@example.com</td><td>(231)-391-6269</td><td>(790)-838-2130</td></tr>
+				</tbody>
+			</table>
+
+			<h3>Table with horizontal borders</h3>
+
+			<table class="table table--hr-borders">
+				<thead>
+				<tr>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Phone</th>
+					<th>Mobile</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr><td>Gary Coleman</td><td>gary.coleman21@example.com</td><td>(398)-332-5385</td><td>(888)-677-3719</td></tr>
+				<tr><td>Rose Parker</td><td>rose.parker16@example.com</td><td>(293)-873-2247</td><td>(216)-889-4933</td></tr>
+				<tr><td>Chloe Nelson</td><td>chloe.nelson18@example.com</td><td>(957)-213-3499</td><td>(207)-516-4474</td></tr>
+				<tr><td>Eric Bell</td><td>eric.bell16@example.com</td><td>(897)-762-9782</td><td>(565)-627-3002</td></tr>
+				<tr><td>Douglas Hayes</td><td>douglas.hayes92@example.com</td><td>(231)-391-6269</td><td>(790)-838-2130</td></tr>
+				</tbody>
+			</table>
+
+			<h3>Striped Table</h3>
+
+			<table class="table table--striped">
+				<thead>
+				<tr>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Phone</th>
+					<th>Mobile</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr><td>Gary Coleman</td><td>gary.coleman21@example.com</td><td>(398)-332-5385</td><td>(888)-677-3719</td></tr>
+				<tr><td>Rose Parker</td><td>rose.parker16@example.com</td><td>(293)-873-2247</td><td>(216)-889-4933</td></tr>
+				<tr><td>Chloe Nelson</td><td>chloe.nelson18@example.com</td><td>(957)-213-3499</td><td>(207)-516-4474</td></tr>
+				<tr><td>Eric Bell</td><td>eric.bell16@example.com</td><td>(897)-762-9782</td><td>(565)-627-3002</td></tr>
+				<tr><td>Douglas Hayes</td><td>douglas.hayes92@example.com</td><td>(231)-391-6269</td><td>(790)-838-2130</td></tr>
+				</tbody>
+			</table>
+
+			<h3>Highlight row on hover</h3>
+
+			<table class="table table--hover">
+				<thead>
+				<tr>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Phone</th>
+					<th>Mobile</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr><td>Gary Coleman</td><td>gary.coleman21@example.com</td><td>(398)-332-5385</td><td>(888)-677-3719</td></tr>
+				<tr><td>Rose Parker</td><td>rose.parker16@example.com</td><td>(293)-873-2247</td><td>(216)-889-4933</td></tr>
+				<tr><td>Chloe Nelson</td><td>chloe.nelson18@example.com</td><td>(957)-213-3499</td><td>(207)-516-4474</td></tr>
+				<tr><td>Eric Bell</td><td>eric.bell16@example.com</td><td>(897)-762-9782</td><td>(565)-627-3002</td></tr>
+				<tr><td>Douglas Hayes</td><td>douglas.hayes92@example.com</td><td>(231)-391-6269</td><td>(790)-838-2130</td></tr>
+				</tbody>
+			</table>
+
+			<h3>Colors</h3>
+
+			<!-- primary -->
+			<table class="table table--primary">
+				<thead>
+				<tr>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Phone</th>
+					<th>Mobile</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr><td>Gary Coleman</td><td>gary.coleman21@example.com</td><td>(398)-332-5385</td><td>(888)-677-3719</td></tr>
+				<tr><td>Rose Parker</td><td>rose.parker16@example.com</td><td>(293)-873-2247</td><td>(216)-889-4933</td></tr>
+				<tr><td>Chloe Nelson</td><td>chloe.nelson18@example.com</td><td>(957)-213-3499</td><td>(207)-516-4474</td></tr>
+				<tr><td>Eric Bell</td><td>eric.bell16@example.com</td><td>(897)-762-9782</td><td>(565)-627-3002</td></tr>
+				<tr><td>Douglas Hayes</td><td>douglas.hayes92@example.com</td><td>(231)-391-6269</td><td>(790)-838-2130</td></tr>
+				</tbody>
+			</table>
+
+			<!-- secondary -->
+			<table class="table table--secondary">
+				<thead>
+				<tr>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Phone</th>
+					<th>Mobile</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr><td>Gary Coleman</td><td>gary.coleman21@example.com</td><td>(398)-332-5385</td><td>(888)-677-3719</td></tr>
+				<tr><td>Rose Parker</td><td>rose.parker16@example.com</td><td>(293)-873-2247</td><td>(216)-889-4933</td></tr>
+				<tr><td>Chloe Nelson</td><td>chloe.nelson18@example.com</td><td>(957)-213-3499</td><td>(207)-516-4474</td></tr>
+				<tr><td>Eric Bell</td><td>eric.bell16@example.com</td><td>(897)-762-9782</td><td>(565)-627-3002</td></tr>
+				<tr><td>Douglas Hayes</td><td>douglas.hayes92@example.com</td><td>(231)-391-6269</td><td>(790)-838-2130</td></tr>
+				</tbody>
+			</table>
+
+			<!-- black -->
+			<table class="table table--black">
+				<thead>
+				<tr>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Phone</th>
+					<th>Mobile</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr><td>Gary Coleman</td><td>gary.coleman21@example.com</td><td>(398)-332-5385</td><td>(888)-677-3719</td></tr>
+				<tr><td>Rose Parker</td><td>rose.parker16@example.com</td><td>(293)-873-2247</td><td>(216)-889-4933</td></tr>
+				<tr><td>Chloe Nelson</td><td>chloe.nelson18@example.com</td><td>(957)-213-3499</td><td>(207)-516-4474</td></tr>
+				<tr><td>Eric Bell</td><td>eric.bell16@example.com</td><td>(897)-762-9782</td><td>(565)-627-3002</td></tr>
+				<tr><td>Douglas Hayes</td><td>douglas.hayes92@example.com</td><td>(231)-391-6269</td><td>(790)-838-2130</td></tr>
+				</tbody>
+			</table>
+
+			<h3>Condensed Table</h3>
+
+			<table class="table table--condensed">
+				<thead>
+				<tr>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Phone</th>
+					<th>Mobile</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr><td>Gary Coleman</td><td>gary.coleman21@example.com</td><td>(398)-332-5385</td><td>(888)-677-3719</td></tr>
+				<tr><td>Rose Parker</td><td>rose.parker16@example.com</td><td>(293)-873-2247</td><td>(216)-889-4933</td></tr>
+				<tr><td>Chloe Nelson</td><td>chloe.nelson18@example.com</td><td>(957)-213-3499</td><td>(207)-516-4474</td></tr>
+				<tr><td>Eric Bell</td><td>eric.bell16@example.com</td><td>(897)-762-9782</td><td>(565)-627-3002</td></tr>
+				<tr><td>Douglas Hayes</td><td>douglas.hayes92@example.com</td><td>(231)-391-6269</td><td>(790)-838-2130</td></tr>
+				</tbody>
+			</table>
+		</div>
+
+		<hr/>
+
+		<!-- MENUS -->
+		<div id="menus">
+			<h2>Menu</h2>
+
+			<h3>Menu with all features: responsive, heading, dropdown, icons</h3>
+
+			<!-- MENU -->
+			<nav class="menu">
+				<div class="menu__header">
+					<a href="#" class="menu__a menu__brand">Brand</a>
+					<label class="btn menu__burger" for="menu__trigger-1">Show menu</label>
+				</div>
+
+				<input type="checkbox" id="menu__trigger-1" class="menu__trigger">
+
+				<ul class="menu__ul">
+					<li class="menu__li menu__active"><a class="menu__a" href="#">Home</a></li>
+					<li class="menu__li menu__parent">
+						<a class="menu__a">Services</a>
+						<ul class="menu__ul--dropdown">
+							<li class="menu__li"><a class="menu__a" href="#">Service 1</a></li>
+							<li class="menu__li menu__parent">
+								<a class="menu__a">Service 2</a>
+								<ul class="menu__ul--dropdown">
+									<li class="menu__li"><a class="menu__a" href="#">Service 2.1</a></li>
+									<li class="menu__li"><a class="menu__a" href="#">Service 2.2</a></li>
+									<li class="menu__li"><a class="menu__a" href="#">Service 2.3</a></li>
+								</ul>
+							</li>
+							<li class="menu__li"><a class="menu__a" href="#">Service 3</a></li>
+						</ul>
+					</li>
+					<li class="menu__li"><a class="menu__a" href="#">Blog</a></li>
+					<li class="menu__li"><a class="menu__a" href="#">About Us</a></li>
+					<li class="menu__li"><a class="menu__a" href="#">Contact Us</a></li>
+				</ul>
+			</nav>
+
+			&nbsp;
+
+			<nav class="menu menu--primary">
+				<div class="menu__header">
+					<a href="#" class="menu__a menu__brand">Brand</a>
+					<label class="btn btn--primary menu__burger" for="menu__trigger-2">Show menu</label>
+				</div>
+
+				<input type="checkbox" id="menu__trigger-2" class="menu__trigger">
+
+				<ul class="menu__ul">
+					<li class="menu__li menu__active"><a class="menu__a" href="#">Home</a></li>
+					<li class="menu__li menu__parent">
+						<a class="menu__a">Services</a>
+						<ul class="menu__ul--dropdown">
+							<li class="menu__li"><a class="menu__a" href="#">Service 1</a></li>
+							<li class="menu__li menu__parent">
+								<a class="menu__a">Service 2</a>
+								<ul class="menu__ul--dropdown">
+									<li class="menu__li"><a class="menu__a" href="#">Service 2.1</a></li>
+									<li class="menu__li"><a class="menu__a" href="#">Service 2.2</a></li>
+									<li class="menu__li"><a class="menu__a" href="#">Service 2.3</a></li>
+								</ul>
+							</li>
+							<li class="menu__li"><a class="menu__a" href="#">Service 3</a></li>
+						</ul>
+					</li>
+					<li class="menu__li"><a class="menu__a" href="#">Blog</a></li>
+					<li class="menu__li"><a class="menu__a" href="#">About Us</a></li>
+					<li class="menu__li"><a class="menu__a" href="#">Contact Us</a></li>
+				</ul>
+			</nav>
+
+			&nbsp;
+
+			<nav class="menu menu--secondary">
+				<div class="menu__header">
+					<a href="#" class="menu__a menu__brand">Brand</a>
+					<label class="btn--secondary menu__burger" for="menu__trigger-3">Show menu</label>
+				</div>
+
+				<input type="checkbox" id="menu__trigger-3" class="menu__trigger">
+
+				<ul class="menu__ul">
+					<li class="menu__li menu__active"><a class="menu__a" href="#">Home</a></li>
+					<li class="menu__li menu__parent">
+						<a class="menu__a">Services</a>
+						<ul class="menu__ul--dropdown">
+							<li class="menu__li"><a class="menu__a" href="#">Service 1</a></li>
+							<li class="menu__li menu__parent">
+								<a class="menu__a">Service 2</a>
+								<ul class="menu__ul--dropdown">
+									<li class="menu__li"><a class="menu__a" href="#">Service 2.1</a></li>
+									<li class="menu__li"><a class="menu__a" href="#">Service 2.2</a></li>
+									<li class="menu__li"><a class="menu__a" href="#">Service 2.3</a></li>
+								</ul>
+							</li>
+							<li class="menu__li"><a class="menu__a" href="#">Service 3</a></li>
+						</ul>
+					</li>
+					<li class="menu__li"><a class="menu__a" href="#">Blog</a></li>
+					<li class="menu__li"><a class="menu__a" href="#">About Us</a></li>
+					<li class="menu__li"><a class="menu__a" href="#">Contact Us</a></li>
+				</ul>
+			</nav>
+
+			&nbsp;
+
+			<nav class="menu menu--black">
+				<div class="menu__header">
+					<a href="#" class="menu__a menu__brand">Brand</a>
+					<label class="btn btn--black menu__burger" for="menu__trigger-4">Show menu</label>
+				</div>
+
+				<input type="checkbox" id="menu__trigger-4" class="menu__trigger">
+
+				<ul class="menu__ul">
+					<li class="menu__li menu__active"><a class="menu__a" href="#">Home</a></li>
+					<li class="menu__li menu__parent">
+						<a class="menu__a">Services</a>
+						<ul class="menu__ul--dropdown">
+							<li class="menu__li"><a class="menu__a" href="#">Service 1</a></li>
+							<li class="menu__li menu__parent">
+								<a class="menu__a">Service 2</a>
+								<ul class="menu__ul--dropdown">
+									<li class="menu__li"><a class="menu__a" href="#">Service 2.1</a></li>
+									<li class="menu__li"><a class="menu__a" href="#">Service 2.2</a></li>
+									<li class="menu__li"><a class="menu__a" href="#">Service 2.3</a></li>
+								</ul>
+							</li>
+							<li class="menu__li"><a class="menu__a" href="#">Service 3</a></li>
+						</ul>
+					</li>
+					<li class="menu__li"><a class="menu__a" href="#">Blog</a></li>
+					<li class="menu__li"><a class="menu__a" href="#">About Us</a></li>
+					<li class="menu__li"><a class="menu__a" href="#">Contact Us</a></li>
+				</ul>
+			</nav>
+
+			&nbsp;
+
+			<nav class="menu menu--primary menu--fixed-top">
+				<div class="menu__header">
+					<a href="#" class="menu__a menu__brand">Brand</a>
+					<label class="btn btn--black menu__burger" for="menu__trigger-5">Show menu</label>
+				</div>
+
+				<input type="checkbox" id="menu__trigger-5" class="menu__trigger">
+
+				<ul class="menu__ul">
+					<li class="menu__li menu__active"><a class="menu__a" href="#">Home</a></li>
+					<li class="menu__li menu__parent">
+						<a class="menu__a">Services</a>
+						<ul class="menu__ul--dropdown">
+							<li class="menu__li"><a class="menu__a" href="#">Service 1</a></li>
+							<li class="menu__li menu__parent">
+								<a class="menu__a">Service 2</a>
+								<ul class="menu__ul--dropdown">
+									<li class="menu__li"><a class="menu__a" href="#">Service 2.1</a></li>
+									<li class="menu__li"><a class="menu__a" href="#">Service 2.2</a></li>
+									<li class="menu__li"><a class="menu__a" href="#">Service 2.3</a></li>
+								</ul>
+							</li>
+							<li class="menu__li"><a class="menu__a" href="#">Service 3</a></li>
+						</ul>
+					</li>
+					<li class="menu__li"><a class="menu__a" href="#">Blog</a></li>
+					<li class="menu__li"><a class="menu__a" href="#">About Us</a></li>
+					<li class="menu__li"><a class="menu__a" href="#">Contact Us</a></li>
+				</ul>
+			</nav>
+
+			<nav class="menu menu--primary menu--flat">
+				<div class="menu__header">
+					<a href="#" class="menu__a menu__brand">Brand</a>
+					<label class="btn btn--black menu__burger" for="menu__trigger-6">Show menu</label>
+				</div>
+
+				<input type="checkbox" id="menu__trigger-6" class="menu__trigger">
+
+				<ul class="menu__ul">
+					<li class="menu__li menu__active"><a class="menu__a" href="#">Home</a></li>
+					<li class="menu__li menu__parent">
+						<a class="menu__a">Services</a>
+						<ul class="menu__ul--dropdown">
+							<li class="menu__li"><a class="menu__a" href="#">Service 1</a></li>
+							<li class="menu__li menu__parent">
+								<a class="menu__a">Service 2</a>
+								<ul class="menu__ul--dropdown">
+									<li class="menu__li"><a class="menu__a" href="#">Service 2.1</a></li>
+									<li class="menu__li"><a class="menu__a" href="#">Service 2.2</a></li>
+									<li class="menu__li"><a class="menu__a" href="#">Service 2.3</a></li>
+								</ul>
+							</li>
+							<li class="menu__li"><a class="menu__a" href="#">Service 3</a></li>
+						</ul>
+					</li>
+					<li class="menu__li"><a class="menu__a" href="#">Blog</a></li>
+					<li class="menu__li"><a class="menu__a" href="#">About Us</a></li>
+					<li class="menu__li"><a class="menu__a" href="#">Contact Us</a></li>
+				</ul>
+			</nav>
+			&nbsp;
+		</div>
+
+		<hr/>
+
+		<!-- GROUPS -->
+		<div id="groups" class="clearfix">
+
+			<h2>Groups</h2>
+
+			<div class="group group--hr">
+				<button class="btn">Button 1</button>
+				<span class="group__addon">Addon 1</span>
+				<input class="form__control" type="text" placeholder="Input">
+				<button class="btn">Button 2</button>
+				<button class="btn">Button 3</button>
+			</div>
+
+			<div class="group col__md-4">
+				<button class="btn">Button 1</button>
+				<span class="group__addon">Addon 1</span>
+				<input class="form__control" type="text" placeholder="Input">
+				<button class="btn">Button 2</button>
+				<button class="btn">Button 3</button>
+			</div>
+
+		</div>
+
+		<hr/>
+
+		<!-- INFOBOXES -->
+		<div id="infoboxes">
+
+			<h2>Infoboxes</h2>
+
+			<div class="infobox">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia autem iusto eos doloribus repellat a nam labore. Quae, explicabo accusamus beatae dignissimos aliquid molestiae asperiores! Ipsam, at animi deserunt quos!
+			</div>
+
+			<div class="infobox infobox--primary">
+				Quo, eveniet perferendis odio tempore inventore cum iure nisi enim asperiores esse amet veniam dolor placeat non architecto sunt eos hic dignissimos vero assumenda libero officia optio et mollitia minus?
+			</div>
+
+			<div class="infobox infobox--secondary">
+				Voluptatem, suscipit, repellendus odio deleniti sequi unde architecto magni placeat dolor qui explicabo optio sint culpa corporis sunt quia error dignissimos omnis minima asperiores laboriosam saepe hic accusamus veritatis eligendi.
+			</div>
+
+			<div class="infobox infobox--light-blue">
+				Dolore, nobis, esse, pariatur, amet a aut reiciendis autem numquam voluptates quod omnis voluptate corporis placeat et iste blanditiis temporibus cumque quo voluptatum deserunt debitis minus qui. Mollitia, voluptas, eius?
+			</div>
+
+			<div class="infobox infobox--black">
+				Quas, itaque quidem dicta accusantium est aliquam suscipit amet facere beatae ex quisquam possimus reprehenderit voluptatibus molestias repellendus nobis rem obcaecati cum aspernatur explicabo nemo error illo ab inventore unde.
+			</div>
+
+			<div class="infobox infobox--red">
+				<strong>Warning:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aspernatur laudantium esse sunt architecto.
+			</div>
+
+			<div class="infobox infobox--orange">
+				<strong>Attention:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aspernatur laudantium esse sunt architecto.
+			</div>
+
+			<div class="infobox infobox--green">
+				<strong>Success:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aspernatur laudantium esse sunt architecto.
+			</div>
+
+			<div class="infobox infobox--blue">
+				<strong>Information:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aspernatur laudantium esse sunt architecto.
+			</div>
+
+		</div>
+
+		<hr/>
+
+		<!-- LABELS -->
+		<div id="labels">
+
+			<h2>Labels</h2>
+
+			<span class="label">Default label</span>
+			<span class="label label--primary">Primary label</span>
+			<span class="label label--secondary">Secondary label</span>
+			<span class="label label--blue">Blue label</span>
+			<span class="label label--green">Green label</span>
+			<span class="label label--red">Red label</span>
+			<span class="label label--orange">Orange label</span>
+			<span class="label label--black">Black label</span>
+			<span class="label label--radius">Radius label</span>
+
+		</div>
+
+		<hr/>
+
+		<!-- PROGRESS -->
+		<div id="progress">
+
+			<h2>Progress</h2>
+
+			<div class="progress">
+				<div class="progress__bar" style="width: 10%"></div>
+			</div>
+
+			&nbsp;
+
+			<div class="progress progress--primary">
+				<div class="progress__bar" style="width: 20%"></div>
+			</div>
+
+			&nbsp;
+
+			<div class="progress progress--secondary">
+				<div class="progress__bar" style="width: 30%"></div>
+			</div>
+
+			&nbsp;
+
+			<div class="progress progress--blue">
+				<div class="progress__bar" style="width: 40%"></div>
+			</div>
+
+			&nbsp;
+
+			<div class="progress progress--green">
+				<div class="progress__bar" style="width: 50%"></div>
+			</div>
+
+			&nbsp;
+
+			<div class="progress progress--red">
+				<div class="progress__bar" style="width: 60%"></div>
+			</div>
+
+			&nbsp;
+
+			<div class="progress progress--orange">
+				<div class="progress__bar" style="width: 70%"></div>
+			</div>
+
+			&nbsp;
+
+			<div class="progress progress--black">
+				<div class="progress__bar" style="width: 80%"></div>
+			</div>
+
+			&nbsp;
+
+			<h3>Vertical Progress</h3>
+			<div class="clearfix">
+				<div class="progress progress--vert">
+					<div class="progress__bar" style="height: 15%"></div>
+				</div>
+
+				<div class="progress progress--vert progress--primary">
+					<div class="progress__bar" style="height: 25%"></div>
+				</div>
+
+				<div class="progress progress--vert progress--secondary">
+					<div class="progress__bar" style="height: 40%"></div>
+				</div>
+			</div>
+
+		</div>
+
+		<hr/>
+
+		<!-- ACCORDION -->
+		<div id="accordions">
+
+			<h2>Accordion</h2>
+			<div class="accordion">
+
+				<input id="accordion__item-1" class="accordion__trigger" name="radio" type="radio" />
+				<div class="accordion__item">
+					<label class="accordion__item__heading btn btn--flat" for="accordion__item-1">Panel 1</label>
+					<div class="accordion__item__content">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto dolor dolore earum error excepturi magnam maxime modi natus, neque pariatur quibusdam saepe soluta, sunt tenetur vero. Accusamus ea explicabo non!</p>
+					</div>
+				</div>
+
+				<input id="accordion__item-2" class="accordion__trigger" name="radio" type="radio" />
+				<div class="accordion__item">
+					<label class="accordion__item__heading btn btn--flat" for="accordion__item-2">Panel 2</label>
+					<div class="accordion__item__content">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto dolor dolore earum error excepturi magnam maxime modi natus, neque pariatur quibusdam saepe soluta, sunt tenetur vero. Accusamus ea explicabo non!</p>
+					</div>
+				</div>
+
+				<input id="accordion__item-3" class="accordion__trigger" name="radio" type="radio" />
+				<div class="accordion__item">
+					<label class="accordion__item__heading btn btn--flat" for="accordion__item-3">Panel 3</label>
+					<div class="accordion__item__content">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto dolor dolore earum error excepturi magnam maxime modi natus, neque pariatur quibusdam saepe soluta, sunt tenetur vero. Accusamus ea explicabo non!</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<hr/>
+
+		<!-- PRICING TABLE -->
+		<div id="pricing-table">
+
+			<h2>Pricing Table</h2>
+			<div class="pricing row">
+
+				<!-- Default -->
+				<div class="pricing__plan col__sm-4">
+					<div class="pricing__plan__header">
+						<h3 class="pricing__plan__heading">Personal</h3>
+						<span class="pricing__plan__price">$5 <span>per month</span></span>
+					</div>
+
+					<ul class="pricing__plan__list">
+						<li>Free setup</li>
+						<li>Custom sub-domain</li>
+						<li>Standard customer support</li>
+						<li>1GB file storage</li>
+						<li>1 database</li>
+						<li>Unlimited bandwidth</li>
+					</ul>
+
+					<a href="#" class="btn btn--radius btn--xl">Choose</a>
+				</div>
+
+				<!-- Blue -->
+				<div class="pricing__plan pricing__plan--blue col__sm-4">
+					<div class="pricing__plan__header">
+						<h3 class="pricing__plan__heading">Personal</h3>
+						<span class="pricing__plan__price">$5 <span>per month</span></span>
+					</div>
+
+					<ul class="pricing__plan__list">
+						<li>Free setup</li>
+						<li>Custom sub-domain</li>
+						<li>Standard customer support</li>
+						<li>1GB file storage</li>
+						<li>1 database</li>
+						<li>Unlimited bandwidth</li>
+					</ul>
+
+					<a href="#" class="btn btn--blue btn--radius btn--xl">Choose</a>
+				</div>
+
+				<!-- green -->
+				<div class="pricing__plan pricing__plan--green col__sm-4">
+					<div class="pricing__plan__header">
+						<h3 class="pricing__plan__heading">Personal</h3>
+						<span class="pricing__plan__price">$5 <span>per month</span></span>
+					</div>
+
+					<ul class="pricing__plan__list">
+						<li>Free setup</li>
+						<li>Custom sub-domain</li>
+						<li>Standard customer support</li>
+						<li>1GB file storage</li>
+						<li>1 database</li>
+						<li>Unlimited bandwidth</li>
+					</ul>
+
+					<a href="#" class="btn btn--green btn--radius btn--xl">Choose</a>
+				</div>
+
+			</div>
+
+			<div class="pricing row">
+
+				<!-- Red -->
+				<div class="pricing__plan pricing__plan--red col__sm-4">
+					<div class="pricing__plan__header">
+						<h3 class="pricing__plan__heading">Personal</h3>
+						<span class="pricing__plan__price">$5 <span>per month</span></span>
+					</div>
+
+					<ul class="pricing__plan__list">
+						<li>Free setup</li>
+						<li>Custom sub-domain</li>
+						<li>Standard customer support</li>
+						<li>1GB file storage</li>
+						<li>1 database</li>
+						<li>Unlimited bandwidth</li>
+					</ul>
+
+					<a href="#" class="btn btn--red btn--radius btn--xl">Choose</a>
+				</div>
+
+				<!-- Orange -->
+				<div class="pricing__plan pricing__plan--orange col__sm-4">
+					<div class="pricing__plan__header">
+						<h3 class="pricing__plan__heading">Personal</h3>
+						<span class="pricing__plan__price">$5 <span>per month</span></span>
+					</div>
+
+					<ul class="pricing__plan__list">
+						<li>Free setup</li>
+						<li>Custom sub-domain</li>
+						<li>Standard customer support</li>
+						<li>1GB file storage</li>
+						<li>1 database</li>
+						<li>Unlimited bandwidth</li>
+					</ul>
+
+					<a href="#" class="btn btn--orange btn--radius btn--xl">Choose</a>
+				</div>
+
+				<!-- black -->
+				<div class="pricing__plan pricing__plan--black col__sm-4">
+					<div class="pricing__plan__header">
+						<h3 class="pricing__plan__heading">Personal</h3>
+						<span class="pricing__plan__price">$5 <span>per month</span></span>
+					</div>
+
+					<ul class="pricing__plan__list">
+						<li>Free setup</li>
+						<li>Custom sub-domain</li>
+						<li>Standard customer support</li>
+						<li>1GB file storage</li>
+						<li>1 database</li>
+						<li>Unlimited bandwidth</li>
+					</ul>
+
+					<a href="#" class="btn btn--black btn--radius btn--xl">Choose</a>
+				</div>
+
+			</div>
+
+			<div class="pricing row">
+
+				<!-- Secondary -->
+				<div class="pricing__plan pricing__plan--secondary col__sm-4">
+					<div class="pricing__plan__header">
+						<h3 class="pricing__plan__heading">Personal</h3>
+						<span class="pricing__plan__price">$5 <span>per month</span></span>
+					</div>
+
+					<ul class="pricing__plan__list">
+						<li>Free setup</li>
+						<li>Custom sub-domain</li>
+						<li>Standard customer support</li>
+						<li>1GB file storage</li>
+						<li>1 database</li>
+						<li>Unlimited bandwidth</li>
+					</ul>
+
+					<a href="#" class="btn btn--secondary btn--radius btn--xl">Choose</a>
+				</div>
+
+				<!-- Primary Optimal -->
+				<div class="pricing__plan pricing__plan--primary pricing__plan--optimal col__sm-4">
+					<div class="pricing__plan__header">
+						<h3 class="pricing__plan__heading">Personal</h3>
+						<span class="pricing__plan__price">$5 <span>per month</span></span>
+					</div>
+
+					<ul class="pricing__plan__list">
+						<li>Free setup</li>
+						<li>Custom sub-domain</li>
+						<li>Standard customer support</li>
+						<li>1GB file storage</li>
+						<li>1 database</li>
+						<li>Unlimited bandwidth</li>
+					</ul>
+
+					<a href="#" class="btn btn--primary btn--radius btn--xl">Choose</a>
+				</div>
+
+				<!-- secondary -->
+				<div class="pricing__plan pricing__plan--secondary col__sm-4">
+					<div class="pricing__plan__header">
+						<h3 class="pricing__plan__heading">Personal</h3>
+						<span class="pricing__plan__price">$5 <span>per month</span></span>
+					</div>
+
+					<ul class="pricing__plan__list">
+						<li>Free setup</li>
+						<li>Custom sub-domain</li>
+						<li>Standard customer support</li>
+						<li>1GB file storage</li>
+						<li>1 database</li>
+						<li>Unlimited bandwidth</li>
+					</ul>
+
+					<a href="#" class="btn btn--secondary btn--radius btn--xl">Choose</a>
+				</div>
+
+			</div>
+
+		</div>
+
+		<hr/>
+	</div>
+	
+</body>
+</html>

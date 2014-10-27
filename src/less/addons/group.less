@@ -1,0 +1,127 @@
+// Block:           Groups
+// Description:     Grouping elements
+//
+// Component:       `group`
+//
+// Element:         `group__addon`
+//
+// Modifiers:       `group--hr`
+//                  `group--xs`
+//                  `group--sm`
+//                  `group--lg`
+//                  `group--xl`
+//                  `group__addon--flat`
+//                  `group__addon--radius`
+//
+// Markup:
+// <div class="group group--hr">
+//   <button class="btn">Button 1</button>
+//   <span class="group__addon">Addon 1</span>
+//   <input class="form__control" type="text" placeholder="Input">
+//   <button class="btn">Button 2</button>
+//   <button class="btn">Button 3</button>
+// </div>
+//
+// ========================================================================
+
+/* GROUPS
+   ==================================== */
+.group {
+	margin-bottom: @font-line-height/2 !important;
+	.clearfix;
+	
+	* {
+		margin: 0;
+		font-size: 14px;
+		font-family: @font-family;
+		float: none;
+		display: block;
+		width: 100%;
+
+		&:not(:first-child):not(:last-child) {
+			.lh-border-radius(0);
+		}
+
+		&:first-child {
+			.lh-border-bottom-right-radius(0px);
+			.lh-border-bottom-left-radius(0px);
+		}
+		&:last-child {
+			.lh-border-top-left-radius(0px);
+			.lh-border-top-right-radius(0px);
+		}
+	}
+
+	// Addon element
+	&__addon {
+		height: @font-line-height*1.5;
+		padding: (@font-line-height * 1.5 -  @font-line-height-normal - 4px)/2 12px;
+		background: lighten(@gray, 5%);
+		border: 2px solid lighten(@gray, 5%);
+		color: @black;
+		text-align: center;
+		.lh-border-radius(@input-radius);
+		.z-depth-1;
+		
+		&--radius {.lh-border-radius(99px);}
+		&--flat {.z-depth-0;}
+	}
+
+	@media (min-width: @screen-sm) {
+		// Horizontal grouping
+		&--hr {
+			* {
+				float: left;
+				display: inline-block;
+				width: auto;
+
+				&:first-child {
+					.lh-border-top-right-radius(0px);
+					.lh-border-bottom-right-radius(0px);
+				}
+				&:last-child {
+					.lh-border-top-left-radius(0px);
+					.lh-border-bottom-left-radius(0px);
+				}
+			}
+		}
+	}
+	
+	// SIZES
+	// Extra Small
+	&--xs {
+		margin: 0 0 @font-line-height;
+		
+		* {
+			font-size: 10px;
+			height: @font-line-height;
+		}
+	}
+	// Small
+	&--sm {
+		margin: 0 0 @font-line-height*0.75;
+		
+		* {
+			font-size: 12px;
+			height: @font-line-height*1.25;
+		}
+	}
+	// Large
+	&--lg {
+		margin: 0 0 @font-line-height;
+		
+		* {
+			font-size: 18px;
+			height: @font-line-height*2;
+		}
+	}
+	// Extra Large
+	&--xl {
+		margin: 0 0 @font-line-height/2;
+		
+		* {
+			font-size: 24px;
+			height: @font-line-height*2.5;
+		}
+	}
+}

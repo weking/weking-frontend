@@ -1,0 +1,272 @@
+// Component:       Form, Button
+// Description:     Provides a responsive, fluid and nestable grid system
+//
+// Blocks:          `btn`
+//                  `form'
+//
+// Elements:        `form__control`
+//
+// Modifiers:       `form--stacked`
+//                  `form--aligned`
+//                  `form__control--disabled'
+//                  `btn--disabled'
+//                  `form__control--xs'
+//                  `btn--xs'
+//                  `form__control--sm'
+//                  `btn--sm'
+//                  `form__control--lg'
+//                  `btn--lg'
+//                  `form__control--xl'
+//                  `btn--xl'
+//
+// Markup:
+//
+// <!-- FORM -->
+// <form class="form" action="#">
+//   <legend>A compact inline form</legend>
+//
+//   <input class="form__control" type="text" placeholder="Username">
+//   <input class="form__control" type="password" placeholder="Password">
+//
+//   <label>
+//     <input id="default-remember" type="checkbox"> Remember me
+//   </label>
+//
+//   <button type="submit" class="btn btn--primary">Sign in</button>
+// </form>
+//
+// ========================================================================
+
+/* ====================================
+   FORMS
+   ==================================== */
+// Styles same to `<input>`, `<select>`, `<textarea>` & buttons
+.form__control, .btn {
+	display: block;
+	font-size: 14px;
+	height: @font-line-height*1.5;
+	padding: 0 @font-line-height/2;
+	margin: 0 0 @font-line-height/2;
+	line-height: normal;
+	font-family: @font-family;
+	vertical-align: top;
+	border: 2px solid transparent;
+	background: @input-bg;
+	color: @input-color;
+	text-decoration: none;
+	.lh-border-radius(@input-radius);
+	.z-depth-1();
+	.lh-transition-property(~"background, border-color, color, box-shadow");
+	.lh-transition-duration(~"0.15s");
+	.lh-transition-timing-function(~"ease");
+	
+	&:focus {outline: 0;}
+	
+	// Firefox:  Get rid of the inner focus border
+	
+	&::-moz-focus-inner {
+		padding: 0;
+		border: 0;
+	}
+	
+	// Disabled & Read-only
+	
+	&[disabled], &--disabled, &[readonly] {
+		cursor: not-allowed;
+		background: darken(@input-bg, 10%);
+		color: lighten(@input-color, 35%);
+		border-color: transparent !important;
+	}
+	
+	&[disabled], &--disabled {.lh-opacity(~"0.4");}
+	
+	// Rounded corners
+	&--radius {.lh-border-radius(99px);}
+	
+	// SIZES
+	
+	// Extra Small
+	&--xs {
+		font-size: 10px;
+		height: @font-line-height;
+		margin: 0 0 @font-line-height;
+	}
+	
+	// Small
+	&--sm {
+		font-size: 12px;
+		height: @font-line-height*1.25;
+		margin: 0 0 @font-line-height*0.75;
+	}
+	
+	// Large
+	&--lg {
+		font-size: 18px;
+		height: @font-line-height*2;
+		margin: 0 0 @font-line-height;
+	}
+	
+	// Extra Large
+	&--xl {
+		font-size: 24px;
+		height: @font-line-height*2.5;
+		margin: 0 0 @font-line-height/2;
+	}
+}
+
+// Styles for `<input>`, `<select>`, `<textarea>`
+.form__control {	
+	&:hover {border-color: darken(@input-bg, 30%)}
+	&:focus {
+		border-color: @input-focus-color;
+
+		&:invalid {
+			color: @input-error-color;
+			border-color: lighten(@input-error-color, 15%);
+			&:focus {
+				border-color: lighten(@input-error-color, 18%);
+			}
+		}
+	}
+}
+
+input[type="file"], input[type="radio"], input[type="checkbox"] {
+	&:focus {
+		outline: 1px auto @input-focus-color;
+	}
+	&:focus:invalid:focus {
+		outline-color: lighten(@input-error-color, 18%);
+	}
+}
+
+// Form Block
+.form {
+	label {
+		.font(14px);
+		vertical-align: top;
+	}
+	legend {
+		display: block;
+		width: 100%;
+		padding: 0 0 @font-line-height/2-1 0;
+		margin-bottom: @font-line-height/2;
+		font-size: @font-size*1.15;
+		font-weight: 700;
+		color: @black;
+		border-bottom: 1px solid darken(@gray, 5%);
+	}
+	input[type="checkbox"], input[type="radio"] {
+		display: inline;
+		height: auto;
+		margin: 0;
+		vertical-align: inherit !important;
+		.lh-box-shadow(~"none");
+	}
+
+	&--stacked {
+		.form__control, label, .btn {
+			display: block;
+		}
+	}
+	
+	&--aligned {
+		label {
+			text-align: left;
+		}
+	}
+}
+
+select[multiple] {
+	height: @font-line-height*4;
+	padding: (@font-line-height * 1.5 -  @font-line-height-normal - 4px)/2 @font-line-height/2;
+	margin-bottom: @font-line-height;
+	width: 100%;
+}
+
+textarea {
+	padding: (@font-line-height * 1.5 -  @font-line-height-normal - 4px)/2 @font-line-height/2;
+	width: 100%;
+	max-width: 100%;
+	min-width: 100%;
+	min-height: @font-line-height * 3.5;
+}
+
+// Media Query
+@media (min-width: @screen-sm) {
+	.form__control, .btn {display: inline-block;}
+	
+	.form--aligned {
+		label {
+			text-align: right;
+			padding-right: @font-line-height;
+		}
+	}
+}
+
+// Button Generator
+.btn-gen(@background; @color) {
+	background: @background;
+	border-color: @background;
+	color: @color;
+
+	// Hover state
+	&:hover, &:focus {
+		background: lighten(@background, 6%);
+		border-color: darken(@background, 5%);
+		color: @color;
+	}
+
+	// Pressed state
+	&:active, .btn--active {
+		background: darken(@background, 6%);
+		border-color: darken(@background, 15%);
+		color: @color;
+	}
+}
+/* BUTTONS
+   ==================================== */
+.btn {
+	.btn-gen(@gray; @black);
+	cursor: pointer;
+	line-height: @font-line-height*1.5;
+	text-transform: uppercase;
+
+	// Pressed state
+	&:active, &--active, &:focus {
+		.z-depth-2();
+	}
+
+	// Sizes
+	&--xs {line-height: @font-line-height;}
+	&--sm {line-height: @font-line-height*1.25;}
+	&--lg {line-height: @font-line-height*2;}
+	&--xl {line-height: @font-line-height*2.5;}
+
+	// COLORS
+	&--primary {.btn-gen(@primary; @white);}
+	&--secondary {.btn-gen(@secondary; @white);}
+	&--blue {.btn-gen(@blue; @white);}
+	&--green {.btn-gen(@green; @white);}
+	&--red {.btn-gen(@red; @white);}
+	&--orange {.btn-gen(@orange; @white);}
+	&--black {.btn-gen(@black; @white);}
+	
+	// Ghost button without background
+	&--ghost {
+		&:not(:hover) {
+			background: transparent;
+			color: @gray;
+			
+			&.btn--primary {color: @primary;}
+			&.btn--secondary {color: @secondary;}
+			&.btn--blue {color: @blue;}
+			&.btn--green {color: @green;}
+			&.btn--red {color: @red;}
+			&.btn--orange {color: @orange;}
+			&.btn--black {color: @black;}
+		}
+	}
+	
+	// Remove shadow for flat button
+	&--flat { .z-depth-0() !important; }
+}

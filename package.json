@@ -1,0 +1,33 @@
+{
+  "name": "WeKing",
+  "version": "0.1",
+  "description": "WeKing is a responsive, fast and easy toolkit for creating web interfaces.",
+  "main": "index.js",
+  "url": "https://github.com/weking/",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "grunt": "~0.4.5"
+  },
+  "devDependencies": {
+    "grunt-contrib-concat": "~0.4.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-less": "~0.11.1",
+    "grunt-contrib-cssmin": "~0.9.0",
+    "grunt-newer": "0.7.0",
+    "grunt-cssbeautifier": "~0.1.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/weking/weking-base.git"
+  },
+  "author": "Constantine Karnaukhov",
+  "license": "MIT License",
+  "bugs": {
+    "url": "https://github.com/weking/weking-base/issues"
+  }
+}
