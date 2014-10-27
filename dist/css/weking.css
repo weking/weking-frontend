@@ -1086,7 +1086,6 @@ svg:not(:root) {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-	outline: thin dotted #333333;
 	outline: 1px auto #5677fc;
 }
 
@@ -1411,16 +1410,16 @@ textarea {
 	background-color: #f7f7f7;
 }
 
-.table.table--all-borders td,
-.table.table--hr-borders td,
-.table.table--all-borders th,
-.table.table--hr-borders th {
+.table--all-borders td,
+.table--hr-borders td,
+.table--all-borders th,
+.table--hr-borders th {
 	border-bottom: 1px solid #b7b7b7;
 }
 
-.table .table__odd td,
-.table.table--striped tbody tr:nth-child(2n-1) td,
-.table.table--hover tbody tr:hover td {
+.table__odd td,
+.table--striped tbody tr:nth-child(2n-1) td,
+.table--hover tbody tr:hover td {
 	background-color: #d0d0d0;
 }
 
@@ -1503,16 +1502,16 @@ textarea {
 	background-color: #606fc7;
 }
 
-.table--primary.table--all-borders td,
-.table--primary.table--hr-borders td,
-.table--primary.table--all-borders th,
-.table--primary.table--hr-borders th {
+.table--primary--all-borders td,
+.table--primary--hr-borders td,
+.table--primary--all-borders th,
+.table--primary--hr-borders th {
 	border-bottom: 1px solid #2b387c;
 }
 
-.table--primary .table__odd td,
-.table--primary.table--striped tbody tr:nth-child(2n-1) td,
-.table--primary.table--hover tbody tr:hover td {
+.table--primary__odd td,
+.table--primary--striped tbody tr:nth-child(2n-1) td,
+.table--primary--hover tbody tr:hover td {
 	background-color: #3849a2;
 }
 
@@ -1535,16 +1534,16 @@ textarea {
 	background-color: #ffce3a;
 }
 
-.table--secondary.table--all-borders td,
-.table--secondary.table--hr-borders td,
-.table--secondary.table--all-borders th,
-.table--secondary.table--hr-borders th {
+.table--secondary--all-borders td,
+.table--secondary--hr-borders td,
+.table--secondary--all-borders th,
+.table--secondary--hr-borders th {
 	border-bottom: 1px solid #b98b00;
 }
 
-.table--secondary .table__odd td,
-.table--secondary.table--striped tbody tr:nth-child(2n-1) td,
-.table--secondary.table--hover tbody tr:hover td {
+.table--secondary__odd td,
+.table--secondary--striped tbody tr:nth-child(2n-1) td,
+.table--secondary--hover tbody tr:hover td {
 	background-color: #ecb100;
 }
 
@@ -1567,16 +1566,16 @@ textarea {
 	background-color: #4d4d4d;
 }
 
-.table--black.table--all-borders td,
-.table--black.table--hr-borders td,
-.table--black.table--all-borders th,
-.table--black.table--hr-borders th {
+.table--black--all-borders td,
+.table--black--hr-borders td,
+.table--black--all-borders th,
+.table--black--hr-borders th {
 	border-bottom: 1px solid #0d0d0d;
 }
 
-.table--black .table__odd td,
-.table--black.table--striped tbody tr:nth-child(2n-1) td,
-.table--black.table--hover tbody tr:hover td {
+.table--black__odd td,
+.table--black--striped tbody tr:nth-child(2n-1) td,
+.table--black--hover tbody tr:hover td {
 	background-color: #262626;
 }
 
@@ -2154,17 +2153,6 @@ textarea {
 	border-radius: 3px;
 	background: #dddddd;
 	color: #848484;
-}
-
-.infobox:before {
-	float: left;
-	display: block;
-	font-size: 48px;
-	line-height: 48px;
-	width: 48px;
-	text-align: center;
-	margin-right: 12px;
-	margin-bottom: 12px;
 }
 
 .infobox--primary {
