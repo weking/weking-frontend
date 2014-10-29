@@ -27,7 +27,7 @@
 /* GROUPS
    ==================================== */
 .group {
-	margin-bottom: @font-line-height/2 !important;
+	margin-bottom: @font-line-height;
 	.clearfix;
 	
 	* {
@@ -68,6 +68,8 @@
 	}
 
 	@media (min-width: @screen-sm) {
+		margin-bottom: @font-line-height/2 !important;
+
 		// Horizontal grouping
 		&--hr {
 			* {

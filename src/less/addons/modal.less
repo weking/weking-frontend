@@ -1,0 +1,57 @@
+// Component:       Modal
+// Description:     Defines styles for modal dialogs
+//
+// Block:           `modal`
+//
+// Elements:        `modal__dialog`
+//                  `modal__trigger`
+//
+// Uses:            Grid
+//
+// Markup:
+// <label class="btn btn--lg btn--blue" for="modal__trigger-1">Launch modal</label>
+//
+// <input type="checkbox" class="modal__trigger" id="modal__trigger-1" name="modal__trigger-1" />
+// <div class="modal">
+//   <div class="modal__dialog col__xs-8">
+//     ...
+//   </div>
+// </div>
+//
+// ========================================================================
+
+/* MODAL
+   ==================================== */
+// Modal wrapper
+.modal {
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: @modal-bg;
+	display: none;
+	overflow-y: scroll;
+
+	// Dialog
+	&__dialog {
+		float: none;
+		background: @modal-dialog-bg;
+		color: @modal-dialog-color;
+		margin: @font-line-height*3 auto;
+		padding: @font-line-height/2;
+		.z-depth-1;
+		.lh-border-radius(@modal-radius);
+	}
+}
+
+// Modal trigger
+.modal__trigger {
+	display: none;
+
+	// Show modal when trigger is checked
+	&:checked + .modal {
+		display: block;
+	}
+}

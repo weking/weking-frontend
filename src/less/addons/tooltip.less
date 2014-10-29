@@ -1,0 +1,94 @@
+// Component:       Tooltip
+// Description:     Define styles for tooltips
+//
+// Block:           `tooltip`
+//
+// Elements:        `tooltip--top`
+//                  `tooltip--bottom`
+//                  `tooltip--left`
+//                  `tooltip--right`
+//                  `tooltip--primary`
+//                  `tooltip--secondary`
+//                  `tooltip--blue`
+//                  `tooltip--green`
+//                  `tooltip--red`
+//                  `tooltip--orange`
+//                  `tooltip--black`
+//                  `tooltip--always`
+//                  `tooltip--radius`
+//
+// Markup:
+// <span class="tooltip tooltip--top" data-tooltip="Tooltip on top">Tooltip on top</span>
+// <span class="tooltip tooltip--right" data-tooltip="Tooltip on right">Tooltip on right</span>
+// <span class="tooltip tooltip--bottom" data-tooltip="Tooltip on bottom">Tooltip on bottom</span>
+// <span class="tooltip tooltip--left" data-tooltip="Tooltip on left">Tooltip on left</span>
+//
+// ========================================================================
+
+/* TOOLTIP
+   ==================================== */
+.tooltip {
+	position: relative;
+	display: inline-block;
+	
+	&:after {
+		position: absolute;
+		z-index: 10;
+		pointer-events: none;
+		content: attr(data-tooltip);
+		padding: @font-line-height/4 8px;
+		white-space: nowrap;
+		background: @gray;
+		color: @black;
+		.font(12px);
+		.lh-opacity(0);
+		.lh-border-radius(@basic-radius);
+		.lh-transition(~"0.3s ease");
+	}
+	
+	&:hover:after {.lh-opacity(1);}
+	
+	// Top
+	&--top:after {
+		margin-left: @font-line-height * -2.5;
+		bottom: 100%;
+		left: 50%;
+	}
+	
+	// Bottom
+	&--bottom:after {
+		margin-left: @font-line-height * -2.5;
+		top: 100%;
+		left: 50%;
+	}
+	
+	// Right
+	&--right:after {
+		margin-left: 8px;
+		left: 100%;
+		bottom: -25%;
+	}
+	
+	// Left
+	&--left:after {
+		margin-right: 8px;
+		right: 100%;
+		top: -25%;
+	}
+
+	// Colors
+	&--primary:after {background-color: @primary; color: @white;}
+	&--secondary:after {background-color: @secondary; color: @white;}
+	&--blue:after {background-color: @blue; color: @white;}
+	&--green:after {background-color: @green; color: @white;}
+	&--red:after {background-color: @red; color: @white;}
+	&--orange:after {background-color: @orange; color: @white;}
+	&--black:after {background-color: @black; color: @white;}
+
+	// Extra
+	&--always {
+		&:after {.lh-opacity(1);}
+	}
+
+	&--radius:after {.lh-border-radius(99px);}
+}

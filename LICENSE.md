@@ -1,9 +1,8 @@
-WeKing License
-=============
+#Weking License
 
 The MIT License (MIT)
 
-Copyright (c) 2014 Constantine Karnauhov
+Copyright (c) 2014 Constantine Karnaukhov
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,8 +22,9 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-HINT.css License
-================
+## Third-party software
+
+### HINT.css License
 
 Copyright (c) 2013 Kushagra Gour
 
@@ -48,3 +48,7 @@ HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
 WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
+
+### Material Design Icons
+
+Material Design Icons licensed by Creative Commons Attribution-ShareAlike 4.0 International.

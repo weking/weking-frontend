@@ -8,13 +8,13 @@
 //                  `accordion__item__trigger`
 //                  `accordion__item__content`
 //
-// Uses:            Button
+// Uses:            Button, Group
 //
 // Markup:
-// <div class="accordion">
+// <div class="accordion group">
 //   <div class="accordion__item">
-//     <label class="accordion__item__heading btn btn--flat" for="accordion__item-1">Panel 1</label>
-//     <input id="accordion__item-1" class="accordion__trigger" name="radio" type="radio" />
+//     <label class="accordion__item__heading btn" for="accordion__item-1">Panel 1</label>
+//     <input id="accordion__item-1" class="accordion__trigger" name="accordion__trigger" type="radio" />
 //     <div class="accordion__item__content">
 //       ...
 //     </div>
@@ -28,43 +28,31 @@
    ==================================== */
 .accordion {
 
-	&__item {
-		margin-bottom: 8px;
+	// Heading
+	&__heading {
+		margin: 0;
+		display: block;
+		position: relative;
+		z-index: 1;
+	}
 
-		// Heading
-		&__heading {
-			margin: 0;
-			display: block;
-			height: @font-line-height*2;
-		}
-
-		// Content
-		&__content {
-			// Hide item content by default
-			display: none;
-			padding: 7px 8px;
-			background: @white;
-			border: 1px solid @gray;
-			.lh-border-bottom-left-radius(@basic-radius);
-			.lh-border-bottom-right-radius(@basic-radius);
-		}
-
+	// Content
+	&__content {
+		// Hide item content by default
+		display: none;
+		padding: @font-line-height/2;
+		background: @white;
+		.z-depth-1;
+		.lh-border-radius(@input-radius);
 	}
 
 	// Hide checkboxes and radio-buttons
 	&__trigger {
 		display: none;
 
-		&:checked + .accordion__item {
-			// Show item content when trigger is checked
-			.accordion__item__content {
-				display: block;
-			}
-
-			.accordion__item__heading {
-				.lh-border-bottom-left-radius(0);
-				.lh-border-bottom-right-radius(0);
-			}
+		// Show item content when trigger is checked
+		&:checked + .accordion__content {
+			display: block;
 		}
 	}
 

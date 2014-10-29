@@ -1,5 +1,5 @@
 // Component:       Form, Button
-// Description:     Provides a responsive, fluid and nestable grid system
+// Description:     Define styles for forms, form elements and buttons
 //
 // Blocks:          `btn`
 //                  `form'
@@ -18,6 +18,8 @@
 //                  `btn--lg'
 //                  `form__control--xl'
 //                  `btn--xl'
+//                  `form__control--flat'
+//                  `btn--flat'
 //
 // Markup:
 //
@@ -115,7 +117,7 @@
 }
 
 // Styles for `<input>`, `<select>`, `<textarea>`
-.form__control {	
+.form__control {
 	&:hover {border-color: darken(@input-bg, 30%)}
 	&:focus {
 		border-color: @input-focus-color;
@@ -127,6 +129,11 @@
 				border-color: lighten(@input-error-color, 18%);
 			}
 		}
+	}
+
+	&--flat {
+		.z-depth-0;
+		border-color: darken(@input-bg, 20%)
 	}
 }
 
