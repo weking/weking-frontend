@@ -1,17 +1,15 @@
 // Block:           Groups
 // Description:     Grouping elements
 //
-// Component:       `group`
+// Component:       'group'
 //
-// Element:         `group__addon`
+// Element:         'group__addon'
 //
-// Modifiers:       `group--hr`
-//                  `group--xs`
-//                  `group--sm`
-//                  `group--lg`
-//                  `group--xl`
-//                  `group__addon--flat`
-//                  `group__addon--radius`
+// Modifiers:       'group--hr'
+//                  'group__addon--xs'
+//                  'group__addon--sm'
+//                  'group__addon--lg'
+//                  'group__addon--xl'
 //
 // Markup:
 // <div class="group group--hr">
@@ -38,33 +36,58 @@
 		display: block;
 		width: 100%;
 
-		&:not(:first-child):not(:last-child) {
-			.lh-border-radius(0);
-		}
-
-		&:first-child {
-			.lh-border-bottom-right-radius(0px);
-			.lh-border-bottom-left-radius(0px);
-		}
-		&:last-child {
-			.lh-border-top-left-radius(0px);
-			.lh-border-top-right-radius(0px);
-		}
+//		&:not(:first-child):not(:last-child) {
+//			.lh-border-radius(0);
+//		}
+//
+//		&:first-child {
+//			.lh-border-bottom-right-radius(0px);
+//			.lh-border-bottom-left-radius(0px);
+//		}
+//		&:last-child {
+//			.lh-border-top-left-radius(0px);
+//			.lh-border-top-right-radius(0px);
+//		}
 	}
 
 	// Addon element
 	&__addon {
 		height: @font-line-height*1.5;
 		padding: (@font-line-height * 1.5 -  @font-line-height-normal - 4px)/2 12px;
-		background: lighten(@gray, 5%);
-		border: 2px solid lighten(@gray, 5%);
-		color: @black;
+		background: transparent;
+		border: 2px solid transparent;
+		color: @text-color;
 		text-align: center;
-		.lh-border-radius(@input-radius);
-		.z-depth-1;
-		
-		&--radius {.lh-border-radius(99px);}
-		&--flat {.z-depth-0;}
+
+		// SIZES
+
+		// Extra Small
+		&--xs {
+			font-size: 10px;
+			height: @font-line-height;
+			margin: @font-line-height/2 0;
+		}
+
+		// Small
+		&--sm {
+			font-size: 12px;
+			height: @font-line-height*1.25;
+			margin: @font-line-height*0.75/2 0;
+		}
+
+		// Large
+		&--lg {
+			font-size: 18px;
+			height: @font-line-height*2;
+			margin: @font-line-height/2 0;
+		}
+
+		// Extra Large
+		&--xl {
+			font-size: 24px;
+			height: @font-line-height*2.5;
+			margin: @font-line-height/4 0;
+		}
 	}
 
 	@media (min-width: @screen-sm) {
@@ -77,53 +100,15 @@
 				display: inline-block;
 				width: auto;
 
-				&:first-child {
-					.lh-border-top-right-radius(0px);
-					.lh-border-bottom-right-radius(0px);
-				}
-				&:last-child {
-					.lh-border-top-left-radius(0px);
-					.lh-border-bottom-left-radius(0px);
-				}
+//				&:first-child {
+//					.lh-border-top-right-radius(0px);
+//					.lh-border-bottom-right-radius(0px);
+//				}
+//				&:last-child {
+//					.lh-border-top-left-radius(0px);
+//					.lh-border-bottom-left-radius(0px);
+//				}
 			}
-		}
-	}
-	
-	// SIZES
-	// Extra Small
-	&--xs {
-		margin: 0 0 @font-line-height;
-		
-		* {
-			font-size: 10px;
-			height: @font-line-height;
-		}
-	}
-	// Small
-	&--sm {
-		margin: 0 0 @font-line-height*0.75;
-		
-		* {
-			font-size: 12px;
-			height: @font-line-height*1.25;
-		}
-	}
-	// Large
-	&--lg {
-		margin: 0 0 @font-line-height;
-		
-		* {
-			font-size: 18px;
-			height: @font-line-height*2;
-		}
-	}
-	// Extra Large
-	&--xl {
-		margin: 0 0 @font-line-height/2;
-		
-		* {
-			font-size: 24px;
-			height: @font-line-height*2.5;
 		}
 	}
 }

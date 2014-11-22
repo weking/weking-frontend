@@ -1,27 +1,27 @@
 // Component:       Menu
 // Description:     Define styles for navigation menu
 //
-// Blocks:          `menu`
+// Blocks:          'menu'
 //
-// Elements:        `menu__ul`
-//                  `menu__li`
-//                  `menu__a`
-//                  `menu__active`
-//                  `menu__brand`
-//                  `menu__parent`
-//                  `menu__burger`
-//                  `menu__trigger`
+// Elements:        'menu__ul'
+//                  'menu__li'
+//                  'menu__a'
+//                  'menu__active'
+//                  'menu__brand'
+//                  'menu__parent'
+//                  'menu__burger'
+//                  'menu__trigger'
 //
-// Modifiers:       `menu--vert`
-//                  `menu--droptop`
-//                  `menu--dropleft`
-//                  `menu--primary'
-//                  `menu--secondary'
-//                  `menu--black'
-//                  `menu--flat'
-//                  `menu--fixed-top`
-//                  `menu--fixed-bottom`
-//                  `menu__ul--dropdown`
+// Modifiers:       'menu--vert'
+//                  'menu--droptop'
+//                  'menu--dropleft'
+//                  'menu--primary'
+//                  'menu--secondary'
+//                  'menu--black'
+//                  'menu--flat'
+//                  'menu--fixed-top'
+//                  'menu--fixed-bottom'
+//                  'menu__ul--dropdown'
 //
 // Markup:
 //
@@ -59,55 +59,12 @@
 //
 // ========================================================================
 
-// Menu generator
-.menu-gen(@menu-bg, @menu-color, @sub-menu-bg: @menu-bg, @sub-menu-color: @menu-color) {
-	background: @menu-bg;
-
-	.menu__brand {color: @menu-color !important}
-
-	.menu__ul {
-		.menu__a {
-			color: fade(@menu-color, 60%);
-		}
-
-		// Active state & Brand link
-		.menu__li:hover > .menu__a, .menu__active > .menu__a {
-			color: @menu-color;
-		}
-
-		@media (min-width: @screen-md) {
-			&--dropdown {
-				background: @sub-menu-bg;
-
-				.menu__a {
-					color: fade(@sub-menu-color, 60%);
-				}
-
-				.menu__li:hover, .menu__active {
-					background: darken(@sub-menu-bg, 6%);
-
-					> .menu__a {
-						color: @sub-menu-color;
-					}
-				}
-			}
-
-			.menu__li:hover, .menu__active {
-				> .menu__a {
-					border-color: @menu-color;
-				}
-			}
-		}
-	}
-}
-
 /* ====================================
    MENU
    ==================================== */
 .menu {
 	.z-depth-1;
-	.lh-border-radius(@menu-radius);
-	.menu-gen(@menu-bg, @menu-color, @sub-menu-bg, @sub-menu-color);
+	.menu-gen(@menu-bg, @menu-color, @grey300, 100);
 	.clearfix;
 
 	// Menu header
@@ -122,7 +79,7 @@
 		float: left;
 	}
 
-	// Burger
+	// Burger icon
 	&__burger {
 		float: right;
 		margin: (@font-line-height*2 - @font-line-height*1.5 - 6px) 16px;
@@ -132,11 +89,13 @@
 	&__trigger {
 		display: none;
 
+		// Show Menu list when trigger checked
 		&:checked + .menu__ul {
 			display: block;
 		}
 	}
 
+	// Menu lists. Hidden by default
 	&__ul {
 		margin: 0;
 		padding: 0;
@@ -150,6 +109,7 @@
 		}
 	}
 
+	// Menu item
 	&__li {
 		position: relative;
 		display: block;
@@ -159,6 +119,7 @@
 		&:hover > .menu__ul--dropdown {display: block}
 	}
 
+	// Menu link
 	&__a {
 		padding: 0 16px;
 		text-decoration: none;
@@ -167,7 +128,12 @@
 		white-space: nowrap;
 		font-weight: 700;
 
-		.menu__parent > &:after {content: " \25BE"; line-height: 50%;}
+		.menu__parent > &:after {
+			content: " \25BE";
+			font-size: @font-size;
+			line-height: @font-line-height;
+			vertical-align: middle;
+		}
 	}
 
 	// Fixed menus
@@ -186,24 +152,30 @@
 		width: 100%;
 		z-index: 999;
 		.lh-border-radius(0);
+		.z-depth-1('top');
 	}
 	
 	// Colors
 	&--primary {
-		.menu-gen(@primary, @white, @sub-menu-bg, @sub-menu-color);
+		.menu-gen('primary', @white);
 	}
 
 	&--secondary {
-		.menu-gen(@secondary, @white, @sub-menu-bg, @sub-menu-color);
+		.menu-gen('secondary', @white);
 	}
 
 	&--black {
-		.menu-gen(@black, @white, @sub-menu-bg, @sub-menu-color);
+		.menu-gen('grey', @white, @white, 900);
 	}
 	
 	// Flat menu (without shadow)
 	&--flat {
 		.z-depth-0;
+
+		.menu__ul--dropdown {
+			.z-depth-0;
+			outline: 1px solid #ddd;
+		}
 	}
 	
 	// Responsive menu
@@ -218,6 +190,7 @@
 			display: none;
 		}
 
+		// Menu list
 		&__ul {
 			display: block;
 			float: left;
@@ -272,7 +245,7 @@
 				width: 100%;
 			}
 
-			.menu__parent > a:after, {content: ' \25B8';}
+			.menu__parent > a:after {content: ' \25B8';}
 
 			.menu__a {
 				line-height: @font-line-height*2;
@@ -294,7 +267,7 @@
 					bottom:0 !important;
 				}
 
-				.menu__parent > .menu__a:after, {content: ' \25B8';}
+				.menu__parent > .menu__a:after {content: ' \25B8';}
 			}
 
 			.menu__parent > .menu__a:after {content: " \25B4"}

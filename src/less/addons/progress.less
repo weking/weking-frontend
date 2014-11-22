@@ -1,19 +1,19 @@
 // Block:           Progress
 // Description:     Defines styles for progress bars
 //
-// Component:       `progress`
+// Component:       'progress'
 //
-// Element:         `progress__bar`
+// Element:         'progress__bar'
 //
-// Modifiers:       `progress--primary`
-//                  `progress--secondary`
-//                  `progress--blue`
-//                  `progress--green`
-//                  `progress--red`
-//                  `progress--orange`
-//                  `progress--black`
-//                  `progress--vert`
-//                  `progress--thin`
+// Modifiers:       'progress--primary'
+//                  'progress--secondary'
+//                  'progress--blue'
+//                  'progress--green'
+//                  'progress--red'
+//                  'progress--orange'
+//                  'progress--black'
+//                  'progress--vert'
+//                  'progress--thin'
 //
 // Markup:
 //
@@ -23,19 +23,13 @@
 //
 // ========================================================================
 
-// Progress
-.progress-gen(@color) {
-	background: fade(@color, 50%);
-	.progress__bar {background: @color;}
-}
-
 /* Progress Bar
    ==================================== */
 .progress {
 	height: 4px;
 	margin: (@font-line-height - 4px )/2 0;
 	position: relative;
-	.progress-gen(@gray);
+	.progress-gen(@grey);
 	
 	&__bar {
 		float: left;
@@ -50,7 +44,7 @@
 	&--green {.progress-gen(@green);}
 	&--red {.progress-gen(@red);}
 	&--orange {.progress-gen(@orange);}
-	&--black {.progress-gen(@black);}
+	&--black {.progress-gen(@grey900);}
 	
 	// Vertical
 	&--vert {

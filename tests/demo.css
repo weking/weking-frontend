@@ -16,25 +16,6 @@
 	background-color: #999;
 }
 
-.demo {
-	padding: 48px 24px 24px;
-	margin: 24px 0;
-	outline: 1px solid #ddd;
-background: #fff;
-	position: relative;
-}
-.demo:after {
-	content: "Example";
-	position: absolute;
-	top: 12px;
-	left: 24px;
-	font-size: 12px;
-	font-weight: bold;
-	color: #bbb;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-}
-
 /* Debug vertical rythm */
 
 body {

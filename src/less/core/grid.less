@@ -1,16 +1,16 @@
 // Component:       Grid
 // Description:     Provides a responsive, fluid and nestable grid system
 //
-// Blocks:          `row`
-//                  `col__xs-*'
-//                  `col__sm-*'
-//                  `col__md-*`
-//                  `col__lg-*`
+// Blocks:          'row'
+//                  'col__xs-*'
+//                  'col__sm-*'
+//                  'col__md-*'
+//                  'col__lg-*'
 //
-// Modifiers:       `col__xs--offset-*'
-//                  `col__sm--offset-*'
-//                  `col__md--offset-*`
-//                  `col__lg--offset-*`
+// Modifiers:       'col__xs--offset-*'
+//                  'col__sm--offset-*'
+//                  'col__md--offset-*'
+//                  'col__lg--offset-*'
 //
 // Markup:
 //
@@ -22,34 +22,18 @@
 //
 // ========================================================================
 
-// Columns generator
-.make-columns(@quantity: @grid-columns; @suffix: ~""; @i: 1;) when (@i <= @quantity) {
-	
-	.col@{suffix}-@{i} { width: percentage(( @i / @quantity )); }
-
-	.make-columns(@quantity; @suffix; @i+1);
-
-}
-
-// Offset generator
-.make-offset(@quantity: @grid-columns; @suffix: ~""; @i: 1;) when (@i < @quantity) {
-	
-	.col@{suffix}--offset-@{i} { margin-left: percentage(( @i / @quantity )); }
-
-	.make-offset(@quantity; @suffix; @i+1);
-
-}
-
 /* ====================================
    GRID
    ==================================== */
+
+// Rows contain and clear the floats of your columns.
 .row {
 	width: 100%;
 	*zoom: 1;
 	.clearfix;
 }
 
-// Basic styles for collumns
+// Basic styles for columns
 [class*="col"] {
 	min-height: @font-line-height;
 	float: left;
@@ -57,8 +41,18 @@
 	display: block;
 	margin: 0;
 	.clearfix;
+}
 
-	&.padding, .inner {padding: 0 10px;}
+.col__inner {
+	padding: 0 12px;
+
+	&:first-child {
+		padding-left: 0;
+	}
+
+	&:last-child {
+		padding-right: 0;
+	}
 }
 
 // Style reset for offset
@@ -67,19 +61,23 @@
 	float: none;
 }
 
+// Columns & offsets for all screens
 .make-columns(@suffix: ~"__xs");
 .make-offset(@suffix: ~"__xs");
 
+// Columns & offsets from small screen (tablets and wider)
 @media (min-width: @screen-sm) {
 	.make-columns(@suffix: ~"__sm");
 	.make-offset(@suffix: ~"__sm");
 }
 
+// Columns & offsets from medium screen (desktops and wider)
 @media (min-width: @screen-md) {
 	.make-columns(@suffix: ~"__md");
 	.make-offset(@suffix: ~"__md");
 }
 
+// Columns & offsets from large screen (wide desktops)
 @media (min-width: @screen-lg) {
 	.make-columns(@suffix: ~"__lg");
 	.make-offset(@suffix: ~"__lg");

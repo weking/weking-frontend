@@ -1,21 +1,21 @@
 // Component:       Tooltip
 // Description:     Define styles for tooltips
 //
-// Block:           `tooltip`
+// Block:           'tooltip'
 //
-// Elements:        `tooltip--top`
-//                  `tooltip--bottom`
-//                  `tooltip--left`
-//                  `tooltip--right`
-//                  `tooltip--primary`
-//                  `tooltip--secondary`
-//                  `tooltip--blue`
-//                  `tooltip--green`
-//                  `tooltip--red`
-//                  `tooltip--orange`
-//                  `tooltip--black`
-//                  `tooltip--always`
-//                  `tooltip--radius`
+// Elements:        'tooltip--top'
+//                  'tooltip--bottom'
+//                  'tooltip--left'
+//                  'tooltip--right'
+//                  'tooltip--primary'
+//                  'tooltip--secondary'
+//                  'tooltip--blue'
+//                  'tooltip--green'
+//                  'tooltip--red'
+//                  'tooltip--orange'
+//                  'tooltip--black'
+//                  'tooltip--always'
+//                  'tooltip--radius'
 //
 // Markup:
 // <span class="tooltip tooltip--top" data-tooltip="Tooltip on top">Tooltip on top</span>
@@ -38,8 +38,8 @@
 		content: attr(data-tooltip);
 		padding: @font-line-height/4 8px;
 		white-space: nowrap;
-		background: @gray;
-		color: @black;
+		background: @grey;
+		color: @grey900;
 		.font(12px);
 		.lh-opacity(0);
 		.lh-border-radius(@basic-radius);
@@ -83,7 +83,7 @@
 	&--green:after {background-color: @green; color: @white;}
 	&--red:after {background-color: @red; color: @white;}
 	&--orange:after {background-color: @orange; color: @white;}
-	&--black:after {background-color: @black; color: @white;}
+	&--black:after {background-color: @grey900; color: @white;}
 
 	// Extra
 	&--always {

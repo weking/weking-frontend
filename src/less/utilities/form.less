@@ -1,0 +1,40 @@
+// Button Generator
+//
+// Mixin return rules for coloring buttons
+//
+// Arguments:
+//   @bg - name of background color swatch (type: string)
+//   @color - button text color (type: color)
+//   @bg-level - level of background color swatch (type: number)
+//
+
+.btn-gen(@bg, @color, @bg-level: 500) {
+
+	// Make color swatch variables names
+	@background-default: %(~"%s%s", ~'@{bg}', @bg-level);
+	@border-default: %(~"%s%s", ~'@{bg}', @bg-level);
+
+	@background-hover: %(~"%s%s", ~'@{bg}', @bg-level - 100);
+	@border-hover: %(~"%s%s", ~'@{bg}', @bg-level + 100);
+
+	@background-active: %(~"%s%s", ~'@{bg}', @bg-level + 100);
+	@border-active: %(~"%s%s", ~'@{bg}', @bg-level + 200);
+
+	background: @@background-default;
+	border-color: @@border-default;
+	color: @color;
+
+	// Hover state
+	&:hover, &:focus {
+		background: @@background-hover;
+		border-color: @@border-hover;
+		color: @color;
+	}
+
+	// Pressed state
+	&:active, .btn--active {
+		background: @@background-active;
+		border-color: @@border-active;
+		color: @color;
+	}
+}

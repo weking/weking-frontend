@@ -1,0 +1,236 @@
+// ==========================================
+// Global variables
+// ==========================================
+
+// Color Palette
+// ==========================================
+@black:        @grey1000;
+@white:        @grey0;
+
+// Grey color swatch
+@grey:         @grey400;
+
+@grey0:        #FFFFFF;
+@grey50:       #FAFAFA;
+@grey100:      #F5F5F5;
+@grey200:      #EEEEEE;
+@grey300:      #E0E0E0;
+@grey400:      #BDBDBD;
+@grey500:      #9E9E9E;
+@grey600:      #757575;
+@grey700:      #616161;
+@grey800:      #424242;
+@grey900:      #212121;
+@grey1000:     #000000;
+
+// Blue color swatch
+@blue:         @blue500;
+
+@blue50:       #E3F2FD;
+@blue100:      #BBDEFB;
+@blue200:      #90CAF9;
+@blue300:      #64B5F6;
+@blue400:      #42A5F5;
+@blue500:      #2196F3;
+@blue600:      #1E88E5;
+@blue700:      #1976D2;
+@blue800:      #1565C0;
+@blue900:      #0D47A1;
+
+@blueA100:     #82B1FF;
+@blueA200:     #448AFF;
+@blueA400:     #2979FF;
+@blueA700:     #2962FF;
+
+// Green color swatch
+@green:         @green500;
+
+@green50:       #E8F5E9;
+@green100:      #C8E6C9;
+@green200:      #A5D6A7;
+@green300:      #81C784;
+@green400:      #66BB6A;
+@green500:      #4CAF50;
+@green600:      #43A047;
+@green700:      #388E3C;
+@green800:      #2E7D32;
+@green900:      #1B5E20;
+
+@greenA100:     #B9F6CA;
+@greenA200:     #69F0AE;
+@greenA400:     #00E676;
+@greenA700:     #00C853;
+
+// Red color swatch
+@red:          @red500;
+
+@red50:        #FFEBEE;
+@red100:       #FFCDD2;
+@red200:       #EF9A9A;
+@red300:       #E57373;
+@red400:       #EF5350;
+@red500:       #F44336;
+@red600:       #E53935;
+@red700:       #D32F2F;
+@red800:       #C62828;
+@red900:       #B71C1C;
+
+@redA100:      #FF8A80;
+@redA200:      #FF5252;
+@redA400:      #FF1744;
+@redA700:      #D50000;
+
+// Orange color swatch
+@orange:          @orange500;
+
+@orange50:        #FFF3E0;
+@orange100:       #FFE0B2;
+@orange200:       #FFCC80;
+@orange300:       #FFB74D;
+@orange400:       #FFA726;
+@orange500:       #FF9800;
+@orange600:       #FB8C00;
+@orange700:       #F57C00;
+@orange800:       #EF6C00;
+@orange900:       #E65100;
+
+@orangeA100:      #FFD180;
+@orangeA200:      #FFAB40;
+@orangeA400:      #FF9100;
+@orangeA700:      #FF6D00;
+
+// Primary (Indigo) color swatch
+@primary:          @primary500;
+
+@primary50:        #E8EAF6;
+@primary100:       #C5CAE9;
+@primary200:       #9FA8DA;
+@primary300:       #7986CB;
+@primary400:       #5C6BC0;
+@primary500:       #3F51B5;
+@primary600:       #3949AB;
+@primary700:       #303F9F;
+@primary800:       #283593;
+@primary900:       #1A237E;
+
+@primaryA100:      #8C9EFF;
+@primaryA200:      #536DFE;
+@primaryA400:      #3D5AFE;
+@primaryA700:      #304FFE;
+
+// Secondary (Pink) color swatch
+@secondary:          @secondary500;
+
+@secondary50:        #FCE4EC;
+@secondary100:       #F8BBD0;
+@secondary200:       #F48FB1;
+@secondary300:       #F06292;
+@secondary400:       #EC407A;
+@secondary500:       #E91E63;
+@secondary600:       #D81B60;
+@secondary700:       #C2185B;
+@secondary800:       #AD1457;
+@secondary900:       #880E4F;
+
+@secondaryA100:      #FF80AB;
+@secondaryA200:      #FF4081;
+@secondaryA400:      #F50057;
+@secondaryA700:      #C51162;
+
+// Media queries
+// Define media queries breakpoints for responsive mobile-first layout.
+// ==========================================
+
+// Extra small screen (phones)
+@screen-xs:                  480px;
+// Small screen (tablets)
+@screen-sm:                  768px;
+// Medium screen (desktops)
+@screen-md:                  992px;
+// Large screen (wide desktops)
+@screen-lg:                  1200px;
+
+// Base variables
+// ==========================================
+
+// Background color for `<body>`.
+@body-bg:             @white;
+
+// Global text color on `<body>`.
+@text-color:          @grey900;
+
+// Text color for `<a>`.
+@link-color:          @blue;
+
+// Text color for `<a>` on mouseover.
+@link-hover-color:    darken(@link-color, 10%);
+
+// `border-radius` value for rounded corners modifier
+@basic-radius:        3px;
+
+// Typography
+
+// Import font from Google Fonts or use `@font-face` for custom font
+.font-setup() {
+	@import url(http://fonts.googleapis.com/css?family=Roboto:400,700,900&subset=latin,cyrillic);
+}
+
+// Font size for text
+@font-size: 14px;
+
+// Line height for text
+@font-line-height: 24px;
+
+// A value of `line-height: normal` for font in `px`
+@font-line-height-normal: 19px;
+
+// Font family for text
+@font-family: Roboto, sans-serif;
+// Font family for `<code>`, `<kbd>`, and `<pre>`
+@font-family-mono: Monaco, Menlo, Consolas, "Courier New", monospace;
+// Font family for headings
+@font-family-headings: @font-family;
+
+
+// Grids variables
+// ==========================================
+@grid-columns: 12;
+
+// Form elements variables
+// ==========================================
+// Border color for `<input>`, `<select>`, `<textarea>`
+@input-color:             @grey;
+// Text color for `<input>`, `<select>`, `<textarea>`
+@input-text-color:        @text-color;
+// Outline color for `<input>`, `<select>`, `<textarea>` of focus
+@input-focus-color:    @blue;
+// Base color to show error
+@input-error-color:    @red;
+// Border radius for `<input>`, `<select>`, `<textarea>`
+@input-radius:         @basic-radius;
+
+// Tables variables
+// ==========================================
+// Base color for `<table>` elements
+@table-bg:       'grey';
+// Text color for `<table>`
+@table-color:    @grey900;
+
+// Menus variables
+// ==========================================
+@menu-bg: 'grey';
+@menu-color: @grey900;
+@sub-menu-bg: @white;
+@sub-menu-color: @grey900;
+
+// Modals variables
+// ==========================================
+@modal-bg: fade(@grey900, 50%);
+@modal-dialog-bg: @white;
+@modal-dialog-color: @text-color;
+@modal-radius: @basic-radius;
+
+// Icons variables
+// ==========================================
+@icon-font-path: '../fonts';
+@icon-font-v: '1.0.1';

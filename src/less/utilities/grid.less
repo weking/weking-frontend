@@ -1,0 +1,24 @@
+// Columns generator
+//
+// Looped mixin return columns width
+//
+
+.make-columns(@quantity: @grid-columns, @suffix: ~"", @i: 1) when (@i <= @quantity) {
+
+	.col@{suffix}-@{i} { width: percentage(( @i / @quantity )); }
+
+	.make-columns(@quantity, @suffix, @i+1);
+
+}
+
+// Offset generator
+//
+// Looped mixin return offset for columns
+//
+.make-offset(@quantity: @grid-columns, @suffix: ~"", @i: 1) when (@i < @quantity) {
+
+	.col@{suffix}--offset-@{i} { margin-left: percentage(( @i / @quantity )); }
+
+	.make-offset(@quantity, @suffix, @i+1);
+
+}

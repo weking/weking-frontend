@@ -1,9 +1,9 @@
 // Component:       Icons
 // Description:     Material Design Icons by Google
 //
-// Block:           `icon`
+// Block:           'icon'
 //
-// Elements:        `icon__icon-name`
+// Elements:        'icon__icon-name'
 //
 // Markup:
 // <i class="icon icon__icon-name"></i>
@@ -26,7 +26,8 @@
 
 // Define styles for icons
 .icon {
-	vert-align: top;
+	vertical-align: top;
+	font-style: normal;
 
 	&:before {
 		display: inline-block;
@@ -60,58 +61,83 @@
 	@import "icons/toggle.less";
 }
 
-//// Menu with icons
-//.menu {
-//	ul {
-//		li.menu-parent > a:after {font-family: 'zenit'; content: " \e630";}
-//		ul li.menu-parent > a:after, &.vertical li.menu-parent > a:after {content: " \e62e";}
-//	}
-//
-//	&.@{dir-vertical} { li.menu-parent > a:after {font-family: 'zenit'; content: " \e62e";} }
-//
-//	&.droptop, &.fixed-bottom {
-//		li.menu-parent > a:after {content: " \e62c" !important;}
-//		ul ul li.menu-parent > a:after {content: " \e62e" !important;}
-//	}
-//
-//	a[class*="icon"]:before {
-//		margin-right: 5px;
-//	}
-//}
-//
-//// FORMS
-//form {
-//	.checkbox, .radio {
-//		display: none !important;
-//
-//		& + span {
-//			display: inline-block;
-//			height: @font-line-height;
-//			vertical-align: top;
-//
-//			&:before {
-//				font-family: 'zenit';
-//				font-size: @font-size;
-//				color: @black;
-//				-webkit-font-smoothing: antialiased;
-//				-moz-osx-font-smoothing: grayscale;
-//
-//				.lh-transition(~"color 0.15s ease");
-//			}
-//		}
-//
-//		&:checked + span:before {color: @input-focus-color;}
-//	}
-//
-//	.checkbox {
-//		& + span {.icon-checkbox-unchecked;}
-//		&:checked + span {.icon-checkbox-checked;}
-//
-//		&.partial:checked + span {.icon-checkbox-partial;}
-//	}
-//
-//	.radio {
-//		& + span {.icon-radio-unchecked;}
-//		&:checked + span {.icon-radio-checked;}
-//	}
-//}
+// Menu with icons
+.menu {
+	// Default state
+	&__parent > &__a:after {
+		font-family: 'Material Design Iconic Font';
+		content: " \f29e"; // Icon arrow down (.icon__expand-more)
+	}
+
+	.icon:before {
+		margin-right: 5px;
+	}
+
+	@media (min-width: @screen-md) {
+		// Default dropdown & vertical states
+		&__ul--dropdown &__parent > &__a:after, &--vert &__parent > &__a:after {
+			content: " \f29c" !important; // Icon arrow right (.icon__chevron-right)
+		}
+
+		// Droptop state
+		&--droptop  {
+			.menu__parent > .menu__a:after {
+				content: " \f29d";  // Icon arrow top (.icon__expand-less)
+			}
+		}
+	}
+}
+// FORMS
+.form {
+	&__checkbox, &__radio {
+		display: none !important;
+
+		& + span {
+			display: inline-block;
+			height: @font-line-height;
+			vertical-align: top;
+
+			&:before {
+				font-family: 'Material Design Iconic Font';
+				color: @grey900;
+				speak: none;
+				text-rendering: auto;
+				font-size: @font-line-height;
+				vertical-align: top;
+
+				// Better Font Rendering
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+
+				.lh-transition(~"color 0.15s ease");
+			}
+		}
+
+		&:checked + span:before {color: @input-focus-color;}
+
+		&[disabled], &--disabled {
+			& + span {
+				cursor: not-allowed;
+				.lh-opacity(~"0.5");
+			}
+		}
+	}
+
+	&__checkbox {
+		& + span:before {
+			content: "\f2e2";
+		}
+		&:checked + span:before {
+			content: "\f2e1";
+		}
+	}
+
+	&__radio {
+		& + span:before {
+			content: "\f2e3";
+		}
+		&:checked + span:before {
+			content: "\f2e4";
+		}
+	}
+}

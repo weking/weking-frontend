@@ -77,24 +77,23 @@ h6 {.font(@font-size*0.75);}
 
 blockquote {
 	padding: 0 @font-line-height;
-	border-left: @font-line-height/4 solid @gray;
-	color: @black;
+	border-left: @font-line-height/4 solid @grey;
+	color: @grey900;
 }
 
 hr {
 	border: 0;
-	border-top: 1px solid darken(@gray, 15);
+	border-top: 1px solid darken(@grey, 15);
 	border-bottom: 1px solid @white;
-	margin: 0;
-    margin-bottom: @font-line-height - 2px;
+	margin: 0 0 @font-line-height - 2px;
 }
 
 ol, ul {padding: 0 0 0 @font-line-height*2;}
 ol ol, ul ul {margin: 0;}
-nav ul, nav ol {list-style: none; list-style-image: none;}
+nav ul, nav ol {list-style: none;}
 
 dt {font-weight: bold;}
-dd {margin: 0 0 0 40px;}
+dd {margin: 0 0 0 @font-line-height*2;}
 
 p, blockquote, dl, menu, ol, ul, dd, img, pre {
     margin-bottom: @font-line-height;
@@ -122,8 +121,8 @@ abbr[title] {
 }
 
 mark {
-	background: #ff0;
-	color: #000;
+	background: @orange400;
+	color: @grey900;
 }
 
 small {font-size: 80%; line-height: 80%;}
@@ -145,9 +144,9 @@ code, kbd {
 	padding: 2px 4px;
 	font-size: @font-size * 0.9;
     line-height: @font-size * 0.9;
-	color: darken(@red, 10%);
+	color: @red600;
 	white-space: nowrap;
-	background: lighten(@gray, 10%);
+	background: @grey200;
 	.lh-border-radius(@basic-radius);
 }
 
@@ -157,9 +156,9 @@ pre {
 	display: block;
 	padding: 0 16px;
 	font-size: @font-size * 0.9;
-	color: @black;
-	background: lighten(@gray, 10%);
-	outline: 1px solid @gray;
+	color: @grey900;
+	background: @grey200;
+	outline: 1px solid @grey;
 	overflow: auto;
 	word-break: break-all;
 	word-wrap: break-word;
@@ -170,7 +169,6 @@ pre {
 		color: inherit;
 		white-space: pre-wrap;
 		background-color: transparent;
-		border: 0;
 	}
 }
 
@@ -206,7 +204,7 @@ svg:not(:root) {overflow: hidden;}
 }
 
 // Clearfix
-.clearfix{.clearfix}
+.clearfix {.clearfix}
 
 // Container
 .container {
@@ -220,46 +218,56 @@ svg:not(:root) {overflow: hidden;}
 .hidden {display: none;}
 
 // Responsive utility classes
+//
+// 'visible--xs' Visible on extra small screen (phones) only
+// 'visible--sm' Visible on small screen (tablets) only
+// 'visible--md' Visible on medium screen (desktop) only
+// 'visible--lg' Visible on large screen (wide desktop) only
+//
+// 'hidden--xs' Hidden on extra small screen (phones) only
+// 'hidden--sm' Hidden on small screen (tablets) only
+// 'hidden--md' Hidden on medium screen (desktop) only
+// 'hidden--lg' Hidden on large screen (wide desktop) only
 
-.visible-xs {display: inherit !important;}
-.visible-sm {display: none !important;}
-.visible-md {display: none !important;}
-.visible-lg {display: none !important;}
+.visible--xs {display: inherit !important;}
+.visible--sm {display: none !important;}
+.visible--md {display: none !important;}
+.visible--lg {display: none !important;}
 
-.hidden-xs {display: none !important;}
+.hidden--xs {display: none !important;}
 
 // Tablet
 @media (min-width: @screen-sm) {
-	.visible-xs {display: none !important;}
-	.visible-sm {display: inherit !important;}
-	.visible-md {display: none !important;}
-	.visible-lg {display: none !important;}
+	.visible--xs {display: none !important;}
+	.visible--sm {display: inherit !important;}
+	.visible--md {display: none !important;}
+	.visible--lg {display: none !important;}
 	
-	.hidden-xs {display: inherit !important;}
-	.hidden-sm {display: none !important;}
+	.hidden--xs {display: inherit !important;}
+	.hidden--sm {display: none !important;}
 }
 
 // Desktop
 @media (min-width: @screen-md) {
-	.visible-xs {display: none !important;}
-	.visible-sm {display: none !important;}
-	.visible-md {display: inherit !important;}
-	.visible-lg {display: none !important;}
+	.visible--xs {display: none !important;}
+	.visible--sm {display: none !important;}
+	.visible--md {display: inherit !important;}
+	.visible--lg {display: none !important;}
 	
-	.hidden-xs {display: inherit !important;}
-	.hidden-sm {display: inherit !important;}
-	.hidden-md {display: none !important;}
+	.hidden--xs {display: inherit !important;}
+	.hidden--sm {display: inherit !important;}
+	.hidden--md {display: none !important;}
 }
 
 // Large Desktops
 @media (min-width: @screen-lg) {
-	.visible-xs {display: none !important;}
-	.visible-sm {display: none !important;}
-	.visible-md {display: none !important;}
-	.visible-lg {display: inherit !important;}
+	.visible--xs {display: none !important;}
+	.visible--sm {display: none !important;}
+	.visible--md {display: none !important;}
+	.visible--lg {display: inherit !important;}
 	
-	.hidden-xs {display: inherit !important;}
-	.hidden-sm {display: inherit !important;}
-	.hidden-md {display: inherit !important;}
-	.hidden-lg {display: none !important;}
+	.hidden--xs {display: inherit !important;}
+	.hidden--sm {display: inherit !important;}
+	.hidden--md {display: inherit !important;}
+	.hidden--lg {display: none !important;}
 }

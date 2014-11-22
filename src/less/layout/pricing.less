@@ -1,22 +1,24 @@
 // Block:           Pricing Table
 // Description:     Define styles for pricing table
 //
-// Component:       `pricing`
+// Component:       'pricing'
 //
-// Element:         `pricing__plan`
-//                  `pricing__plan__header`
-//                  `pricing__plan__heading`
-//                  `pricing__plan__price`
-//                  `pricing__plan__list`
+// Element:         'pricing__plan'
+//                  'pricing__plan__header'
+//                  'pricing__plan__heading'
+//                  'pricing__plan__price'
+//                  'pricing__plan__list'
 //
-// Modifiers:       `pricing__plan--primary`
-//                  `pricing__plan--secondary`
-//                  `pricing__plan--blue`
-//                  `pricing__plan--green`
-//                  `pricing__plan--red`
-//                  `pricing__plan--orange`
-//                  `pricing__plan--black`
-//                  `pricing__plan--optimal`
+// Modifiers:       'pricing__plan--primary'
+//                  'pricing__plan--secondary'
+//                  'pricing__plan--blue'
+//                  'pricing__plan--green'
+//                  'pricing__plan--red'
+//                  'pricing__plan--orange'
+//                  'pricing__plan--black'
+//                  'pricing__plan--optimal'
+//
+// Dependencies:    'btn'
 //
 // Markup:
 // <div class="pricing row">
@@ -50,11 +52,11 @@
 	text-align: center;
 	
 	&__plan {
-		background: darken(@white, 3%);
+		background: @grey100;
 
 		// Header
 		&__header {
-			background: lighten(@black, 35%);
+			background: @grey;
 			color: @white;
 		}
 
@@ -71,7 +73,7 @@
 			.font(@font-line-height*3);
 			display: block;
 			padding: @font-line-height 0;
-			background: lighten(@black, 20%);
+			background: @grey700;
 
 			span {
 				display: block;
@@ -90,7 +92,7 @@
 			
 			li {
 				padding: @font-line-height/2 - 0.5px 0;
-				border-bottom: 1px solid @gray;
+				border-bottom: 1px solid @grey;
 			}
 		}
 
@@ -105,43 +107,43 @@
 		// primary
 		&--primary {
 			.pricing__plan__header {background: @primary;}
-			.pricing__plan__price {background: darken(@primary, 20%);}
+			.pricing__plan__price {background: @primary700;}
 		}
 		
 		// secondary
 		&--secondary {
 			.pricing__plan__header {background: @secondary;}
-			.pricing__plan__price {background: darken(@secondary, 20%);}
+			.pricing__plan__price {background: @secondary700;}
 		}
 		
 		// Blue
 		&--blue {
 			.pricing__plan__header {background: @blue;}
-			.pricing__plan__price {background: darken(@blue, 20%);}
+			.pricing__plan__price {background: @blue700;}
 		}
 		
 		// Green
 		&--green {
 			.pricing__plan__header {background: @green;}
-			.pricing__plan__price {background: darken(@green, 20%);}
+			.pricing__plan__price {background: @green700;}
 		}
 		
 		// Red
 		&--red {
 			.pricing__plan__header {background: @red;}
-			.pricing__plan__price {background: darken(@red, 20%);}
+			.pricing__plan__price {background: @red700;}
 		}
 		
 		// Orange
 		&--orange {
 			.pricing__plan__header {background: @orange;}
-			.pricing__plan__price {background: darken(@orange, 20%);}
+			.pricing__plan__price {background: @orange700;}
 		}
 		
 		// Black
 		&--black {
-			.pricing__plan__header {background: darken(@black, 13%);}
-			.pricing__plan__price {background: darken(@black, 20%);}
+			.pricing__plan__header {background: @grey800;}
+			.pricing__plan__price {background: @grey900;}
 		}
 
 		// Optimal plan

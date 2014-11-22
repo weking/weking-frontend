@@ -138,7 +138,7 @@
 	 */
 	;( function( window ) {
 
-		'use strict';
+		<code>'use strict';</code>
 
 		var support = { animations : Modernizr.cssanimations },
 			animEndEventNames = { 'WebkitAnimation' : 'webkitAnimationEnd', 'OAnimation' : 'oAnimationEnd', 'msAnimation' : 'MSAnimationEnd', 'animation' : 'animationend' },
@@ -416,17 +416,17 @@
 
 					<div class="col__sm-3">
 						<legend>Styled Radios</legend>
-						<label><input type="radio" name="demo-radio-styled" class="radio"> <span></span> Radio 1</label>
-						<label><input type="radio" name="demo-radio-styled" class="radio"> <span></span> Radio 2</label>
-						<label><input type="radio" name="demo-radio-styled" class="radio"> <span></span> Radio 3</label>
-						<label><input type="radio" name="demo-radio-styled" class="radio"> <span></span> Radio 4</label>
+						<label><input type="radio" name="demo-radio-styled" class="form__radio"> <span></span> Radio 1</label>
+						<label><input type="radio" name="demo-radio-styled" class="form__radio"> <span></span> Radio 2</label>
+						<label><input type="radio" name="demo-radio-styled-disabled" class="form__radio" disabled checked> <span></span> Radio 3</label>
+						<label><input type="radio" name="demo-radio-styled-disabled" class="form__radio" disabled> <span></span> Radio 4</label>
 					</div>
 					<div class="col__sm-3">
 						<legend>Styled Checkboxes</legend>
-						<label><input type="checkbox" name="demo-checkbox-styled" class="checkbox"> <span></span> Checkbox 1</label>
-						<label><input type="checkbox" name="demo-checkbox-styled" class="checkbox"> <span></span> Checkbox 2</label>
-						<label><input type="checkbox" name="demo-checkbox-styled" class="checkbox partial"> <span></span> Partial Checkbox 1</label>
-						<label><input type="checkbox" name="demo-checkbox-styled" class="checkbox partial"> <span></span> Partial Checkbox 2</label>
+						<label><input type="checkbox" name="demo-checkbox-styled" class="form__checkbox"> <span></span> Checkbox 1</label>
+						<label><input type="checkbox" name="demo-checkbox-styled" class="form__checkbox"> <span></span> Checkbox 2</label>
+						<label><input type="checkbox" name="demo-checkbox-styled" class="form__checkbox" disabled checked> <span></span> Disabled checkbox 1</label>
+						<label><input type="checkbox" name="demo-checkbox-styled" class="form__checkbox" disabled> <span></span> Disabled checkbox 2</label>
 					</div>
 				</fieldset>
 
@@ -894,10 +894,18 @@
 
 			<div class="group group--hr">
 				<button class="btn">Button 1</button>
-				<span class="group__addon">Addon 1</span>
-				<input class="form__control" type="text" placeholder="Input">
+				<label for="group-demo-input" class="group__addon">Addon 1</label>
+				<input class="form__control" id="group-demo-input" name="group-demo-input" type="text" placeholder="Input">
+				<span class="group__addon">Button 3</span>
 				<button class="btn">Button 2</button>
-				<button class="btn">Button 3</button>
+			</div>
+
+			<div class="group group--hr">
+				<button class="btn btn--lg">Button 1</button>
+				<label for="group-demo-input-2" class="group__addon group__addon--lg">Addon 1</label>
+				<input class="form__control form__control--lg" id="group-demo-input-2" name="group-demo-input-2" type="text" placeholder="Input">
+				<span class="group__addon group__addon--lg">Button 3</span>
+				<button class="btn btn--lg">Button 2</button>
 			</div>
 
 			<div class="group col__md-4">
@@ -912,45 +920,81 @@
 
 		<hr/>
 
-		<!-- INFOBOXES -->
-		<div id="infoboxes">
+		<!-- CARDS -->
+		<div id="cards">
 
-			<h2>Infoboxes</h2>
+			<h2>Cards</h2>
 
-			<div class="infobox">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia autem iusto eos doloribus repellat a nam labore. Quae, explicabo accusamus beatae dignissimos aliquid molestiae asperiores! Ipsam, at animi deserunt quos!
+			<div class="row">
+				<div class="col__sm-4 col__inner">
+					<div class="card">
+						<header class="card__header">
+							<img src="http://lorempixel.com/300/200/business/2" class="card__img"/>
+							<h2 class="card__heading">Card Header</h2>
+						</header>
+						<div class="card__content">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia autem iusto eos doloribus repellat a nam labore. Quae, explicabo accusamus beatae dignissimos aliquid molestiae asperiores! Ipsam, at animi deserunt quos!
+						</div>
+					</div>
+				</div>
+
+				<div class="col__sm-4 col__inner">
+					<div class="card">
+						<header class="card__header">
+							<img src="http://lorempixel.com/300/200/city/1" class="card__img"/>
+							<h2 class="card__heading">Card Header</h2>
+						</header>
+						<div class="card__content">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia autem iusto eos doloribus repellat a nam labore. Quae, explicabo accusamus beatae dignissimos aliquid molestiae asperiores! Ipsam, at animi deserunt quos!
+						</div>
+					</div>
+				</div>
+
+				<div class="col__sm-4 col__inner">
+					<div class="card">
+						<header class="card__header">
+							<img src="http://lorempixel.com/300/200/sports/5" class="card__img"/>
+							<h2 class="card__heading">Card Header</h2>
+						</header>
+						<div class="card__content">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia autem iusto eos doloribus repellat a nam labore. Quae, explicabo accusamus beatae dignissimos aliquid molestiae asperiores! Ipsam, at animi deserunt quos!
+						</div>
+					</div>
+				</div>
 			</div>
 
-			<div class="infobox infobox--primary">
-				Quo, eveniet perferendis odio tempore inventore cum iure nisi enim asperiores esse amet veniam dolor placeat non architecto sunt eos hic dignissimos vero assumenda libero officia optio et mollitia minus?
+			<div class="card">
+				<div class="card__content">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia autem iusto eos doloribus repellat a nam labore. Quae, explicabo accusamus beatae dignissimos aliquid molestiae asperiores! Ipsam, at animi deserunt quos!
+				</div>
 			</div>
 
-			<div class="infobox infobox--secondary">
-				Voluptatem, suscipit, repellendus odio deleniti sequi unde architecto magni placeat dolor qui explicabo optio sint culpa corporis sunt quia error dignissimos omnis minima asperiores laboriosam saepe hic accusamus veritatis eligendi.
+			<div class="card card--primary">
+				<div class="card__content">Dolore, nobis, esse, pariatur, amet a aut reiciendis autem numquam voluptates quod omnis voluptate corporis placeat et iste blanditiis temporibus cumque quo voluptatum deserunt debitis minus qui. Mollitia, voluptas, eius?</div>
 			</div>
 
-			<div class="infobox infobox--light-blue">
-				Dolore, nobis, esse, pariatur, amet a aut reiciendis autem numquam voluptates quod omnis voluptate corporis placeat et iste blanditiis temporibus cumque quo voluptatum deserunt debitis minus qui. Mollitia, voluptas, eius?
+			<div class="card card--secondary">
+				<div class="card__content">Dolore, nobis, esse, pariatur, amet a aut reiciendis autem numquam voluptates quod omnis voluptate corporis placeat et iste blanditiis temporibus cumque quo voluptatum deserunt debitis minus qui. Mollitia, voluptas, eius?</div>
 			</div>
 
-			<div class="infobox infobox--black">
-				Quas, itaque quidem dicta accusantium est aliquam suscipit amet facere beatae ex quisquam possimus reprehenderit voluptatibus molestias repellendus nobis rem obcaecati cum aspernatur explicabo nemo error illo ab inventore unde.
+			<div class="card card--black">
+				<div class="card__content">Quas, itaque quidem dicta accusantium est aliquam suscipit amet facere beatae ex quisquam possimus reprehenderit voluptatibus molestias repellendus nobis rem obcaecati cum aspernatur explicabo nemo error illo ab inventore unde.</div>
 			</div>
 
-			<div class="infobox infobox--red">
-				<strong>Warning:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aspernatur laudantium esse sunt architecto.
+			<div class="card card--red">
+				<div class="card__content"><strong>Warning:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aspernatur laudantium esse sunt architecto.</div>
 			</div>
 
-			<div class="infobox infobox--orange">
-				<strong>Attention:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aspernatur laudantium esse sunt architecto.
+			<div class="card card--orange">
+				<div class="card__content"><strong>Attention:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aspernatur laudantium esse sunt architecto.</div>
 			</div>
 
-			<div class="infobox infobox--green">
-				<strong>Success:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aspernatur laudantium esse sunt architecto.
+			<div class="card card--green">
+				<div class="card__content"><strong>Success:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aspernatur laudantium esse sunt architecto.</div>
 			</div>
 
-			<div class="infobox infobox--blue">
-				<strong>Information:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aspernatur laudantium esse sunt architecto.
+			<div class="card card--blue">
+				<div class="card__content"><strong>Information:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aspernatur laudantium esse sunt architecto.</div>
 			</div>
 
 		</div>

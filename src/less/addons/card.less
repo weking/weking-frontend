@@ -1,0 +1,71 @@
+// Block:           Card
+// Description:     Defines styles for information messages
+//
+// Component:       'card'
+//
+// Elements:        'card__header'
+//                  'card__content'
+//
+// Modifiers:       'card--primary'
+//                  'card--secondary'
+//                  'card--blue'
+//                  'card--green'
+//                  'card--red'
+//                  'card--orange'
+//                  'card--black'
+//
+// Markup:
+//
+// <div class="card">
+//     <div class="card__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia autem iusto eos doloribus repellat a nam labore. Quae, explicabo accusamus beatae dignissimos aliquid molestiae asperiores! Ipsam, at animi deserunt quos!</div>
+// </div>
+//
+// <div class="card card--primary">
+//     <div class="card__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia autem iusto eos doloribus repellat a nam labore. Quae, explicabo accusamus beatae dignissimos aliquid molestiae asperiores! Ipsam, at animi deserunt quos!</div>
+// </div>
+//
+// ========================================================================
+
+/* Card
+   ==================================== */
+.card {
+	margin: 0 0 @font-line-height;
+	.card-gen(@white; @grey900);
+	.lh-border-radius(@basic-radius);
+	.z-depth-1;
+
+	// Header
+	&__header {
+		padding: @font-line-height;
+		position: relative;
+		overflow: hidden;
+		color: @white;
+
+		&__content {
+			position: absolute;
+			bottom: @font-line-height;
+		}
+	}
+
+	&__img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		.lh-border-top-left-radius(@basic-radius);
+		.lh-border-top-right-radius(@basic-radius);
+	}
+
+	// Content
+	&__content {
+		padding: @font-line-height;
+	}
+
+	&--primary {.card-gen(@primary; @white);}
+	&--secondary {.card-gen(@secondary; @white);}
+	&--blue {.card-gen(@blue; @white);}
+	&--green {.card-gen(@green; @white);}
+	&--red {.card-gen(@red; @white);}
+	&--orange {.card-gen(@orange; @white);}
+	&--black {.card-gen(@grey900; @white);}
+}

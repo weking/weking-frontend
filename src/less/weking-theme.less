@@ -1,0 +1,55 @@
+// Let's customize Weking
+// ======================
+
+// Import global variables & mixins
+@import "utilities/index";
+
+// Create a custom color swatch
+@custom:         @custom500;
+
+@custom50:       #E8F5E9;
+@custom100:      #C8E6C9;
+@custom200:      #A5D6A7;
+@custom300:      #81C784;
+@custom400:      #66BB6A;
+@custom500:      #4CAF50;
+@custom600:      #43A047;
+@custom700:      #388E3C;
+@custom800:      #2E7D32;
+@custom900:      #1B5E20;
+
+@customA100:     #B9F6CA;
+@customA200:     #69F0AE;
+@customA400:     #00E676;
+@customA700:     #00C853;
+
+// Let do some magic
+
+.menu {
+	// Rounded corners for menu
+	.lh-border-radius(@basic-radius;);
+
+	// Create new color for menu
+	&--red {
+		.menu-gen('red', @white, 300);
+	}
+
+	// Redefine Z position for fixed menus
+	&--fixed-top {
+		.z-depth-3;
+	}
+
+	&--fixed-bottom {
+		.z-depth-3('top');
+	}
+}
+
+.table {
+	// Create new color for table
+	&--red {
+		.table-gen('red'; @white);
+	}
+}
+
+// Your code begins here
+// =====================

@@ -1,0 +1,82 @@
+/*!
+ * Name: Weking
+ * Description: Weking is a responsive, fast and easy toolkit for creating web interfaces.
+ * Version: 0.1.0
+ * URI: https://github.com/weking/
+ * Author: Constantine Karnaukhov
+ * License: MIT License
+ */
+.menu {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.menu--red {
+  background: #f44336;
+}
+.menu--red .menu__brand {
+  color: #ffffff !important;
+}
+.menu--red .menu__ul .menu__a {
+  color: rgba(255, 255, 255, 0.6);
+}
+.menu--red .menu__ul .menu__li:hover > .menu__a,
+.menu--red .menu__ul .menu__active > .menu__a {
+  color: #ffffff;
+}
+@media (min-width: 992px) {
+  .menu--red .menu__ul--dropdown {
+    background: #ffffff;
+  }
+  .menu--red .menu__ul--dropdown .menu__a {
+    color: rgba(33, 33, 33, 0.6);
+  }
+  .menu--red .menu__ul--dropdown .menu__li:hover,
+  .menu--red .menu__ul--dropdown .menu__active {
+    background: #ffebee;
+  }
+  .menu--red .menu__ul--dropdown .menu__li:hover > .menu__a,
+  .menu--red .menu__ul--dropdown .menu__active > .menu__a {
+    color: #212121;
+  }
+  .menu--red .menu__ul .menu__li:hover > .menu__a,
+  .menu--red .menu__ul .menu__active > .menu__a {
+    border-color: 300;
+  }
+}
+.menu--fixed-top {
+  -webkit-box-shadow: 0 17px 50px 0 rgba(0, 0, 0, 0.19), 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+  -moz-box-shadow: 0 17px 50px 0 rgba(0, 0, 0, 0.19), 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+  box-shadow: 0 17px 50px 0 rgba(0, 0, 0, 0.19), 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+}
+.menu--fixed-bottom {
+  -webkit-box-shadow: 0 -17px 50px 0 rgba(0, 0, 0, 0.19), 0 -12px 15px 0 rgba(0, 0, 0, 0.24);
+  -moz-box-shadow: 0 -17px 50px 0 rgba(0, 0, 0, 0.19), 0 -12px 15px 0 rgba(0, 0, 0, 0.24);
+  box-shadow: 0 -17px 50px 0 rgba(0, 0, 0, 0.19), 0 -12px 15px 0 rgba(0, 0, 0, 0.24);
+}
+.table--red {
+  border: 1px solid #e53935;
+  color: #ffebee;
+}
+.table--red td,
+.table--red th {
+  border-left: 1px solid #e53935;
+}
+.table--red thead {
+  background: #f44336;
+  color: #ffebee;
+}
+.table--red tbody {
+  background-color: #e57373;
+}
+.table--red--all-borders td,
+.table--red--hr-borders td,
+.table--red--all-borders th,
+.table--red--hr-borders th {
+  border-bottom: 1px solid #e53935;
+}
+.table--red__odd td,
+.table--red--striped tbody tr:nth-child(2n-1) td,
+.table--red--hover tbody tr:hover td {
+  background-color: #ef5350;
+}

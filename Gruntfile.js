@@ -2,24 +2,25 @@ module.exports = function (grunt) {
 	'use strict';
 	
 	grunt.initConfig({
-      
+
 		pkg: grunt.file.readJSON('package.json'),
 		
 		less: {
 			dev: {
 				options: {
 					expand: true,
-//					banner: '/*!\n' +
-//							' * Name: <%= pkg.name %>\n' +
-//							' * URI: <%= pkg.url %>\n' +
-//							' * Description: <%= pkg.description %>\n' +
-//							' * Version: <%= pkg.version %>\n' +
-//							' * Author: <%= pkg.author %>\n' +
-//							' * License: <%= pkg.license %>\n' +
-//							' */\n'
+					banner: '/*!\n' +
+					' * Name: <%= pkg.name %>\n' +
+					' * Description: <%= pkg.description %>\n' +
+					' * Version: <%= pkg.version %>\n' +
+					' * URI: <%= pkg.url %>\n' +
+					' * Author: <%= pkg.author %>\n' +
+					' * License: <%= pkg.license %>\n' +
+					' */\n'
 				},
 				files: {
-					"dist/css/weking.css": "src/less/weking.less"
+					"dist/css/weking.css": "src/less/weking.less",
+					"dist/css/weking-theme.css": "src/less/weking-theme.less"
 				}
 			}
 		},
