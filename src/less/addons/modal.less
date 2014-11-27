@@ -25,14 +25,16 @@
 // Modal wrapper
 .modal {
 	position: fixed;
-	z-index: 1000;
+	z-index: -10;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
 	background: @modal-bg;
-	display: none;
+	visibility: hidden;
+	opacity: 0;
 	overflow-y: scroll;
+	.animate(~"visibility, opacity");
 
 	// Dialog
 	&__dialog {
@@ -52,6 +54,8 @@
 
 	// Show modal when trigger is checked
 	&:checked + .modal {
-		display: block;
+		visibility: visible;
+		opacity: 1;
+		z-index: 1000;
 	}
 }

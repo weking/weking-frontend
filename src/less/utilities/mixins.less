@@ -24,6 +24,13 @@
 	.line-height(@size);
 }
 
+// Animate
+.animate(@props, @time: ~"0.2s", @function: ~"ease") {
+	.lh-transition-property(@props);
+	.lh-transition-duration(@time);
+	.lh-transition-timing-function(@function);
+}
+
 // Clearfix
 
 .clearfix() {

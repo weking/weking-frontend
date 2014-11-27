@@ -1,0 +1,35 @@
+// Table generator
+//
+// Mixin return rules for coloring table content
+//
+// Arguments:
+//   @bg - name of background color swatch (type: string)
+//   @color - button text color (type: color)
+//   @bg-level - level of background color swatch (type: number)
+//
+
+.table-gen(@bg, @color, @bg-level: 500) {
+
+	// Make color swatch variables names
+	@headBg: %(~"%s%s", ~'@{bg}', @bg-level);
+	@headColor: %(~"%s%s", ~'@{bg}', 50);
+
+	@contentBg: %(~"%s%s", ~'grey', 0);
+	@strippedContentBg: %(~"%s%s", ~'grey', 100);
+	@contentBgHover: %(~"%s%s", ~'@{bg}', 100);
+
+	color: @color;
+
+	.table__header {background: @@headBg !important; color: @@headColor !important;}
+	tbody {background-color: @@contentBg;}
+
+	// Striped & Hover state
+	&.table__odd,
+	&.table--striped tbody tr:nth-child(2n-1) {
+		td {background-color: @@strippedContentBg;}
+	}
+
+	&.table--hover tbody tr:hover td {
+		background: @@contentBgHover;
+	}
+}

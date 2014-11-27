@@ -45,6 +45,11 @@
 }
 
 .table {
+	// Add shadow to table header
+	&__header {
+		.z-depth-1;
+	}
+
 	// Create new color for table
 	&--red {
 		.table-gen('red'; @white);

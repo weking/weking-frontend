@@ -55,8 +55,6 @@
 		background: @white;
 		padding: @font-line-height/2;
 		.z-depth-1;
-		.lh-border-bottom-left-radius(@basic-radius);
-		.lh-border-bottom-right-radius(@basic-radius);
 
 		&--flat {
 			.z-depth-0;
@@ -66,7 +64,10 @@
 	}
 
 	&__item {
-		display: none;
+		visibility: hidden;
+		opacity: 0;
+		height: 0;
+		.animate(~"opacity");
 	}
 
 	// Hide radio-buttons
@@ -75,7 +76,9 @@
 
 		// Show item content when trigger is checked
 		&:checked + .tabs__item {
-			display: block;
+			visibility: visible;
+			opacity: 1;
+			height: auto;
 		}
 	}
 

@@ -39,11 +39,13 @@
 	// Content
 	&__content {
 		// Hide item content by default
-		display: none;
-		padding: @font-line-height/2;
+		visibility: hidden;
+		opacity: 0;
+		height: 0;
 		background: @white;
 		.z-depth-1;
 		.lh-border-radius(@input-radius);
+		.animate(~"visibility, opacity, height");
 	}
 
 	// Hide checkboxes and radio-buttons
@@ -52,7 +54,10 @@
 
 		// Show item content when trigger is checked
 		&:checked + .accordion__content {
-			display: block;
+			visibility: visible;
+			opacity: 1;
+			height: auto;
+			padding: @font-line-height/2;
 		}
 	}
 

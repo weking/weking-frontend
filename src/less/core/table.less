@@ -65,30 +65,15 @@
 	thead {
 		text-align: left;
 		vertical-align: bottom;
-		
-		td, th {line-height: @font-line-height - 2px;}
-	}
-	
-	// All borders
-	&--all-borders {
-		tbody > tr:last-child td {border-bottom-width: 0;}
-		tbody { td, th {line-height: @font-line-height - 1px;} }
-	}
-	
-	// Only horizontal borders
-	&--hr-borders {
-		td, th {border-width: 0 0 1px 0 !important;}
-		tbody > tr:last-child td {border-bottom-width: 0;}
-		tbody { td, th {line-height: @font-line-height - 1px;} }
 	}
 	
 	// Condensed table
 	&--condensed {td, th {padding: 0 @font-line-height/2;}}
 	
 	// Colors
-	&--primary {.table-gen('primary', @white);}
-	&--secondary {.table-gen('secondary', @white);}
-	&--black {.table-gen('grey', @white);}
+	&--primary {.table-gen('primary', @text-color);}
+	&--secondary {.table-gen('secondary', @text-color);}
+	&--black {.table-gen('grey', @text-color, 700);}
 }
 
 .table__responsive {
