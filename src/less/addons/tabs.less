@@ -1,13 +1,13 @@
 // Component:       Tabs
-// Description:      Define styles for collapsible tabs
+// Description:     Define styles for collapsible tabs
 //
 // Block:           'tabs'
 //
-// Elements:        'tabs__content'
-//                  'tabs__item'
-//                  'tabs__trigger'
+// Elements:        'tabs_content'
+//                  'tabs_item'
+//                  'tabs_trigger'
 //
-// Modifiers:       'tabs__content--flat'
+// Modifiers:       'tabs_content-flat'
 //
 // Uses:            Menu
 //
@@ -16,16 +16,16 @@
 //
 //   <!-- Tabs nav -->
 //   <nav class="menu">
-//     <ul class="menu__ul">
-//       <li class="menu__li"><label class="menu__a" for="tabs__item-1">Home</label></li>
+//     <ul class="menu_ul">
+//       <li class="menu_li"><label class="menu_a" for="tabs_item-1">Home</label></li>
 //       ...
 //     </ul>
 //   </nav>
 //
 //   <!-- Tab panes -->
-//   <div class="tabs__content">
-//     <input id="tabs__item-1" class="tabs__trigger" name="tabs__trigger" type="radio" checked />
-//     <div class="tabs__item">...</div>
+//   <div class="tabs_content">
+//     <input id="tabs_item-1" class="tabs_trigger" name="tabs_trigger" type="radio" checked />
+//     <div class="tabs_item">...</div>
 //     ...
 //   </div>
 // </div>
@@ -44,26 +44,26 @@
 		.lh-border-bottom-left-radius(0);
 		.lh-border-bottom-right-radius(0);
 
-		&__ul {
+		&_ul {
 			display: block;
 		}
 	}
 
 	// Content
-	&__content {
+	&_content {
 		width: 100%;
 		background: @white;
 		padding: @font-line-height/2;
 		.z-depth-1;
 
-		&--flat {
+		&[class*=flat] {
 			.z-depth-0;
 			border: 1px solid @grey;
 			padding: @font-line-height/2 - 1px @font-line-height/2;
 		}
 	}
 
-	&__item {
+	&_item {
 		visibility: hidden;
 		opacity: 0;
 		height: 0;
@@ -71,11 +71,11 @@
 	}
 
 	// Hide radio-buttons
-	&__trigger {
+	&_trigger {
 		display: none;
 
 		// Show item content when trigger is checked
-		&:checked + .tabs__item {
+		&:checked + .tabs_item {
 			visibility: visible;
 			opacity: 1;
 			height: auto;

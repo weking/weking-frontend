@@ -3,25 +3,22 @@
 //
 // Component:       'card'
 //
-// Elements:        'card__header'
-//                  'card__content'
+// Elements:        'card_header'
+//                  'card_content'
 //
-// Modifiers:       'card--primary'
-//                  'card--secondary'
-//                  'card--blue'
-//                  'card--green'
-//                  'card--red'
-//                  'card--orange'
-//                  'card--black'
+// Modifiers:       'card-primary'
+//                  'card-secondary'
+//                  'card-black'
+//                  'card-tile'
 //
 // Markup:
 //
 // <div class="card">
-//     <div class="card__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia autem iusto eos doloribus repellat a nam labore. Quae, explicabo accusamus beatae dignissimos aliquid molestiae asperiores! Ipsam, at animi deserunt quos!</div>
+//     <div class="card_content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia autem iusto eos doloribus repellat a nam labore. Quae, explicabo accusamus beatae dignissimos aliquid molestiae asperiores! Ipsam, at animi deserunt quos!</div>
 // </div>
 //
-// <div class="card card--primary">
-//     <div class="card__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia autem iusto eos doloribus repellat a nam labore. Quae, explicabo accusamus beatae dignissimos aliquid molestiae asperiores! Ipsam, at animi deserunt quos!</div>
+// <div class="card card-primary">
+//     <div class="card_content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia autem iusto eos doloribus repellat a nam labore. Quae, explicabo accusamus beatae dignissimos aliquid molestiae asperiores! Ipsam, at animi deserunt quos!</div>
 // </div>
 //
 // ========================================================================
@@ -35,19 +32,19 @@
 	.z-depth-1;
 
 	// Header
-	&__header {
+	&_header {
 		padding: @font-line-height;
 		position: relative;
 		overflow: hidden;
 		color: @white;
 
-		&__content {
+		&_content {
 			position: absolute;
 			bottom: @font-line-height;
 		}
 	}
 
-	&__img {
+	&_img {
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -57,15 +54,15 @@
 	}
 
 	// Content
-	&__content {
+	&_content {
 		padding: @font-line-height;
 	}
 
-	&--primary {.card-gen(@primary; @white);}
-	&--secondary {.card-gen(@secondary; @white);}
-	&--blue {.card-gen(@blue; @white);}
-	&--green {.card-gen(@green; @white);}
-	&--red {.card-gen(@red; @white);}
-	&--orange {.card-gen(@orange; @white);}
-	&--black {.card-gen(@grey900; @white);}
+	&[class*=primary] {.card-gen(@primary; @white);}
+	&[class*=secondary] {.card-gen(@secondary; @white);}
+	&[class*=black] {.card-gen(@grey900; @white);}
+
+	&[class*=tile] {
+		.lh-border-radius(0);
+	}
 }

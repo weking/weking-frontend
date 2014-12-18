@@ -3,22 +3,22 @@
 //
 // Component:       'label'
 //
-// Modifiers:       'label--primary'
-//                  'label--secondary'
-//                  'label--blue'
-//                  'label--green'
-//                  'label--red'
-//                  'label--orange'
-//                  'label--black'
-//                  'label--radius'
+// Modifiers:       'label-primary'
+//                  'label-secondary'
+//                  'label-blue'
+//                  'label-green'
+//                  'label-red'
+//                  'label-orange'
+//                  'label-black'
+//                  'label-radius'
 //
 // Markup:
 //
 // <span class="label">Highlighted text</span>
 //
-// <span class="label label--primary">Primary colored text</span>
+// <span class="label label-primary">Primary colored text</span>
 //
-// <span class="label label--radius">Label w/ rounded corners</span>
+// <span class="label label-radius">Label w/ rounded corners</span>
 //
 // ========================================================================
 
@@ -35,13 +35,13 @@
 	vertical-align: top;
 	.lh-border-radius(@basic-radius);
 	
-	&--radius { .lh-border-radius(99px); }
+	&[class*=radius] { .lh-border-radius(99px); }
 
-	&--primary {background: @primary;}
-	&--secondary {background: @secondary;}
-	&--blue {background: @blue;}
-	&--green {background: @green;}
-	&--red {background: @red;}
-	&--orange {background: @orange;}
-	&--black {background: @grey900;}
+	&[class*=primary] {background: @primary;}
+	&[class*=secondary] {background: @secondary;}
+	&[class*=blue] {background: @blue;}
+	&[class*=green] {background: @green;}
+	&[class*=red] {background: @red;}
+	&[class*=orange] {background: @orange;}
+	&[class*=black] {background: @grey900;}
 }

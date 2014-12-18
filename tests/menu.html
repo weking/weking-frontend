@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Weking demo</title>
+
+	<link rel="stylesheet" href="../dist/css/weking.min.css">
+	<link rel="stylesheet" href="demo.css">
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+</head>
+<body>
+
+<!-- MENUS -->
+<div id="menus">
+	<h2>Menu</h2>
+
+	<h3>Menu with all features: responsive, heading, dropdown, icons</h3>
+
+	<!-- MENU -->
+	<nav class="menu">
+		<div class="menu_header">
+			<a href="#" class="menu_a menu_brand">Brand</a>
+			<label class="btn menu_burger" for="menu_trigger1">Show menu</label>
+		</div>
+
+		<input type="checkbox" id="menu_trigger1" class="menu_trigger">
+
+		<ul class="menu_ul">
+			<li class="menu_li menu_active"><a class="menu_a" href="#">Home</a></li>
+			<li class="menu_li menu_parent">
+				<a class="menu_a">Services</a>
+				<ul class="menu_ul-dropdown">
+					<li class="menu_li"><a class="menu_a" href="#">Service 1</a></li>
+					<li class="menu_li menu_parent">
+						<a class="menu_a">Service 2</a>
+						<ul class="menu_ul-dropdown">
+							<li class="menu_li"><a class="menu_a" href="#">Service 2.1</a></li>
+							<li class="menu_li"><a class="menu_a" href="#">Service 2.2</a></li>
+							<li class="menu_li"><a class="menu_a" href="#">Service 2.3</a></li>
+						</ul>
+					</li>
+					<li class="menu_li"><a class="menu_a" href="#">Service 3</a></li>
+				</ul>
+			</li>
+			<li class="menu_li"><a class="menu_a" href="#">Blog</a></li>
+			<li class="menu_li"><a class="menu_a" href="#">About Us</a></li>
+			<li class="menu_li"><a class="menu_a" href="#">Contact Us</a></li>
+		</ul>
+	</nav>
+
+	&nbsp;
+
+	<nav class="menu menu-primary">
+		<div class="menu_header">
+			<a href="#" class="menu_a menu_brand">Brand</a>
+			<label class="btn btn--primary menu_burger" for="menu_trigger-2">Show menu</label>
+		</div>
+
+		<input type="checkbox" id="menu_trigger-2" class="menu_trigger">
+
+		<ul class="menu_ul">
+			<li class="menu_li menu_active"><a class="menu_a" href="#">Home</a></li>
+			<li class="menu_li menu_parent">
+				<a class="menu_a">Services</a>
+				<ul class="menu_ul-dropdown">
+					<li class="menu_li"><a class="menu_a" href="#">Service 1</a></li>
+					<li class="menu_li menu_parent">
+						<a class="menu_a">Service 2</a>
+						<ul class="menu_ul-dropdown">
+							<li class="menu_li"><a class="menu_a" href="#">Service 2.1</a></li>
+							<li class="menu_li"><a class="menu_a" href="#">Service 2.2</a></li>
+							<li class="menu_li"><a class="menu_a" href="#">Service 2.3</a></li>
+						</ul>
+					</li>
+					<li class="menu_li"><a class="menu_a" href="#">Service 3</a></li>
+				</ul>
+			</li>
+			<li class="menu_li"><a class="menu_a" href="#">Blog</a></li>
+			<li class="menu_li"><a class="menu_a" href="#">About Us</a></li>
+			<li class="menu_li"><a class="menu_a" href="#">Contact Us</a></li>
+		</ul>
+	</nav>
+
+	&nbsp;
+
+	<nav class="menu menu-secondary">
+		<div class="menu_header">
+			<a href="#" class="menu_a menu_brand">Brand</a>
+			<label class="btn btn--secondary menu_burger" for="menu_trigger-3">Show menu</label>
+		</div>
+
+		<input type="checkbox" id="menu_trigger-3" class="menu_trigger">
+
+		<ul class="menu_ul">
+			<li class="menu_li menu_active"><a class="menu_a" href="#">Home</a></li>
+			<li class="menu_li menu_parent">
+				<a class="menu_a">Services</a>
+				<ul class="menu_ul-dropdown">
+					<li class="menu_li"><a class="menu_a" href="#">Service 1</a></li>
+					<li class="menu_li menu_parent">
+						<a class="menu_a">Service 2</a>
+						<ul class="menu_ul-dropdown">
+							<li class="menu_li"><a class="menu_a" href="#">Service 2.1</a></li>
+							<li class="menu_li"><a class="menu_a" href="#">Service 2.2</a></li>
+							<li class="menu_li"><a class="menu_a" href="#">Service 2.3</a></li>
+						</ul>
+					</li>
+					<li class="menu_li"><a class="menu_a" href="#">Service 3</a></li>
+				</ul>
+			</li>
+			<li class="menu_li"><a class="menu_a" href="#">Blog</a></li>
+			<li class="menu_li"><a class="menu_a" href="#">About Us</a></li>
+			<li class="menu_li"><a class="menu_a" href="#">Contact Us</a></li>
+		</ul>
+	</nav>
+
+	&nbsp;
+
+	<nav class="menu menu-black">
+		<div class="menu_header">
+			<a href="#" class="menu_a menu_brand">Brand</a>
+			<label class="btn btn--black menu_burger" for="menu_trigger-4">Show menu</label>
+		</div>
+
+		<input type="checkbox" id="menu_trigger-4" class="menu_trigger">
+
+		<ul class="menu_ul">
+			<li class="menu_li menu_active"><a class="menu_a" href="#">Home</a></li>
+			<li class="menu_li menu_parent">
+				<a class="menu_a">Services</a>
+				<ul class="menu_ul-dropdown">
+					<li class="menu_li"><a class="menu_a" href="#">Service 1</a></li>
+					<li class="menu_li menu_parent">
+						<a class="menu_a">Service 2</a>
+						<ul class="menu_ul-dropdown">
+							<li class="menu_li"><a class="menu_a" href="#">Service 2.1</a></li>
+							<li class="menu_li"><a class="menu_a" href="#">Service 2.2</a></li>
+							<li class="menu_li"><a class="menu_a" href="#">Service 2.3</a></li>
+						</ul>
+					</li>
+					<li class="menu_li"><a class="menu_a" href="#">Service 3</a></li>
+				</ul>
+			</li>
+			<li class="menu_li"><a class="menu_a" href="#">Blog</a></li>
+			<li class="menu_li"><a class="menu_a" href="#">About Us</a></li>
+			<li class="menu_li"><a class="menu_a" href="#">Contact Us</a></li>
+		</ul>
+	</nav>
+
+	&nbsp;
+
+	<nav class="menu menu-primary-fixedTop">
+		<div class="menu_header">
+			<a href="#" class="menu_a menu_brand">Brand</a>
+			<label class="btn btn-primary menu_burger" for="menu_trigger-5">Show menu</label>
+		</div>
+
+		<input type="checkbox" id="menu_trigger-5" class="menu_trigger">
+
+		<ul class="menu_ul">
+			<li class="menu_li menu_active"><a class="menu_a" href="#">Home</a></li>
+			<li class="menu_li menu_parent">
+				<a class="menu_a">Services</a>
+				<ul class="menu_ul-dropdown">
+					<li class="menu_li"><a class="menu_a" href="#">Service 1</a></li>
+					<li class="menu_li menu_parent">
+						<a class="menu_a">Service 2</a>
+						<ul class="menu_ul-dropdown">
+							<li class="menu_li"><a class="menu_a" href="#">Service 2.1</a></li>
+							<li class="menu_li"><a class="menu_a" href="#">Service 2.2</a></li>
+							<li class="menu_li"><a class="menu_a" href="#">Service 2.3</a></li>
+						</ul>
+					</li>
+					<li class="menu_li"><a class="menu_a" href="#">Service 3</a></li>
+				</ul>
+			</li>
+			<li class="menu_li"><a class="menu_a" href="#">Blog</a></li>
+			<li class="menu_li"><a class="menu_a" href="#">About Us</a></li>
+			<li class="menu_li"><a class="menu_a" href="#">Contact Us</a></li>
+		</ul>
+	</nav>
+
+	<nav class="menu menu-primary-flat">
+		<div class="menu_header">
+			<a href="#" class="menu_a menu_brand">Brand</a>
+			<label class="btn btn-primary-flat menu_burger" for="menu_trigger-6">Show menu</label>
+		</div>
+
+		<input type="checkbox" id="menu_trigger-6" class="menu_trigger">
+
+		<ul class="menu_ul">
+			<li class="menu_li menu_active"><a class="menu_a" href="#">Home</a></li>
+			<li class="menu_li menu_parent">
+				<a class="menu_a">Services</a>
+				<ul class="menu_ul-dropdown">
+					<li class="menu_li"><a class="menu_a" href="#">Service 1</a></li>
+					<li class="menu_li menu_parent">
+						<a class="menu_a">Service 2</a>
+						<ul class="menu_ul-dropdown">
+							<li class="menu_li"><a class="menu_a" href="#">Service 2.1</a></li>
+							<li class="menu_li"><a class="menu_a" href="#">Service 2.2</a></li>
+							<li class="menu_li"><a class="menu_a" href="#">Service 2.3</a></li>
+						</ul>
+					</li>
+					<li class="menu_li"><a class="menu_a" href="#">Service 3</a></li>
+				</ul>
+			</li>
+			<li class="menu_li"><a class="menu_a" href="#">Blog</a></li>
+			<li class="menu_li"><a class="menu_a" href="#">About Us</a></li>
+			<li class="menu_li"><a class="menu_a" href="#">Contact Us</a></li>
+		</ul>
+	</nav>
+	&nbsp;
+
+	<nav class="menu menu-primary-vert-offset">
+		<div class="menu_header">
+			<label class="menu_a menu_brand icon icon_menu" for="menu_trigger-7">Brand</label>
+		</div>
+
+		<input type="checkbox" id="menu_trigger-7" class="menu_trigger">
+
+		<ul class="menu_ul col col-xs3">
+			<li class="menu_li menu_active"><a class="menu_a" href="#">Home</a></li>
+			<li class="menu_li menu_parent">
+				<a class="menu_a">Services</a>
+				<ul class="menu_ul-dropdown">
+					<li class="menu_li"><a class="menu_a" href="#">Service 1</a></li>
+					<li class="menu_li menu_parent">
+						<a class="menu_a">Service 2</a>
+						<ul class="menu_ul-dropdown">
+							<li class="menu_li"><a class="menu_a" href="#">Service 2.1</a></li>
+							<li class="menu_li"><a class="menu_a" href="#">Service 2.2</a></li>
+							<li class="menu_li"><a class="menu_a" href="#">Service 2.3</a></li>
+						</ul>
+					</li>
+					<li class="menu_li"><a class="menu_a" href="#">Service 3</a></li>
+				</ul>
+			</li>
+			<li class="menu_li"><a class="menu_a" href="#">Blog</a></li>
+			<li class="menu_li"><a class="menu_a" href="#">About Us</a></li>
+			<li class="menu_li"><a class="menu_a" href="#">Contact Us</a></li>
+		</ul>
+	</nav>
+</div>
+
+</body>
+</html>

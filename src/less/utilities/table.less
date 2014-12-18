@@ -20,16 +20,16 @@
 
 	color: @color;
 
-	.table__header {background: @@headBg !important; color: @@headColor !important;}
+	.table_header {background: @@headBg !important; color: @@headColor !important;}
 	tbody {background-color: @@contentBg;}
 
 	// Striped & Hover state
-	&.table__odd,
-	&.table--striped tbody tr:nth-child(2n-1) {
+	&.table_odd,
+	&[class*=striped] tbody tr:nth-child(2n-1) {
 		td {background-color: @@strippedContentBg;}
 	}
 
-	&.table--hover tbody tr:hover td {
+	&[class*=hover] tbody tr:hover td {
 		background: @@contentBgHover;
 	}
 }

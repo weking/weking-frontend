@@ -21,36 +21,36 @@
 
 	background: @@topNavBg;
 
-	.menu__brand {color: @topNavColor !important}
+	.menu_brand {color: @topNavColor !important}
 
-	.menu__ul {
-		.menu__a {
+	.menu_ul {
+		.menu_a {
 			color: fade(@topNavColor, 60%);
 		}
 
 		// Active state & Brand link
-		.menu__li:hover > .menu__a, .menu__active > .menu__a {
+		.menu_li:hover > .menu_a, .menu_active > .menu_a {
 			color: @topNavColor;
 		}
 
 		@media (min-width: @screen-md) {
-			&--dropdown {
+			&-dropdown {
 				background: @@dropDownBg;
 
-				.menu__a {
+				.menu_a {
 					color: fade(@dropDownColor, 60%);
 				}
 
-				.menu__li:hover, .menu__active {
-					> .menu__a {
+				.menu_li:hover, .menu_active {
+					> .menu_a {
 						background: @@dropDownBgHover;
 						color: @dropDownColor;
 					}
 				}
 			}
 
-			.menu__li:hover, .menu__active {
-				> .menu__a {
+			.menu_li:hover, .menu_active {
+				> .menu_a {
 					border-color: @indicator;
 				}
 			}

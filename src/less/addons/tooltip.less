@@ -1,9 +1,14 @@
-// Component:       Tooltip
-// Description:     Define styles for tooltips
+// Component:       Tooltip and Popover
+// Description:     Define styles for tooltips that shows some content on hover.
+//                  Popover like tooltips, but showed by click and  uses HTML
 //
-// Block:           'tooltip'
+// Blocks:          'tooltip'
+//                  'popover'
 //
-// Elements:        'tooltip--top'
+// Elements:        'popover_content'
+//                  'popover_trigger'
+//
+// Modifiers:       'tooltip--top'
 //                  'tooltip--bottom'
 //                  'tooltip--left'
 //                  'tooltip--right'
@@ -34,61 +39,140 @@
 	&:after {
 		position: absolute;
 		z-index: 10;
-		pointer-events: none;
 		content: attr(data-tooltip);
 		padding: @font-line-height/4 8px;
 		white-space: nowrap;
 		background: @grey;
 		color: @grey900;
 		.font(12px);
+		visibility: hidden;
+		height: 0;
 		.lh-opacity(0);
 		.lh-border-radius(@basic-radius);
-		.lh-transition(~"0.3s ease");
+		.animate(~"opacity, visibility");
 	}
 	
-	&:hover:after {.lh-opacity(1);}
+	&:hover:after {
+		visibility: visible;
+		height: auto;
+		.lh-opacity(1);
+	}
 	
 	// Top
-	&--top:after {
+	&[class*=top]:after {
 		margin-left: @font-line-height * -2.5;
 		bottom: 100%;
 		left: 50%;
 	}
 	
 	// Bottom
-	&--bottom:after {
+	&[class*=bottom]:after {
 		margin-left: @font-line-height * -2.5;
 		top: 100%;
 		left: 50%;
 	}
 	
 	// Right
-	&--right:after {
+	&[class*=right]:after {
 		margin-left: 8px;
 		left: 100%;
 		bottom: -25%;
 	}
 	
 	// Left
-	&--left:after {
+	&[class*=left]:after {
 		margin-right: 8px;
 		right: 100%;
 		top: -25%;
 	}
 
 	// Colors
-	&--primary:after {background-color: @primary; color: @white;}
-	&--secondary:after {background-color: @secondary; color: @white;}
-	&--blue:after {background-color: @blue; color: @white;}
-	&--green:after {background-color: @green; color: @white;}
-	&--red:after {background-color: @red; color: @white;}
-	&--orange:after {background-color: @orange; color: @white;}
-	&--black:after {background-color: @grey900; color: @white;}
+	&[class*=primary]:after {background-color: @primary; color: @white;}
+	&[class*=secondary]:after {background-color: @secondary; color: @white;}
+	&[class*=blue]:after {background-color: @blue; color: @white;}
+	&[class*=green]:after {background-color: @green; color: @white;}
+	&[class*=red]:after {background-color: @red; color: @white;}
+	&[class*=orange]:after {background-color: @orange; color: @white;}
+	&[class*=black]:after {background-color: @grey900; color: @white;}
 
-	// Extra
-	&--always {
-		&:after {.lh-opacity(1);}
+	// Always showed
+	&[class*=always]:after {
+		visibility: visible;
+		height: auto;
+		.lh-opacity(1);
 	}
 
-	&--radius:after {.lh-border-radius(99px);}
+	// Rounded corners
+	&[class*=radius]:after {.lh-border-radius(99px);}
+}
+
+/* POPOVER
+   ==================================== */
+.popover {
+	position: relative;
+	display: inline-block;
+
+	&_content {
+		position: absolute;
+		z-index: 10;
+		width: 500px;
+		padding: @font-line-height/4 8px;
+		background: @grey;
+		color: @grey900;
+		visibility: hidden;
+		height: 0;
+		.lh-opacity(0);
+		.lh-border-radius(@basic-radius);
+		.animate(~"opacity, visibility");
+	}
+
+	&_trigger {
+		display: none;
+	}
+
+	&_trigger:checked + &_content {
+		visibility: visible;
+		height: auto;
+		.lh-opacity(1);
+	}
+
+	// Top
+	&[class*=top] &_content {
+		margin-left: @font-line-height * -2.5;
+		bottom: 100%;
+		left: 50%;
+	}
+
+	// Bottom
+	&[class*=bottom] &_content {
+		margin-left: @font-line-height * -2.5;
+		top: 100%;
+		left: 50%;
+	}
+
+	// Right
+	&[class*=right] &_content {
+		margin-left: 8px;
+		left: 100%;
+		bottom: -25%;
+	}
+
+	// Left
+	&[class*=left] &_content {
+		margin-right: 8px;
+		right: 100%;
+		top: -25%;
+	}
+
+	// Colors
+	&[class*=primary] &_content {background-color: @primary; color: @white;}
+	&[class*=secondary] &_content {background-color: @secondary; color: @white;}
+	&[class*=blue] &_content {background-color: @blue; color: @white;}
+	&[class*=green] &_content {background-color: @green; color: @white;}
+	&[class*=red] &_content {background-color: @red; color: @white;}
+	&[class*=orange] &_content {background-color: @orange; color: @white;}
+	&[class*=black] &_content {background-color: @grey900; color: @white;}
+
+	// Rounded corners
+	&[class*=radius] &_content {.lh-border-radius(99px);}
 }

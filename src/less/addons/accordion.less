@@ -3,19 +3,19 @@
 //
 // Block:           'accordion'
 //
-// Elements:        'accordion__item'
-//                  'accordion__item__heading'
-//                  'accordion__item__trigger'
-//                  'accordion__item__content'
+// Elements:        'accordion_item'
+//                  'accordion_item_heading'
+//                  'accordion_item_trigger'
+//                  'accordion_item_content'
 //
 // Uses:            Button, Group
 //
 // Markup:
 // <div class="accordion group">
-//   <div class="accordion__item">
-//     <label class="accordion__item__heading btn" for="accordion__item-1">Panel 1</label>
-//     <input id="accordion__item-1" class="accordion__trigger" name="accordion__trigger" type="radio" />
-//     <div class="accordion__item__content">
+//   <div class="accordion_item">
+//     <label class="accordion_item_heading btn" for="accordion_item-1">Panel 1</label>
+//     <input id="accordion_item-1" class="accordion_trigger" name="accordion_trigger" type="radio" />
+//     <div class="accordion_item_content">
 //       ...
 //     </div>
 //   </div>
@@ -29,7 +29,7 @@
 .accordion {
 
 	// Heading
-	&__heading {
+	&_heading {
 		margin: 0;
 		display: block;
 		position: relative;
@@ -37,23 +37,23 @@
 	}
 
 	// Content
-	&__content {
+	&_content {
 		// Hide item content by default
 		visibility: hidden;
 		opacity: 0;
 		height: 0;
-		background: @white;
+		background: @grey100;
 		.z-depth-1;
-		.lh-border-radius(@input-radius);
+//		.lh-border-radius(@input-radius);
 		.animate(~"visibility, opacity, height");
 	}
 
 	// Hide checkboxes and radio-buttons
-	&__trigger {
+	&_trigger {
 		display: none;
 
 		// Show item content when trigger is checked
-		&:checked + .accordion__content {
+		&:checked + .accordion_content {
 			visibility: visible;
 			opacity: 1;
 			height: auto;

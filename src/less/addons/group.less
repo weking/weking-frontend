@@ -3,19 +3,19 @@
 //
 // Component:       'group'
 //
-// Element:         'group__addon'
+// Element:         'group_addon'
 //
-// Modifiers:       'group--hr'
-//                  'group__addon--xs'
-//                  'group__addon--sm'
-//                  'group__addon--lg'
-//                  'group__addon--xl'
+// Modifiers:       'group-hr'
+//                  'group_addon-xs'
+//                  'group_addon-sm'
+//                  'group_addon-lg'
+//                  'group_addon-xl'
 //
 // Markup:
-// <div class="group group--hr">
+// <div class="group group-hr">
 //   <button class="btn">Button 1</button>
-//   <span class="group__addon">Addon 1</span>
-//   <input class="form__control" type="text" placeholder="Input">
+//   <span class="group_addon">Addon 1</span>
+//   <input class="form_control" type="text" placeholder="Input">
 //   <button class="btn">Button 2</button>
 //   <button class="btn">Button 3</button>
 // </div>
@@ -35,23 +35,10 @@
 		float: none;
 		display: block;
 		width: 100%;
-
-//		&:not(:first-child):not(:last-child) {
-//			.lh-border-radius(0);
-//		}
-//
-//		&:first-child {
-//			.lh-border-bottom-right-radius(0px);
-//			.lh-border-bottom-left-radius(0px);
-//		}
-//		&:last-child {
-//			.lh-border-top-left-radius(0px);
-//			.lh-border-top-right-radius(0px);
-//		}
 	}
 
 	// Addon element
-	&__addon {
+	&_addon {
 		height: @font-line-height*1.5;
 		padding: (@font-line-height * 1.5 -  @font-line-height-normal - 4px)/2 12px;
 		background: transparent;
@@ -62,28 +49,28 @@
 		// SIZES
 
 		// Extra Small
-		&--xs {
+		&[class*=xs] {
 			font-size: 10px;
 			height: @font-line-height;
 			margin: @font-line-height/2 0;
 		}
 
 		// Small
-		&--sm {
+		&[class*=sm] {
 			font-size: 12px;
 			height: @font-line-height*1.25;
 			margin: @font-line-height*0.75/2 0;
 		}
 
 		// Large
-		&--lg {
+		&[class*=lg] {
 			font-size: 18px;
 			height: @font-line-height*2;
 			margin: @font-line-height/2 0;
 		}
 
 		// Extra Large
-		&--xl {
+		&[class*=xl] {
 			font-size: 24px;
 			height: @font-line-height*2.5;
 			margin: @font-line-height/4 0;
@@ -94,20 +81,11 @@
 		margin-bottom: @font-line-height/2 !important;
 
 		// Horizontal grouping
-		&--hr {
+		&[class*=hr] {
 			* {
 				float: left;
 				display: inline-block;
 				width: auto;
-
-//				&:first-child {
-//					.lh-border-top-right-radius(0px);
-//					.lh-border-bottom-right-radius(0px);
-//				}
-//				&:last-child {
-//					.lh-border-top-left-radius(0px);
-//					.lh-border-bottom-left-radius(0px);
-//				}
 			}
 		}
 	}

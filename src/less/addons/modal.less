@@ -3,17 +3,17 @@
 //
 // Block:           'modal'
 //
-// Elements:        'modal__dialog'
-//                  'modal__trigger'
+// Elements:        'modal_dialog'
+//                  'modal_trigger'
 //
 // Uses:            Grid
 //
 // Markup:
-// <label class="btn btn--lg btn--blue" for="modal__trigger-1">Launch modal</label>
+// <label class="btn btn-lg-blue" for="modal_trigger-1">Launch modal</label>
 //
-// <input type="checkbox" class="modal__trigger" id="modal__trigger-1" name="modal__trigger-1" />
+// <input type="checkbox" class="modal_trigger" id="modal_trigger-1" name="modal_trigger-1" />
 // <div class="modal">
-//   <div class="modal__dialog col__xs-8">
+//   <div class="modal_dialog col-xs8">
 //     ...
 //   </div>
 // </div>
@@ -37,7 +37,7 @@
 	.animate(~"visibility, opacity");
 
 	// Dialog
-	&__dialog {
+	&_dialog {
 		float: none;
 		background: @modal-dialog-bg;
 		color: @modal-dialog-color;
@@ -49,7 +49,7 @@
 }
 
 // Modal trigger
-.modal__trigger {
+.modal_trigger {
 	display: none;
 
 	// Show modal when trigger is checked

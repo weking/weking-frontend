@@ -28,5 +28,7 @@ body {
 	background-size: 100% 24px;
 	background-position: left top;
 
-	padding-top: 72px;
+	width: 85%;
+	max-width: 1200px;
+	margin: 0 auto;
 }

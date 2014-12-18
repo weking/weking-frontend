@@ -3,17 +3,16 @@
 //
 // Block:           'table'
 //
-// Elements:        'table__responsive'
-//                  'table__caption'
-//                  'table__odd'
+// Elements:        'table_responsive'
+//                  'table_caption'
+//                  'table_odd'
+//                  'table_header'
 //
-// Modifiers:       'table--all-borders'
-//                  'table--hr-borders'
-//                  'table--condensed'
-//                  'table--striped'
-//                  'table--primary'
-//                  'table--secondary'
-//                  'table--black'
+// Modifiers:       'table-condensed'
+//                  'table-striped'
+//                  'table-primary'
+//                  'table-secondary'
+//                  'table-black'
 //
 // Markup:
 // <div class="table__responsive">
@@ -46,7 +45,7 @@
 	margin-bottom: @font-line-height;
 	.table-gen(@table-bg, @table-color);
 
-	&__caption {
+	&_caption {
 		.font(@font-size*0.85);
 		font-style: italic;
 		padding: @font-line-height 0;
@@ -68,15 +67,15 @@
 	}
 	
 	// Condensed table
-	&--condensed {td, th {padding: 0 @font-line-height/2;}}
+	&[class*=condensed] {td, th {padding: 0 @font-line-height/2;}}
 	
 	// Colors
-	&--primary {.table-gen('primary', @text-color);}
-	&--secondary {.table-gen('secondary', @text-color);}
-	&--black {.table-gen('grey', @text-color, 700);}
+	&[class*=primary] {.table-gen('primary', @text-color);}
+	&[class*=secondary] {.table-gen('secondary', @text-color);}
+	&[class*=black] {.table-gen('grey', @text-color, 700);}
 }
 
-.table__responsive {
+.table_responsive {
 	width: 100%;
 	overflow-x: auto;
 	margin-bottom: @font-line-height;

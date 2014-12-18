@@ -1,0 +1,248 @@
+// Component:       Styled checkbox and radio-button
+// Description:     Define styles for checkbox and radio-button w/ Material Design
+//
+// Uses:            Icons
+//
+// Elements:        'form_checkbox'
+//                  'form_radio'
+//
+// Markup:
+// <input type="radio" name="..." class="form_radio"> <span></span> Label text
+// <input type="checkbox" name="..." class="form_checkbox"> <span></span> Label text
+//
+// ========================================================================
+
+.form {
+	// Hide control element
+	&_checkbox, &_radio {
+		display: none !important;
+
+		// Control elements replaced by next span
+		& + span {
+			display: inline-block;
+			height: @font-line-height;
+			vertical-align: top;
+
+			&:before {
+				font-family: 'Material Design Iconic Font';
+				color: @grey900;
+				speak: none;
+				text-rendering: auto;
+				font-size: @font-line-height;
+				vertical-align: top;
+
+				// Better Font Rendering
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+
+				.lh-transition(~"color 0.15s ease");
+			}
+		}
+
+		// Checked state
+		&:checked + span:before {color: @input-focus-color;}
+
+		// Disabled state
+		&[disabled], &[class*=disabled] {
+			& + span {
+				cursor: not-allowed;
+				.lh-opacity(~"0.5");
+			}
+		}
+	}
+
+	// Checkbox styles
+	&_checkbox {
+		& + span:before {
+			content: "\f2e2";
+		}
+		&:checked + span:before {
+			content: "\f2e1";
+		}
+	}
+
+	// Radio styles
+	&_radio {
+		& + span:before {
+			content: "\f2e3";
+		}
+		&:checked + span:before {
+			content: "\f2e4";
+		}
+	}
+}
+
+// Component:       Switch
+// Description:     Define styles for switcher checkbox
+//
+// Elements:        'form_switch'
+//
+// Markup:
+// <input type="checkbox" name="..." class="form_switch"> <span></span> Label text
+//
+// ========================================================================
+
+.form_switch {
+	// Hide control element
+	display: none !important;
+
+	// Control elements replaced by next span (container)
+	+ span {
+		display: inline-block;
+		position: relative;
+		width: 36px;
+		height: @font-line-height/2;
+		margin-right: @font-line-height/2;
+
+		background: @grey500;
+		.lh-border-radius(99px);
+		.animate(~'background');
+
+		// Circle
+		&:before {
+			content: '';
+			display: inline-block;
+			position: absolute;
+			left: -1*@font-line-height/2;
+			top: -1*@font-line-height/4;
+			height: @font-line-height;
+			width: @font-line-height;
+
+			background: @grey200;
+			.lh-border-radius(99px);
+			.z-depth-1;
+			.animate(~'left, background');
+		}
+	}
+
+	// Checked state
+	&:checked + span {
+		background: lighten(@input-focus-color, 10%);
+		&:before {
+			background: @input-focus-color;
+			left: 36px - @font-line-height/2;
+		}
+	}
+}
+
+// Component:       Dropdown
+// Description:     Define styles for dropdown like select
+//
+// Blocks:          'dropdown'
+//
+//
+// Elements:        'dropdown_container'
+//                  'dropdown_title'
+//                  'dropdown_list'
+//                  'dropdown_item'
+//                  'dropdown_option'
+//                  'dropdown_option-text'
+//
+// Markup:
+// <div class="dropdown">
+//   <div class="dropdown_title control">Select title</div>
+//   <ul class="dropdown_list">
+//     <li class="dropdown_item">
+//       <input type="radio" class="dropdown_option" name="..." id="..." value="...">
+//       <label class="dropdown_option-text" for="...">Label text</label>
+//     </li>
+//     <li class="dropdown_item">
+//       <input type="radio" class="dropdown_option" name="..." id="..." value="...">
+//       <label class="dropdown_option-text" for="...">Label text</label>
+//     </li>
+//     <li class="dropdown_item">
+//       <input type="radio" class="dropdown_option" name="..." id="..." value="...">
+//       <label class="dropdown_option-text" for="...">Label text</label>
+//     </li>
+//     <li class="dropdown_item">
+//       <input type="radio" class="dropdown_option" name="..." id="..." value="...">
+//       <label class="dropdown_option-text" for="...">Label text</label>
+//     </li>
+//   </ul>
+// </div>
+//
+// ========================================================================
+
+.dropdown {
+	position: relative;
+	z-index: 1;
+
+	// Container
+	&_container {
+		position: absolute;
+		width: 100%;
+		height: @font-line-height*2;
+		overflow: hidden;
+		padding: 0 3px;
+	}
+
+	// Title
+	&_title {
+		padding: 0 16px;
+
+		&:after {
+			content: " \25BE";
+			font-size: @font-size;
+			line-height: @font-line-height;
+			vertical-align: middle;
+		}
+	}
+
+	// List of options
+	&_list {
+		position: relative;
+		background: @white;
+		padding: 0;
+		margin: 0;
+		.lh-border-radius(@basic-radius);
+		.z-depth-1;
+
+		// Add transitions
+		.animate(~"height, visibility, opacity");
+	}
+
+	// Show list on hover
+	&:hover &_container {
+		height: auto;
+	}
+	&:hover &_list {
+		top: -48px;
+	}
+	&:hover &_optionText {
+		position: static !important;
+	}
+
+	// Item styles
+	&_item {
+		display: block;
+		vertical-align: middle;
+
+		&:hover {
+			background: @grey100;
+		}
+
+		&:first-child {
+			.lh-border-radius(@basic-radius @basic-radius 0 0);
+		}
+
+		&:last-child {
+			.lh-border-radius(0 0 @basic-radius @basic-radius);
+		}
+	}
+
+	&_optionText {
+		padding: 0 16px;
+		line-height: @font-line-height*2 !important;
+		display: block;
+		white-space: nowrap;
+	}
+
+	// Option functionality
+	&_option {
+		display: none !important;
+	}
+	&_option:checked + &_optionText {
+		position: absolute;
+		top: @font-line-height*-2;
+	}
+}

@@ -3,10 +3,10 @@
 //
 // Block:           'icon'
 //
-// Elements:        'icon__icon-name'
+// Elements:        'icon_icon-name'
 //
 // Markup:
-// <i class="icon icon__icon-name"></i>
+// <i class="icon icon_icon-name"></i>
 //
 // ========================================================================
 
@@ -64,80 +64,27 @@
 // Menu with icons
 .menu {
 	// Default state
-	&__parent > &__a:after {
+	&_parent > &_a:after {
 		font-family: 'Material Design Iconic Font';
-		content: " \f29e"; // Icon arrow down (.icon__expand-more)
+		content: " \f29e"; // Icon arrow down (.icon_expand-more)
 	}
 
-	&__ul .icon:before {
+	&_ul .icon:before {
 		margin-right: 8px;
 	}
 
 	@media (min-width: @screen-md) {
 		// Default dropdown & vertical states
-		&__ul--dropdown &__parent > &__a:after, &--vert &__parent > &__a:after {
-			content: " \f29c" !important; // Icon arrow right (.icon__chevron-right)
+		&_ul-dropdown &_parent > &_a:after,
+		&[class*=vert] &_parent > &_a:after {
+			content: " \f29c" !important; // Icon arrow right (.icon_chevron-right)
 		}
 
 		// Droptop state
-		&--droptop  {
-			.menu__parent > .menu__a:after {
-				content: " \f29d";  // Icon arrow top (.icon__expand-less)
+		&[class*=droptop] {
+			.menu_parent > .menu_a:after {
+				content: " \f29d";  // Icon arrow top (.icon_expand-less)
 			}
-		}
-	}
-}
-// FORMS
-.form {
-	&__checkbox, &__radio {
-		display: none !important;
-
-		& + span {
-			display: inline-block;
-			height: @font-line-height;
-			vertical-align: top;
-
-			&:before {
-				font-family: 'Material Design Iconic Font';
-				color: @grey900;
-				speak: none;
-				text-rendering: auto;
-				font-size: @font-line-height;
-				vertical-align: top;
-
-				// Better Font Rendering
-				-webkit-font-smoothing: antialiased;
-				-moz-osx-font-smoothing: grayscale;
-
-				.lh-transition(~"color 0.15s ease");
-			}
-		}
-
-		&:checked + span:before {color: @input-focus-color;}
-
-		&[disabled], &--disabled {
-			& + span {
-				cursor: not-allowed;
-				.lh-opacity(~"0.5");
-			}
-		}
-	}
-
-	&__checkbox {
-		& + span:before {
-			content: "\f2e2";
-		}
-		&:checked + span:before {
-			content: "\f2e1";
-		}
-	}
-
-	&__radio {
-		& + span:before {
-			content: "\f2e3";
-		}
-		&:checked + span:before {
-			content: "\f2e4";
 		}
 	}
 }

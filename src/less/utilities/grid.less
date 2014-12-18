@@ -5,7 +5,7 @@
 
 .make-columns(@quantity: @grid-columns, @suffix: ~"", @i: 1) when (@i <= @quantity) {
 
-	.col@{suffix}-@{i} { width: percentage(( @i / @quantity )); }
+	&[class*="@{suffix}@{i}"] { width: percentage(( @i / @quantity )); }
 
 	.make-columns(@quantity, @suffix, @i+1);
 
@@ -17,7 +17,7 @@
 //
 .make-offset(@quantity: @grid-columns, @suffix: ~"", @i: 1) when (@i < @quantity) {
 
-	.col@{suffix}--offset-@{i} { margin-left: percentage(( @i / @quantity )); }
+	&[class*="@{suffix}Offset@{i}"] { margin-left: percentage(( @i / @quantity )); }
 
 	.make-offset(@quantity, @suffix, @i+1);
 
