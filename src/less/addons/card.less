@@ -26,43 +26,78 @@
 /* Card
    ==================================== */
 .card {
-	margin: 0 0 @font-line-height;
-	.card-gen(@white; @grey900);
-	.lh-border-radius(@basic-radius);
-	.z-depth-1;
+  margin: 0 0 @font-line-height;
+  .card-gen(@white, @grey900);
+  .lh-border-radius(@basic-radius);
+  .z-depth-1;
 
-	// Header
-	&_header {
-		padding: @font-line-height;
-		position: relative;
-		overflow: hidden;
-		color: @white;
+  // Header
+  &_header {
+    position: relative;
+    color: @white;
 
-		&_content {
-			position: absolute;
-			bottom: @font-line-height;
-		}
-	}
+    // Heading in header
+    .card_heading {
+      position: absolute;
+      bottom: @font-line-height;
+      left: @font-line-height;
+      right: @font-line-height;
+      word-wrap: break-word;
+    }
+  }
 
-	&_img {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		.lh-border-top-left-radius(@basic-radius);
-		.lh-border-top-right-radius(@basic-radius);
-	}
+  // Image
+  &_img {
+    margin: 0;
+    width: 100%;
+    .lh-border-top-left-radius(@basic-radius);
+    .lh-border-top-right-radius(@basic-radius);
+  }
 
-	// Content
-	&_content {
-		padding: @font-line-height;
-	}
+  // Heading
+  //&_heading {}
 
-	&[class*=primary] {.card-gen(@primary; @white);}
-	&[class*=secondary] {.card-gen(@secondary; @white);}
-	&[class*=black] {.card-gen(@grey900; @white);}
+  // Content
+  &_content {
+    padding: @font-line-height;
+  }
 
-	&[class*=tile] {
-		.lh-border-radius(0);
-	}
+  // Left & Right side
+  &[class*=left] {
+    .card_img {
+      .lh-border-top-right-radius(0);
+      .lh-border-bottom-left-radius(@basic-radius);
+
+    }
+  }
+
+  &[class*=right] {
+    .card_header, .card_content {
+      float: right;
+    }
+
+    .card_img {
+      .lh-border-top-left-radius(0);
+      .lh-border-bottom-right-radius(@basic-radius);
+    }
+  }
+
+  // Colors
+
+  &[class*=primary] {
+    .card-gen(@primary, @white);
+  }
+
+  &[class*=secondary] {
+    .card-gen(@secondary, @white);
+  }
+
+  &[class*=black] {
+    .card-gen(@grey900, @white);
+  }
+
+  // Title
+  &[class*=tile] {
+    .lh-border-radius(0);
+  }
 }

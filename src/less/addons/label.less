@@ -25,23 +25,47 @@
 /* Labels
    ==================================== */
 .label {
-	display: inline;
-	background: darken(@grey, 20%);
-	padding: 2px 10px;
-	.font(@font-size*0.75);
-	font-weight: bold;
-	color: @white;
-	white-space: nowrap;
-	vertical-align: top;
-	.lh-border-radius(@basic-radius);
-	
-	&[class*=radius] { .lh-border-radius(99px); }
+  display: inline;
+  background: darken(@grey, 20%);
+  padding: 2px 10px;
+  .font(@font-size*0.75);
+  font-weight: bold;
+  color: @white;
+  white-space: nowrap;
+  vertical-align: top;
+  .lh-border-radius(@basic-radius);
 
-	&[class*=primary] {background: @primary;}
-	&[class*=secondary] {background: @secondary;}
-	&[class*=blue] {background: @blue;}
-	&[class*=green] {background: @green;}
-	&[class*=red] {background: @red;}
-	&[class*=orange] {background: @orange;}
-	&[class*=black] {background: @grey900;}
+  // Rounded corners
+  &[class*=radius] {
+    .lh-border-radius(99px);
+  }
+
+  // Colors
+  &[class*=primary] {
+    background: @primary;
+  }
+
+  &[class*=secondary] {
+    background: @secondary;
+  }
+
+  &[class*=blue] {
+    background: @blue;
+  }
+
+  &[class*=green] {
+    background: @green;
+  }
+
+  &[class*=red] {
+    background: @red;
+  }
+
+  &[class*=orange] {
+    background: @orange;
+  }
+
+  &[class*=black] {
+    background: @grey900;
+  }
 }

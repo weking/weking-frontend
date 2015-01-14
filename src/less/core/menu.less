@@ -64,313 +64,264 @@
    MENU
    ==================================== */
 .menu {
-	.z-depth-1;
-	.menu-gen(@menu-bg, @menu-color, @grey300, 100);
-	.clearfix;
+  .z-depth-1;
+  .menu-gen(@menu-bg, @menu-color, @grey300, 100);
+  .clearfix;
 
-	// Menu header
-	&_header {
-		.clearfix;
-	}
+  // Menu header
+  &_header {
+    .clearfix;
+  }
 
-	// Brand - Menu Heading
-	&_brand {
-		text-transform: uppercase;
-		font-weight: 900;
-		float: left;
-	}
+  // Brand - Menu Heading
+  &_brand {
+    text-transform: uppercase;
+    font-weight: 900;
+    float: left;
+  }
 
-	// Burger icon
-	&_burger {
-		float: right;
-		margin-right: 16px;
-	}
+  // Burger icon
+  &_burger {
+    float: right;
+    margin-right: 16px;
+  }
 
-	// Trigger
-	&_trigger {
-		display: none;
+  // Trigger
+  &_trigger {
+    display: none;
 
-		// Show Menu list when trigger checked
-		&:checked + .menu_ul {
-			visibility: visible;
-			opacity: 1;
-			height: auto;
-		}
-	}
+    // Show Menu list when trigger checked
+    &:checked + .menu_ul {
+      visibility: visible;
+      opacity: 1;
+      height: auto;
+    }
+  }
 
-	// Menu lists. Hidden by default
-	&_ul {
-		margin: 0;
-		padding: 0;
-		list-style: none;
-		visibility: hidden;
-		opacity: 0;
-		height: 0;
-		.animate(~"opacity, visibility, height");
+  // Menu lists. Hidden by default
+  &_ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    .animate(~"opacity, visibility, height");
 
-		// Dropdowns
-		&-dropdown {
-			visibility: hidden;
-			opacity: 0;
-			height: 0;
-			padding-left: 16px;
-			.animate(~"opacity, visibility, height");
-		}
-	}
+    // Dropdowns
+    &-dropdown {
+      padding-left: 16px;
+      .animate(~"opacity, visibility, height");
+    }
+  }
 
-	// Menu item
-	&_li {
-		position: relative;
-		display: block;
-		vertical-align: middle;
+  // Menu item
+  &_li {
+    position: relative;
+    display: block;
+    vertical-align: middle;
 
-		// Show Sub-menu
-		&:hover > .menu_ul-dropdown {
-			visibility: visible;
-			opacity: 1;
-			height: auto;
-		}
-	}
+    // Hide dropdown
+    .menu_ul-dropdown {
+      visibility: hidden;
+      opacity: 0;
+      height: 0;
+    }
 
-	// Menu link
-	&_a {
-		padding: 0 16px;
-		text-decoration: none;
-		line-height: @font-line-height*2;
-		display: block;
-		white-space: nowrap;
-		font-weight: 700;
+    // Show dropdown
+    &:hover > .menu_ul-dropdown {
+      visibility: visible;
+      opacity: 1;
+      height: auto;
+    }
+  }
 
-		.menu_parent > &:after {
-			content: " \25BE";
-			font-size: @font-size;
-			line-height: @font-line-height;
-			vertical-align: middle;
-		}
-	}
+  // Menu link
+  &_a {
+    padding: 0 16px;
+    text-decoration: none;
+    line-height: @font-line-height*2;
+    display: block;
+    white-space: nowrap;
+    font-weight: 700;
 
-	// Offset Menu
-	&[class*=offset] {
-		.menu {
-			// Menu list positioned outside of viewport
-			&_ul {
-				position: absolute;
-				left: -100%;
-				height: auto;
-				background: @white;
-				.z-depth-1('right');
-				.animate(~"opacity, visibility, left, right");
+    // Add arrow to elements with dropdowns
+    .menu_li[class*=parent] > &:after {
+      content: " \25BE";
+      font-size: @font-size;
+      line-height: @font-line-height;
+      vertical-align: middle;
+    }
+  }
 
-				&-dropdown {
-					@media (min-width: @screen-md) {
-						left: 100%;
-						top: 0;
-					}
-				}
-			}
+  // Fixed menus
+  &[class*=fixedTop] {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    .lh-border-radius(0);
+  }
 
-			// Define color for menu list items
-			&_a {
-				color: fade(@grey900, 60%) !important;
-			}
-			&_li:hover, &_active {
-				> .menu_a {
-					background: @grey100 !important;
-					color: @grey900 !important;
-					border-color: @grey100 !important;
-				}
-			}
+  &[class*=fixedBottom] {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    .lh-border-radius(0);
+    .z-depth-1('top');
+  }
 
-			&_burger {
-				display: inline-block !important;
-				float: left;
-			}
+  // Colors
+  &[class*=primary] {
+    .menu-gen('primary', @white);
+  }
 
-			&_trigger {
-				// Show Menu on the left side of viewport
-				&:checked + .menu_ul {
-					left: 0;
-				}
-			}
-		}
+  &[class*=secondary] {
+    .menu-gen('secondary', @white);
+  }
 
-		// Fixed bottom offset menu
-		&[class*=fixedBottom] .menu_ul {
-			bottom: 100%;
-		}
+  &[class*=black] {
+    .menu-gen('grey', @white, @white, 900);
+  }
 
-		// Show menu list from right side of viewport
-//		&.menu--dropleft {
-//			.menu_ul {
-//				right: -100%;
-//				left: auto;
-//			}
-//			.menu_trigger {
-//				// Show Menu on the left side of viewport
-//				&:checked + .menu_ul {
-//					right: 0;
-//					left: auto;
-//				}
-//			}
-//		}
-	}
+  // Flat menu (without shadow)
+  &[class*=flat] {
+    .z-depth-0;
 
-	// Fixed menus
-	&[class*=fixedTop] {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		z-index: 999;
-		.lh-border-radius(0);
-	}
-	&[class*=fixedBottom] {
-		position: fixed;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		z-index: 999;
-		.lh-border-radius(0);
-		.z-depth-1('top');
-	}
-	
-	// Colors
-	&[class*=primary] {
-		.menu-gen('primary', @white);
-	}
+    .menu_ul-dropdown {
+      .z-depth-0;
+    }
+  }
 
-	&[class*=secondary] {
-		.menu-gen('secondary', @white);
-	}
+  // Responsive
+  @media (min-width: @screen-md) {
+    // Header
+    &_header {
+      float: left;
+    }
 
-	&[class*=black] {
-		.menu-gen('grey', @white, @white, 900);
-	}
-	
-	// Flat menu (without shadow)
-	&[class*=flat] {
-		.z-depth-0;
+    // Burger
+    &_burger {
+      display: none;
+    }
 
-		.menu_ul-dropdown {
-			.z-depth-0;
-		}
-	}
-	
-	// Responsive menu
-	@media (min-width: @screen-md) {
-		// Header
-		&_header {
-			float: left;
-		}
+    // Menu list
+    &_ul {
+      visibility: visible;
+      height: auto;
+      opacity: 1;
+      float: left;
 
-		// Burger
-		&_burger {
-			display: none;
-		}
+      // Dropdowns
+      &-dropdown {
+        padding: 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 10;
+        .z-depth-1;
 
-		// Menu list
-		&_ul {
-			visibility: visible;
-			height: auto;
-			opacity: 1;
-			float: left;
+        .menu_li {
+          display: block !important;
+        }
 
-			// Dropdowns
-			&-dropdown {
-				padding: 0;
-				position: absolute;
-				top: 100%;
-				left: 0;
-				z-index: 10;
-				.z-depth-1;
+        .menu_a {
+          line-height:@font-line-height*2;
+          border-bottom: 0 none !important;
+        }
 
-				.menu_li {
-					display: block !important;
-				}
+        .menu_li[class*=parent] > .menu_a:after {
+          content: " \25B8";
+        }
 
-				.menu_a {
-					line-height:@font-line-height*2;
-					border-bottom: 0 none !important;
-				}
+        & & {
+          left: 100%; top: 0;
+        }
+      }
+    }
 
-				.menu_parent > .menu_a:after {content: " \25B8";}
+    &_li {
+      display: inline-block;
+    }
 
-				& & {
-					left: 100%; top: 0;
-				}
-			}
-		}
+    &_a {
+      line-height: @font-line-height*2 - 3px;
+      border-bottom: 3px solid transparent;
+    }
 
-		&_li {
-			display: inline-block;
-		}
+    // Vertical menu
+    &[class*=vert] {
+      .menu_header,
+      .menu_ul {
+        float: none;
+      }
 
-		&_a {
-			line-height: @font-line-height*2 - 3px;
-			border-bottom: 3px solid transparent;
-		}
+      .menu_li {
+        width: 100%;
+      }
 
-		// Vertical menu
-		&[class*=vert] {
-			.menu_header, .menu_ul {
-				float: none;
-			}
+      .menu_li[class*=parent] > a:after {
+        content: ' \25B8';
+      }
 
-			.menu_li {
-				width: 100%;
-			}
+      .menu_a {
+        line-height: @font-line-height*2;
+        border: 0 none;
+      }
 
-			.menu_parent > a:after {content: ' \25B8';}
+      .menu_ul-dropdown {
+        left: 100%; top: 0;
+      }
+    }
 
-			.menu_a {
-				line-height: @font-line-height*2;
-				border: 0 none;
-			}
+    // Flat menu
+    &[class*=flat] .menu_ul-dropdown {
+      outline: 1px solid #ddd;
+    }
 
-			.menu_ul-dropdown {left: 100%; top: 0;}
-		}
+    // DropTop
+    &[class*=droptop] {
+      .menu_ul-dropdown {
+        top:auto;
+        bottom:100%;
+        .z-depth-1('top');
 
-		// Flat menu
-		&[class*=flat] .menu_ul-dropdown {
-			outline: 1px solid #ddd;
-		}
+        .menu_ul-dropdown {
+          bottom:0 !important;
+        }
 
-		// DropTop
-		&[class*=droptop] {
-			.menu_ul-dropdown {
-				top:auto;
-				bottom:100%;
-				.z-depth-1('top');
+        .menu_li[class*=parent] > .menu_a:after {
+          content: ' \25B8';
+        }
+      }
 
-				.menu_ul-dropdown {
-					bottom:0 !important;
-				}
+      .menu_li[class*=parent] > .menu_a:after {
+        content: " \25B4"
+      }
+    }
 
-				.menu_parent > .menu_a:after {content: ' \25B8';}
-			}
+    // DropLeft
+    &[class*=dropleft] {
+      .menu_ul-dropdown {
+        right: 0;
 
-			.menu_parent > .menu_a:after {content: " \25B4"}
-		}
+        .menu_ul-dropdown {
+          left: auto;
+          right: 100%;
+        }
+      }
 
-		// DropLeft
-		&[class*=dropleft] {
-			.menu_ul-dropdown {
-				right: 0;
+      &[class*=vert] {
+        .menu_ul-dropdown {
+          left: auto;
+          right: 100%;
+          bottom: 0;
+        }
+      }
+    }
 
-				.menu_ul-dropdown {
-					left: auto;
-					right: 100%;
-				}
-			}
-
-			&[class*=vert] {
-				.menu_ul-dropdown {
-					left: auto;
-					right: 100%;
-					bottom: 0;
-				}
-			}
-		}
-
-	}
+  }
 }

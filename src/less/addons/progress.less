@@ -26,39 +26,60 @@
 /* Progress Bar
    ==================================== */
 .progress {
-	height: 4px;
-	margin: (@font-line-height - 4px )/2 0;
-	position: relative;
-	.progress-gen(@grey);
-	
-	&_bar {
-		float: left;
-		width: 0;
-		max-width: 100%;
-		height: 100%;
-	}
-	
-	&[class*=primary] {.progress-gen(@primary);}
-	&[class*=secondary] {.progress-gen(@secondary);}
-	&[class*=blue] {.progress-gen(@blue);}
-	&[class*=green] {.progress-gen(@green);}
-	&[class*=red] {.progress-gen(@red);}
-	&[class*=orange] {.progress-gen(@orange);}
-	&[class*=black] {.progress-gen(@grey900);}
-	
-	// Vertical
-	&[class*=vert] {
-		width: 4px;
-		height: @font-line-height*10;
-		float: left;
-		margin: 0 (@font-line-height - 4px )/2;
-		
-		.progress_bar {
-			position: absolute;
-			bottom: 0;
-			width: 100%;
-			height: 0;
-			max-height: 100%;
-		}
-	}
+  height: 4px;
+  margin: (@font-line-height - 4px )/2 0;
+  position: relative;
+  .progress-gen(@grey);
+
+  &_bar {
+    float: left;
+    width: 0;
+    max-width: 100%;
+    height: 100%;
+  }
+
+  // Colors
+  &[class*=primary] {
+    .progress-gen(@primary);
+  }
+
+  &[class*=secondary] {
+    .progress-gen(@secondary);
+  }
+
+  &[class*=blue] {
+    .progress-gen(@blue);
+  }
+
+  &[class*=green] {
+    .progress-gen(@green);
+  }
+
+  &[class*=red] {
+    .progress-gen(@red);
+  }
+
+  &[class*=orange] {
+    .progress-gen(@orange);
+  }
+
+  &[class*=black] {
+    .progress-gen(@grey900);
+  }
+
+  // Vertical
+  &[class*=vert] {
+    width: 4px;
+    height: @font-line-height*10;
+    float: left;
+    margin: 0 (@font-line-height - 4px )/2;
+
+    .progress_bar {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 0;
+      max-height: 100%;
+    }
+  }
 }

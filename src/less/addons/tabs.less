@@ -35,51 +35,51 @@
 /* TABS
    ==================================== */
 .tabs {
-	margin-bottom: @font-line-height;
+  margin-bottom: @font-line-height;
 
-	.menu {
-		width: 100%;
-		z-index: 1;
-		position: relative;
-		.lh-border-bottom-left-radius(0);
-		.lh-border-bottom-right-radius(0);
+  .menu {
+    width: 100%;
+    z-index: 1;
+    position: relative;
+    .lh-border-bottom-left-radius(0);
+    .lh-border-bottom-right-radius(0);
 
-		&_ul {
-			display: block;
-		}
-	}
+    &_ul {
+      display: block;
+    }
+  }
 
-	// Content
-	&_content {
-		width: 100%;
-		background: @white;
-		padding: @font-line-height/2;
-		.z-depth-1;
+  // Content
+  &_content {
+    width: 100%;
+    background: @white;
+    padding: @font-line-height/2;
+    .z-depth-1;
 
-		&[class*=flat] {
-			.z-depth-0;
-			border: 1px solid @grey;
-			padding: @font-line-height/2 - 1px @font-line-height/2;
-		}
-	}
+    &[class*=flat] {
+      .z-depth-0;
+      border: 1px solid @grey;
+      padding: @font-line-height/2 - 1px @font-line-height/2;
+    }
+  }
 
-	&_item {
-		visibility: hidden;
-		opacity: 0;
-		height: 0;
-		.animate(~"opacity");
-	}
+  &_item {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    .animate(~"opacity");
+  }
 
-	// Hide radio-buttons
-	&_trigger {
-		display: none;
+  // Hide radio-buttons
+  &_trigger {
+    display: none;
 
-		// Show item content when trigger is checked
-		&:checked + .tabs_item {
-			visibility: visible;
-			opacity: 1;
-			height: auto;
-		}
-	}
+    // Show item content when trigger is checked
+    &:checked + .tabs_item {
+      visibility: visible;
+      opacity: 1;
+      height: auto;
+    }
+  }
 
 }

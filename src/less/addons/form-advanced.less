@@ -13,63 +13,59 @@
 // ========================================================================
 
 .form {
-	// Hide control element
-	&_checkbox, &_radio {
-		display: none !important;
+  // Hide control element
+  &_checkbox,
+  &_radio {
+    display: none !important;
 
-		// Control elements replaced by next span
-		& + span {
-			display: inline-block;
-			height: @font-line-height;
-			vertical-align: top;
+    // Control elements replaced by next span
+    & + span {
+      display: inline-block;
+      height: @font-line-height;
+      vertical-align: top;
 
-			&:before {
-				font-family: 'Material Design Iconic Font';
-				color: @grey900;
-				speak: none;
-				text-rendering: auto;
-				font-size: @font-line-height;
-				vertical-align: top;
+      &:before {
+        .icon;
+        .lh-transition(~"color 0.15s ease");
+      }
+    }
 
-				// Better Font Rendering
-				-webkit-font-smoothing: antialiased;
-				-moz-osx-font-smoothing: grayscale;
+    // Checked state
+    &:checked + span:before {
+      color: @input-focus-color;
+    }
 
-				.lh-transition(~"color 0.15s ease");
-			}
-		}
+    // Disabled state
+    &[disabled],
+    &[class*=disabled] {
+      & + span {
+        cursor: not-allowed;
+        .lh-opacity(~"0.5");
+      }
+    }
+  }
 
-		// Checked state
-		&:checked + span:before {color: @input-focus-color;}
+  // Checkbox styles
+  &_checkbox {
+    & + span:before {
+      content: "\f2e2";
+    }
 
-		// Disabled state
-		&[disabled], &[class*=disabled] {
-			& + span {
-				cursor: not-allowed;
-				.lh-opacity(~"0.5");
-			}
-		}
-	}
+    &:checked + span:before {
+      content: "\f2e1";
+    }
+  }
 
-	// Checkbox styles
-	&_checkbox {
-		& + span:before {
-			content: "\f2e2";
-		}
-		&:checked + span:before {
-			content: "\f2e1";
-		}
-	}
+  // Radio styles
+  &_radio {
+    & + span:before {
+      content: "\f2e3";
+    }
 
-	// Radio styles
-	&_radio {
-		& + span:before {
-			content: "\f2e3";
-		}
-		&:checked + span:before {
-			content: "\f2e4";
-		}
-	}
+    &:checked + span:before {
+      content: "\f2e4";
+    }
+  }
 }
 
 // Component:       Switch
@@ -83,46 +79,47 @@
 // ========================================================================
 
 .form_switch {
-	// Hide control element
-	display: none !important;
+  // Hide control element
+  display: none !important;
 
-	// Control elements replaced by next span (container)
-	+ span {
-		display: inline-block;
-		position: relative;
-		width: 36px;
-		height: @font-line-height/2;
-		margin-right: @font-line-height/2;
+  // Control elements replaced by next span (container)
+  + span {
+    display: inline-block;
+    position: relative;
+    width: 36px;
+    height: @font-line-height/2;
+    margin-right: @font-line-height/2;
 
-		background: @grey500;
-		.lh-border-radius(99px);
-		.animate(~'background');
+    background: @grey500;
+    .lh-border-radius(99px);
+    .animate(~'background');
 
-		// Circle
-		&:before {
-			content: '';
-			display: inline-block;
-			position: absolute;
-			left: -1*@font-line-height/2;
-			top: -1*@font-line-height/4;
-			height: @font-line-height;
-			width: @font-line-height;
+    // Circle
+    &:before {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      left: @font-line-height/-2;
+      top: @font-line-height/-4;
+      height: @font-line-height;
+      width: @font-line-height;
 
-			background: @grey200;
-			.lh-border-radius(99px);
-			.z-depth-1;
-			.animate(~'left, background');
-		}
-	}
+      background: @grey200;
+      .lh-border-radius(99px);
+      .z-depth-1;
+      .animate(~'left, background');
+    }
+  }
 
-	// Checked state
-	&:checked + span {
-		background: lighten(@input-focus-color, 10%);
-		&:before {
-			background: @input-focus-color;
-			left: 36px - @font-line-height/2;
-		}
-	}
+  // Checked state
+  &:checked + span {
+    background: lighten(@input-focus-color, 10%);
+
+    &:before {
+      background: @input-focus-color;
+      left: 36px - @font-line-height/2;
+    }
+  }
 }
 
 // Component:       Dropdown
@@ -164,85 +161,95 @@
 // ========================================================================
 
 .dropdown {
-	position: relative;
-	z-index: 1;
+  position: relative;
+  z-index: 1;
 
-	// Container
-	&_container {
-		position: absolute;
-		width: 100%;
-		height: @font-line-height*2;
-		overflow: hidden;
-		padding: 0 3px;
-	}
+  // Container
+  &_container {
+    position: absolute;
+    width: 100%;
+    height: @font-line-height*2;
+    overflow: hidden;
+    padding: 0 3px;
+  }
 
-	// Title
-	&_title {
-		padding: 0 16px;
+  // Title
+  &_title {
+    padding: 0 16px;
+    background: @white;
 
-		&:after {
-			content: " \25BE";
-			font-size: @font-size;
-			line-height: @font-line-height;
-			vertical-align: middle;
-		}
-	}
+    &:after {
+      content: " \25BE";
+      font-size: @font-size;
+      line-height: @font-line-height;
+      vertical-align: middle;
+      float: right;
+    }
+  }
 
-	// List of options
-	&_list {
-		position: relative;
-		background: @white;
-		padding: 0;
-		margin: 0;
-		.lh-border-radius(@basic-radius);
-		.z-depth-1;
+  // List of options
+  &_list {
+    position: relative;
+    background: @white;
+    padding: 0;
+    margin: 0;
+    .lh-border-radius(@basic-radius);
+    .z-depth-1;
 
-		// Add transitions
-		.animate(~"height, visibility, opacity");
-	}
+    // Add transitions
+    .animate(~"height, visibility, opacity");
+  }
 
-	// Show list on hover
-	&:hover &_container {
-		height: auto;
-	}
-	&:hover &_list {
-		top: -48px;
-	}
-	&:hover &_optionText {
-		position: static !important;
-	}
+  // Show list on hover
+  &:hover &_container {
+    height: auto;
+  }
 
-	// Item styles
-	&_item {
-		display: block;
-		vertical-align: middle;
+  &:hover &_list {
+    top: -48px;
+  }
 
-		&:hover {
-			background: @grey100;
-		}
+  &:hover &_optionText {
+    position: static !important;
+    width: 100% !important;
+    background: none !important;
+    line-height: @font-line-height*2 !important;
+  }
 
-		&:first-child {
-			.lh-border-radius(@basic-radius @basic-radius 0 0);
-		}
+  // Item styles
+  &_item {
+    display: block;
+    vertical-align: middle;
 
-		&:last-child {
-			.lh-border-radius(0 0 @basic-radius @basic-radius);
-		}
-	}
+    &:hover {
+      background: @grey100;
+    }
 
-	&_optionText {
-		padding: 0 16px;
-		line-height: @font-line-height*2 !important;
-		display: block;
-		white-space: nowrap;
-	}
+    &:first-child {
+      .lh-border-radius(@basic-radius @basic-radius 0 0);
+    }
 
-	// Option functionality
-	&_option {
-		display: none !important;
-	}
-	&_option:checked + &_optionText {
-		position: absolute;
-		top: @font-line-height*-2;
-	}
+    &:last-child {
+      .lh-border-radius(0 0 @basic-radius @basic-radius);
+    }
+  }
+
+  &_optionText {
+    padding: 0 16px;
+    display: block;
+    white-space: nowrap;
+  }
+
+  // Option functionality
+  &_option {
+    display: none !important;
+  }
+
+  &_option:checked + &_optionText {
+    position: absolute;
+    top: @font-line-height*-2;
+    background: @white;
+    line-height: @font-line-height*1.5;
+    width: 90%;
+  }
 }

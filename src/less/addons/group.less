@@ -25,68 +25,74 @@
 /* GROUPS
    ==================================== */
 .group {
-	margin-bottom: @font-line-height;
-	.clearfix;
-	
-	* {
-		margin: 0;
-		font-size: 14px;
-		font-family: @font-family;
-		float: none;
-		display: block;
-		width: 100%;
-	}
+  margin-bottom: @font-line-height;
+  .clearfix;
 
-	// Addon element
-	&_addon {
-		height: @font-line-height*1.5;
-		padding: (@font-line-height * 1.5 -  @font-line-height-normal - 4px)/2 12px;
-		background: transparent;
-		border: 2px solid transparent;
-		color: @text-color;
-		text-align: center;
+  * {
+    margin: 0;
+    font-size: 14px;
+    font-family: @font-family;
+    float: none;
+    display: block;
+    width: 100%;
+  }
 
-		// SIZES
+  // Addon element
+  &_addon {
+    height: @font-line-height*1.5;
+    line-height: @font-line-height*1.5;
+    padding-left: @grid-baseline*2;
+    padding-right: @grid-baseline*2;
+    background: transparent;
+    border: 2px solid transparent;
+    color: @text-color;
+    text-align: center;
 
-		// Extra Small
-		&[class*=xs] {
-			font-size: 10px;
-			height: @font-line-height;
-			margin: @font-line-height/2 0;
-		}
+    // SIZES
 
-		// Small
-		&[class*=sm] {
-			font-size: 12px;
-			height: @font-line-height*1.25;
-			margin: @font-line-height*0.75/2 0;
-		}
+    // Extra Small
+    &[class*=xs] {
+      font-size: 10px;
+      height: @font-line-height;
+      line-height: @font-line-height;
+      margin: @font-line-height/2 0;
+    }
 
-		// Large
-		&[class*=lg] {
-			font-size: 18px;
-			height: @font-line-height*2;
-			margin: @font-line-height/2 0;
-		}
+    // Small
+    &[class*=sm] {
+      font-size: 12px;
+      height: @font-line-height*1.25;
+      line-height: @font-line-height*1.25;
+      margin: @font-line-height*0.75/2 0;
+    }
 
-		// Extra Large
-		&[class*=xl] {
-			font-size: 24px;
-			height: @font-line-height*2.5;
-			margin: @font-line-height/4 0;
-		}
-	}
+    // Large
+    &[class*=lg] {
+      font-size: 18px;
+      height: @font-line-height*2;
+      line-height: @font-line-height*2;
+      margin: @font-line-height/2 0;
+    }
 
-	@media (min-width: @screen-sm) {
-		margin-bottom: @font-line-height/2 !important;
+    // Extra Large
+    &[class*=xl] {
+      font-size: 24px;
+      height: @font-line-height*2.5;
+      line-height: @font-line-height*2.5;
+      margin: @font-line-height/4 0;
+    }
+  }
 
-		// Horizontal grouping
-		&[class*=hr] {
-			* {
-				float: left;
-				display: inline-block;
-				width: auto;
-			}
-		}
-	}
+  @media (min-width: @screen-sm) {
+    margin-bottom: @font-line-height/2 !important;
+
+    // Horizontal grouping
+    &[class*=hr] {
+      * {
+        float: left;
+        display: inline-block;
+        width: auto;
+      }
+    }
+  }
 }

@@ -43,244 +43,319 @@
    FORMS
    ==================================== */
 // Styles shared between `<input>`, `<select>`, `<textarea>` & buttons
-.form_control, .btn {
-	display: block;
-	font-size: 14px;
-	height: @font-line-height*1.5;
-	padding: 0;
-	margin: @font-line-height/4 0;
-	line-height: normal;
-	font-family: @font-family;
-	vertical-align: top;
-	color: @input-text-color;
-	text-decoration: none;
-	.animate(~"background, border-color, color, box-shadow");
+.form_control,
+.btn {
+  display: block;
+  font-size: 14px;
+  height: @font-line-height*1.5;
+  padding: 0;
+  margin: @font-line-height/4 0;
+  line-height: normal;
+  font-family: @font-family;
+  vertical-align: top;
+  color: @input-text-color;
+  text-decoration: none;
+  .animate(~"background, border-color, color, box-shadow");
 
-	&:focus {
-		outline: 0;
-	}
-	
-	// Firefox:  Get rid of the inner focus border
-	
-	&::-moz-focus-inner {
-		padding: 0;
-		border: 0;
-	}
-	
-	// Disabled & Read-only
-	
-	&[disabled], &[class*=disabled], &[readonly] {
-		cursor: not-allowed;
-		background: darken(@white, 10%);
-		color: lighten(@input-text-color, 35%);
-		border-color: transparent !important;
-	}
-	
-	&[disabled], &[class*=disabled] {.lh-opacity(~"0.4");}
-	
-	// SIZES
-	
-	// Extra Small
-	&[class*=xs] {
-		font-size: 10px;
-		height: @font-line-height;
-		margin: @font-line-height/2 0;
-	}
-	
-	// Small
-	&[class*=sm] {
-		font-size: 12px;
-		height: @font-line-height*1.25;
-		margin: @font-line-height*0.75/2 0;
-	}
-	
-	// Large
-	&[class*=lg] {
-		font-size: 18px;
-		height: @font-line-height*2;
-		margin: @font-line-height/2 0;
-	}
-	
-	// Extra Large
-	&[class*=xl] {
-		font-size: 24px;
-		height: @font-line-height*2.5;
-		margin: @font-line-height/4 0;
-	}
+  &:focus {
+    outline: 0;
+  }
+
+  // Firefox:  Get rid of the inner focus border
+
+  &::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+
+  // Disabled & Read-only
+
+  &[disabled],
+  &[class*=disabled],
+  &[readonly] {
+    cursor: not-allowed;
+    background: darken(@white, 10%);
+    color: lighten(@input-text-color, 35%);
+    border-color: transparent !important;
+  }
+
+  &[disabled],
+  &[class*=disabled] {
+    .lh-opacity(~"0.4");
+  }
+
+  // SIZES
+
+  // Extra Small
+  &[class*=xs] {
+    font-size: 10px;
+    height: @font-line-height;
+    margin: @font-line-height/2 0;
+  }
+
+  // Small
+  &[class*=sm] {
+    font-size: 12px;
+    height: @font-line-height*1.25;
+    margin: @font-line-height*0.75/2 0;
+  }
+
+  // Large
+  &[class*=lg] {
+    font-size: 18px;
+    height: @font-line-height*2;
+    margin: @font-line-height/2 0;
+  }
+
+  // Extra Large
+  &[class*=xl] {
+    font-size: 24px;
+    height: @font-line-height*2.5;
+    margin: @font-line-height/4 0;
+  }
 }
 
 // Styles for `<input>`, `<select>`, `<textarea>`
 .form_control {
-	background: transparent;
-	border: 0 none;
-	border-bottom: 1px solid @input-color;
+  background: transparent;
+  border: 0 none;
+  border-bottom: 1px solid @input-color;
 
-	&:hover, &:focus {
-		border-bottom: 2px solid @input-focus-color;
+  &:hover,
+  &:focus {
+    border-bottom: 2px solid @input-focus-color;
 
-		&:invalid {
-			color: @input-error-color;
-			border-color: lighten(@input-error-color, 15%);
-			&:focus {
-				border-color: lighten(@input-error-color, 18%);
-			}
-		}
-	}
+    &:invalid {
+      color: @input-error-color;
+      border-color: lighten(@input-error-color, 15%);
 
-	&[class*=raised] {
-		background: @white;
-		border: 2px solid transparent;
-		padding: 0 @font-line-height/2;
-		.lh-border-radius(@input-radius);
-		.z-depth-1();
+      &:focus {
+        border-color: lighten(@input-error-color, 18%);
+      }
+    }
+  }
 
-		&:hover, &:focus {
-			border: 2px solid darken(@white, 30%);
-		}
-		&:focus {
-			border-color: @input-focus-color;
-		}
+  &[class*=raised] {
+    background: @white;
+    border: 2px solid transparent;
+    padding: 0 @font-line-height/2;
+    .lh-border-radius(@input-radius);
+    .z-depth-1();
 
-		// Rounded corners
-		&[class*=radius] {.lh-border-radius(99px);}
-	}
+    &:hover,
+    &:focus {
+      border: 2px solid darken(@white, 30%);
+    }
+
+    &:focus {
+      border-color: @input-focus-color;
+    }
+
+    // Rounded corners
+    &[class*=radius] {
+      .lh-border-radius(99px);
+    }
+  }
 }
 
-input[type="file"], input[type="radio"], input[type="checkbox"] {
-	&:focus {
-		outline: 1px auto @input-focus-color;
-	}
-	&:focus:invalid:focus {
-		outline-color: lighten(@input-error-color, 18%);
-	}
+input[type="file"],
+input[type="radio"],
+input[type="checkbox"] {
+  &:focus {
+    outline: 1px auto @input-focus-color;
+  }
+
+  &:focus:invalid:focus {
+    outline-color: lighten(@input-error-color, 18%);
+  }
 }
 
 // Form Block
 .form {
-	label {
-		.font(14px);
-		vertical-align: top;
-	}
-	legend {
-		display: block;
-		width: 100%;
-		padding: 0 0 @font-line-height/2-1 0;
-		margin-bottom: @font-line-height/2;
-		font-size: @font-size*1.15;
-		font-weight: 700;
-		color: @grey900;
-		border-bottom: 1px solid darken(@grey, 5%);
-	}
-	input[type="checkbox"], input[type="radio"] {
-		display: inline;
-		height: auto;
-		margin: 0;
-		vertical-align: inherit !important;
-		.lh-box-shadow(~"none");
-	}
+  label {
+    font-size: 14px;
+    vertical-align: top;
+  }
 
-	&[class*=stacked] {
-		.form_control, label, .btn {
-			display: block;
-		}
-	}
-	
-	&[class*=aligned] {
-		label {
-			text-align: left;
-		}
-	}
+  legend {
+    display: block;
+    width: 100%;
+    padding: 0 0 @font-line-height/2-1 0;
+    margin-bottom: @font-line-height/2;
+    font-size: @font-size*1.15;
+    font-weight: 700;
+    color: @grey900;
+    border-bottom: 1px solid darken(@grey, 5%);
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    display: inline;
+    height: auto;
+    margin: 0;
+    vertical-align: inherit !important;
+    .lh-box-shadow(~"none");
+  }
+
+  &[class*=stacked] {
+    .form_control,
+    label,
+    .btn {
+      display: block;
+    }
+  }
+
+  &[class*=aligned] {
+    label {
+      text-align: left;
+    }
+  }
 }
 
 textarea {
-	padding: (@font-line-height * 1.5 -  @font-line-height-normal - 4px)/2 @font-line-height/2;
-	width: 100%;
-	max-width: 100%;
-	min-width: 100%;
-	min-height: @font-line-height * 3.5;
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  min-height: @font-line-height * 3.5;
 }
 
 // Media Queries
 @media (min-width: @screen-sm) {
-	.form_control, .btn {
-		display: inline-block;
-	}
+  .form_control,
+  .btn {
+    display: inline-block;
+  }
 
-	.form[class*=aligned] {
-		label {
-			text-align: right;
-			padding-right: @font-line-height;
-		}
-	}
+  .form[class*=aligned] {
+    label {
+      text-align: right;
+      padding-right: @font-line-height;
+    }
+  }
 }
 
 @media (min-width: @screen-md) {
-	select[multiple] {
-		height: @font-line-height*4;
-		padding: (@font-line-height * 1.5 -  @font-line-height-normal - 4px)/2 @font-line-height/2;
-		margin-top: 0;
-		margin-bottom: @font-line-height;
-		width: 100%;
-	}
+  select[multiple] {
+    height: @font-line-height*4;
+    margin-top: 0;
+    margin-bottom: @font-line-height;
+    width: 100%;
+  }
 }
 
 /* BUTTONS
    ==================================== */
 .btn {
-	padding: 0 @font-line-height/2;
-	line-height: @font-line-height*1.5;
-	text-transform: uppercase;
-	cursor: pointer;
-	border: 2px solid transparent;
-	font-weight: bolder;
-	.lh-border-radius(@input-radius);
-	.z-depth-1();
-	.btn-gen('grey', @grey900, 200);
+  padding: 0 @grid-baseline*2;
+  line-height: @font-line-height*1.5;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: 2px solid transparent;
+  font-weight: bolder;
+  .lh-border-radius(@input-radius);
+  .z-depth-1();
+  .btn-gen('grey', @grey900, 200);
 
-	// Pressed state
-	&:active, &[class*=active], &:focus {
-		.z-depth-2();
-	}
+  // Pressed state
+  &:active,
+  &[class*=active],
+  &:focus {
+    .z-depth-2();
+  }
 
-	// Rounded corners
-	&[class*=radius] {.lh-border-radius(99px);}
+  // Rounded corners
+  &[class*=radius] {
+    .lh-border-radius(99px);
+  }
 
-	// Sizes
-	&[class*=xs] {line-height: @font-line-height;}
-	&[class*=sm] {line-height: @font-line-height*1.25;}
-	&[class*=lg] {line-height: @font-line-height*2;}
-	&[class*=xl] {line-height: @font-line-height*2.5;}
+  // Sizes
+  &[class*=xs] {
+    line-height: @font-line-height;
+  }
 
-	// Colors
-	&[class*=primary] {.btn-gen('primary', @white);}
-	&[class*=secondary] {.btn-gen('secondary', @white);}
-	&[class*=blue] {.btn-gen('blue', @white);}
-	&[class*=green] {.btn-gen('green', @white);}
-	&[class*=red] {.btn-gen('red', @white);}
-	&[class*=orange] {.btn-gen('orange', @white);}
-	&[class*=black] {.btn-gen('grey', @white, 800);}
-	
-	// Ghost button (without background)
-	&[class*=ghost] {
-		&:not(:hover) {
-			background: transparent;
-			color: @grey;
-			
-			&[class*=primary] {color: @primary;}
-			&[class*=secondary] {color: @secondary;}
-			&[class*=blue] {color: @blue;}
-			&[class*=green] {color: @green;}
-			&[class*=red] {color: @red;}
-			&[class*=orange] {color: @orange;}
-			&[class*=black] {color: @grey900;}
-		}
-	}
-	
-	// Remove shadow for Flat button
-	&[class*=flat] {
-		.z-depth-0() !important;
-		color: @input-text-color;
-		background: transparent;
-		border-color: transparent;
-	}
+  &[class*=sm] {
+    line-height: @font-line-height*1.25;
+  }
+
+  &[class*=lg] {
+    line-height: @font-line-height*2;
+  }
+
+  &[class*=xl] {
+    line-height: @font-line-height*2.5;
+  }
+
+
+  // Colors
+  &[class*=primary] {
+    .btn-gen('primary', @white);
+  }
+
+  &[class*=secondary] {
+    .btn-gen('secondary', @white);
+  }
+
+  &[class*=blue] {
+    .btn-gen('blue', @white);
+  }
+
+  &[class*=green] {
+    .btn-gen('green', @white);
+  }
+
+  &[class*=red] {
+    .btn-gen('red', @white);
+  }
+
+  &[class*=orange] {
+    .btn-gen('orange', @white);
+  }
+
+  &[class*=black] {
+    .btn-gen('grey', @white, 800);
+  }
+
+  // Ghost button (without background)
+  &[class*=ghost] {
+    &:not(:hover) {
+      background: transparent;
+      color: @grey;
+
+      &[class*=primary] {
+        color: @primary;
+      }
+
+      &[class*=secondary] {
+        color: @secondary;
+      }
+
+      &[class*=blue] {
+        color: @blue;
+      }
+
+      &[class*=green] {
+        color: @green;
+      }
+
+      &[class*=red] {
+        color: @red;
+      }
+
+      &[class*=orange] {
+        color: @orange;
+      }
+
+      &[class*=black] {
+        color: @grey900;
+      }
+    }
+  }
+
+  // Remove shadow for Flat button
+  &[class*=flat] {
+    .z-depth-0() !important;
+    color: @input-text-color;
+    background: transparent;
+    border-color: transparent;
+  }
 }

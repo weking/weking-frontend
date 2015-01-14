@@ -48,108 +48,143 @@
 /* Pricing table
    ==================================== */
 .pricing {
-	margin: 0 auto @font-line-height;
-	text-align: center;
-	
-	&__plan {
-		background: @grey100;
+  margin: 0 auto @font-line-height;
+  text-align: center;
 
-		// Header
-		&__header {
-			background: @grey;
-			color: @white;
-		}
+  &__plan {
+    background: @grey100;
 
-		// Heading
-		&__heading {
-			margin: 0;
-			padding: @font-line-height 0;
-			font-weight: normal;
-			text-transform: uppercase;
-		}
+    // Header
+    &__header {
+      background: @grey;
+      color: @white;
+    }
 
-		// Price label
-		&__price {
-			.font(@font-line-height*3);
-			display: block;
-			padding: @font-line-height 0;
-			background: @grey700;
+    // Heading
+    &__heading {
+      margin: 0;
+      padding: @font-line-height 0;
+      font-weight: normal;
+      text-transform: uppercase;
+    }
 
-			span {
-				display: block;
-				text-transform: uppercase;
-				.font;
-				font-weight: 400;
-				color: @white;
-			}
-		}
+    // Price label
+    &__price {
+      .font(@font-line-height*3);
+      display: block;
+      padding: @font-line-height 0;
+      background: @grey700;
 
-		// List of features
-		&__list {
-			list-style-type: none;
-			padding: 0;
-			text-align: center;
-			
-			li {
-				padding: @font-line-height/2 - 0.5px 0;
-				border-bottom: 1px solid @grey;
-			}
-		}
+      span {
+        display: block;
+        text-transform: uppercase;
+        .font;
+        font-weight: 400;
+        color: @white;
+      }
+    }
 
-		// Action button
-		.btn {
-			margin-left: @font-line-height;
-			margin-right: @font-line-height;
-		}
+    // List of features
+    &__list {
+      list-style-type: none;
+      padding: 0;
+      text-align: center;
 
-		// Colors
+      li {
+        padding: @font-line-height/2 - 0.5px 0;
+        border-bottom: 1px solid @grey;
+      }
+    }
 
-		// primary
-		&--primary {
-			.pricing__plan__header {background: @primary;}
-			.pricing__plan__price {background: @primary700;}
-		}
-		
-		// secondary
-		&--secondary {
-			.pricing__plan__header {background: @secondary;}
-			.pricing__plan__price {background: @secondary700;}
-		}
-		
-		// Blue
-		&--blue {
-			.pricing__plan__header {background: @blue;}
-			.pricing__plan__price {background: @blue700;}
-		}
-		
-		// Green
-		&--green {
-			.pricing__plan__header {background: @green;}
-			.pricing__plan__price {background: @green700;}
-		}
-		
-		// Red
-		&--red {
-			.pricing__plan__header {background: @red;}
-			.pricing__plan__price {background: @red700;}
-		}
-		
-		// Orange
-		&--orange {
-			.pricing__plan__header {background: @orange;}
-			.pricing__plan__price {background: @orange700;}
-		}
-		
-		// Black
-		&--black {
-			.pricing__plan__header {background: @grey800;}
-			.pricing__plan__price {background: @grey900;}
-		}
+    // Action button
+    .btn {
+      margin-left: @font-line-height;
+      margin-right: @font-line-height;
+    }
 
-		// Optimal plan
-		&--optimal {
-			.lh-transform(~"scale(1.05)");
-		}
-	}
+    // Colors
+
+    // primary
+    &--primary {
+      .pricing__plan__header {
+        background: @primary;
+      }
+
+      .pricing__plan__price {
+        background: @primary700;
+      }
+    }
+
+    // secondary
+    &--secondary {
+      .pricing__plan__header {
+        background: @secondary;
+      }
+
+      .pricing__plan__price {
+        background: @secondary700;
+      }
+    }
+
+    // Blue
+    &--blue {
+      .pricing__plan__header {
+        background: @blue;
+      }
+
+      .pricing__plan__price {
+        background: @blue700;
+      }
+    }
+
+    // Green
+    &--green {
+      .pricing__plan__header {
+        background: @green;
+      }
+
+      .pricing__plan__price {
+        background: @green700;
+      }
+    }
+
+    // Red
+    &--red {
+      .pricing__plan__header {
+        background: @red;
+      }
+
+      .pricing__plan__price {
+        background: @red700;
+      }
+    }
+
+    // Orange
+    &--orange {
+      .pricing__plan__header {
+        background: @orange;
+      }
+
+      .pricing__plan__price {
+        background: @orange700;
+      }
+    }
+
+    // Black
+    &--black {
+      .pricing__plan__header {
+        background: @grey800;
+      }
+
+      .pricing__plan__price {
+        background: @grey900;
+      }
+    }
+
+    // Optimal plan
+    &--optimal {
+      .lh-transform(~"scale(1.05)");
+    }
+  }
 
 }

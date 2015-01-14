@@ -14,77 +14,74 @@
    ==================================== */
 // Set up iconic font
 @font-face {
-	font-family: 'Material Design Iconic Font';
-	src: url('@{icon-font-path}/Material-Design-Iconic-Font.eot?v=@{icon-font-v}');
-	src: url('@{icon-font-path}/Material-Design-Iconic-Font.eot?#iefix&v=@{icon-font-v}') format('embedded-opentype'),
-	url('@{icon-font-path}/Material-Design-Iconic-Font.woff?v=@{icon-font-v}') format('woff'),
-	url('@{icon-font-path}/Material-Design-Iconic-Font.ttf?v=@{icon-font-v}') format('truetype'),
-	url('@{icon-font-path}/Material-Design-Iconic-Font.svg?v=@{icon-font-v}#Material-Design-Iconic-Font') format('svg');
-	font-weight: normal;
-	font-style: normal;
+  font-family: 'Material Design Iconic Font';
+  src: url('@{icon-font-path}/Material-Design-Iconic-Font.eot?v=@{icon-font-v}');
+  src: url('@{icon-font-path}/Material-Design-Iconic-Font.eot?#iefix&v=@{icon-font-v}') format('embedded-opentype'),
+  url('@{icon-font-path}/Material-Design-Iconic-Font.woff?v=@{icon-font-v}') format('woff'),
+  url('@{icon-font-path}/Material-Design-Iconic-Font.ttf?v=@{icon-font-v}') format('truetype'),
+  url('@{icon-font-path}/Material-Design-Iconic-Font.svg?v=@{icon-font-v}#Material-Design-Iconic-Font') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
 // Define styles for icons
 .icon {
-	vertical-align: top;
-	font-style: normal;
+  vertical-align: top;
+  font-style: normal;
+  display: inline-block;
+  font-family: 'Material Design Iconic Font';
+  speak: none;
+  text-rendering: auto;
+  font-size: @font-line-height;
+  vertical-align: top;
 
-	&:before {
-		display: inline-block;
-		font-family: 'Material Design Iconic Font';
-		speak: none;
-		text-rendering: auto;
-		font-size: @font-line-height;
-		vertical-align: top;
-
-		// Better Font Rendering
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-	}
-
-	// Include icons
-	// Comment some lines if you don't need some icons
-	@import "icons/actions.less";
-	@import "icons/alert.less";
-	@import "icons/audio-video.less";
-	@import "icons/communication.less";
-	@import "icons/content.less";
-	@import "icons/device.less";
-	@import "icons/editor.less";
-	@import "icons/file.less";
-	@import "icons/hardware.less";
-	@import "icons/image.less";
-	@import "icons/maps.less";
-	@import "icons/navigation.less";
-	@import "icons/notification.less";
-	@import "icons/social.less";
-	@import "icons/toggle.less";
+  // Better Font Rendering
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-// Menu with icons
+// Include icons
+// Comment some lines if you don't need some icons
+@import "icons/actions.less";
+@import "icons/alert.less";
+@import "icons/audio-video.less";
+@import "icons/communication.less";
+@import "icons/content.less";
+@import "icons/device.less";
+@import "icons/editor.less";
+@import "icons/file.less";
+@import "icons/hardware.less";
+@import "icons/image.less";
+@import "icons/maps.less";
+@import "icons/navigation.less";
+@import "icons/notification.less";
+@import "icons/social.less";
+@import "icons/toggle.less";
+
+// Add arrow icons to menu elements with dropdowns
 .menu {
-	// Default state
-	&_parent > &_a:after {
-		font-family: 'Material Design Iconic Font';
-		content: " \f29e"; // Icon arrow down (.icon_expand-more)
-	}
+  // Default state
+  &_li[class*=parent] > &_a:after {
+    font-family: 'Material Design Iconic Font';
+    content: " \f29e"; // Icon arrow down (.icon_expand-more)
+  }
 
-	&_ul .icon:before {
-		margin-right: 8px;
-	}
+  &_ul .icon:before {
+    margin-right: 8px;
+  }
 
-	@media (min-width: @screen-md) {
-		// Default dropdown & vertical states
-		&_ul-dropdown &_parent > &_a:after,
-		&[class*=vert] &_parent > &_a:after {
-			content: " \f29c" !important; // Icon arrow right (.icon_chevron-right)
-		}
+  @media (min-width: @screen-md) {
+    // Default dropdown & vertical states
+    &_ul-dropdown &_li[class*=parent]  > &_a:after,
+    &[class*=vert] &_li[class*=parent]  > &_a:after {
+      content: " \f29c" !important; // Icon arrow right (.icon_chevron-right)
+    }
 
-		// Droptop state
-		&[class*=droptop] {
-			.menu_parent > .menu_a:after {
-				content: " \f29d";  // Icon arrow top (.icon_expand-less)
-			}
-		}
-	}
+    // Droptop state
+    &[class*=droptop] {
+      .menu_li[class*=parent]  > .menu_a:after {
+        content: " \f29d";  // Icon arrow top (.icon_expand-less)
+      }
+    }
+  }
 }

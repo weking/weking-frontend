@@ -11,49 +11,56 @@
 
 .menu-gen(@bg, @color, @indicator: @color, @bg-level: 500) {
 
-	// Make color swatch variables names
-	@topNavBg: %(~"%s%s", ~'@{bg}', @bg-level);
-	@topNavColor: @color;
+  // Make color swatch variables names
+  @topNavBg: %(~"%s%s", ~'@{bg}', @bg-level);
+  @topNavColor: @color;
 
-	@dropDownBg: ~'white';
-	@dropDownBgHover: %(~"%s%s", ~'@{bg}', 50);
-	@dropDownColor: @grey900;
+  @dropDownBg: ~'white';
+  @dropDownBgHover: %(~"%s%s", ~'@{bg}', 50);
+  @dropDownColor: @grey900;
 
-	background: @@topNavBg;
+  background: @@topNavBg;
 
-	.menu_brand {color: @topNavColor !important}
+  .menu_brand {
+    color: @topNavColor !important;
+  }
 
-	.menu_ul {
-		.menu_a {
-			color: fade(@topNavColor, 60%);
-		}
+  .menu_ul {
+    .menu_a {
+      color: fade(@topNavColor, 60%);
+    }
 
-		// Active state & Brand link
-		.menu_li:hover > .menu_a, .menu_active > .menu_a {
-			color: @topNavColor;
-		}
+    // Active state & Brand link
+    .menu_li:hover,
+    .menu_active {
+      > .menu_a{
+        color: @topNavColor;
+      }
+    }
 
-		@media (min-width: @screen-md) {
-			&-dropdown {
-				background: @@dropDownBg;
+    @media (min-width: @screen-md) {
+      &-dropdown {
+        background: @@dropDownBg;
 
-				.menu_a {
-					color: fade(@dropDownColor, 60%);
-				}
+        .menu_a {
+          color: fade(@dropDownColor, 60%);
+        }
 
-				.menu_li:hover, .menu_active {
-					> .menu_a {
-						background: @@dropDownBgHover;
-						color: @dropDownColor;
-					}
-				}
-			}
+        .menu_li:hover,
+        .menu_active {
+          > .menu_a {
+            background: @@dropDownBgHover;
+            color: @dropDownColor;
+          }
+        }
+      }
 
-			.menu_li:hover, .menu_active {
-				> .menu_a {
-					border-color: @indicator;
-				}
-			}
-		}
-	}
+      .menu_li:hover,
+      .menu_active {
+        > .menu_a {
+          border-color: @indicator;
+        }
+      }
+    }
+  }
 }

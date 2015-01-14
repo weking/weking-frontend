@@ -19,203 +19,345 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
-article, aside, details, figcaption, figure, 
+
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-	display: block;
+  display: block;
 }
+
 blockquote, q {
-	quotes: none;
-	
-	&:before, &:after {
-		content: '';
-		content: none;
-	}
+  quotes: none;
+
+  &:before, &:after {
+    content: '';
+    content: none;
+  }
 }
+
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 // Reset the box-sizing
 
-*, *:before, *:after {
-	.lh-box-sizing(~"border-box");
+*,
+*:before,
+*:after {
+  .lh-box-sizing(~"border-box");
 }
 
 body {
-	background-color: @body-bg;
-	color: @text-color;
-	.font;
-	font-family: @font-family;
+  background-color: @body-bg;
+  color: @text-color;
+  .font;
+  font-family: @font-family;
+}
+
+// TYPOGRAPHY
+
+// Display 4
+.typo_display4 {
+  .font(112px);
+  font-weight: 300;
+}
+
+// Display 3
+.typo_display3 {
+  .font(56px);
+}
+
+// Display 2
+.typo_display2 {
+  .font(45px);
+}
+
+// Display 1
+.typo_display1 {
+  .font(34px);
+}
+
+// Headline
+.typo_headline {
+  .font(24px);
+}
+
+// Title
+.typo_title {
+  .font(20px);
+  font-weight: 500;
+}
+
+// Subhead
+.typo_subhead {
+  .font(16px);
+}
+
+// Caption
+.typo_caption {
+  .font(12px);
 }
 
 // Headings styles
-
-h1, h2, h3, h4, h5, h6 {
-	font-weight: 900;
-	font-family: @font-family-headings;
+.typo_h1, h1,
+.typo_h2, h2,
+.typo_h3, h3,
+.typo_h4, h4,
+.typo_h5, h5,
+.typo_h6, h6 {
+  font-weight: 900;
+  font-family: @font-family-headings;
 }
-h1 {.font(@font-size*3.75);}
-h2 {.font(@font-size*3);}
-h3 {.font(@font-size*2.25);}
-h4 {.font(@font-size*1.5);}
-h5 {.font(@font-size);}
-h6 {.font(@font-size*0.75);}
+
+.typo_h1, h1 {
+  .font(@font-size*3.75);
+}
+
+.typo_h2, h2 {
+  .font(@font-size*3);
+}
+
+.typo_h3, h3 {
+  .font(@font-size*2.25);
+}
+
+.typo_h4, h4 {
+  .font(@font-size*1.5);
+}
+
+.typo_h5, h5 {
+  .font(@font-size);
+}
+
+.typo_h6, h6 {
+  .font(@font-size*0.75);
+}
 
 // Define block elements styles
 
 blockquote {
-	padding: 0 @font-line-height;
-	border-left: @font-line-height/4 solid @grey;
-	color: @grey900;
+  padding: 0 @font-line-height;
+  border-left: @font-line-height/4 solid @grey;
+  color: @grey900;
 }
 
 hr {
-	border: 0;
-	border-top: 1px solid darken(@grey, 15);
-	border-bottom: 1px solid @white;
-	margin: 0 0 @font-line-height - 2px;
+  border: 0;
+  border-top: 1px solid darken(@grey, 15);
+  border-bottom: 1px solid @white;
+  margin: (@font-line-height - 1px)/2 0;
 }
 
-ol, ul {padding: 0 0 0 @font-line-height*2;}
-ol ol, ul ul {margin: 0;}
-nav ul, nav ol {list-style: none;}
+// Reset basic margin for nested lists and set left indent
 
-dt {font-weight: bold;}
-dd {margin: 0 0 0 @font-line-height*2;}
+ol,
+ul {
+  padding: 0 0 0 @font-line-height*2;
+  ol,
+  ul {
+    margin: 0;
+  }
+}
 
-p, blockquote, dl, menu, ol, ul, dd, img, pre {
+nav ul,
+nav ol {
+  list-style: none;
+}
+
+// Define styles for definition list
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin: 0 0 0 @font-line-height*2;
+}
+
+p,
+blockquote,
+dl,
+menu,
+ol,
+ul,
+dd,
+img,
+pre {
     margin-bottom: @font-line-height;
 }
 
 // Define inline elements styles
 
-b, strong {font-weight: bolder;}
-i, cite, em, var, dfn {font-style: italic;}
-label {cursor: pointer;}
+b,
+strong {
+  font-weight: bolder;
+}
+
+i,
+cite,
+em,
+var,
+dfn {
+  font-style: italic;
+}
+
+label {
+  cursor: pointer;
+}
 
 a {
-	color: @link-color;
-	text-decoration: underline;
+  color: @link-color;
+  text-decoration: underline;
 
-	&:hover, &:focus {
-		color: @link-hover-color;
-		text-decoration: none;
-	}
+  &:hover,
+  &:focus {
+    color: @link-hover-color;
+    text-decoration: none;
+  }
 }
 
 abbr[title] {
-	border-bottom: 1px dotted;
-	cursor: help;
+  border-bottom: 1px dotted;
+  cursor: help;
 }
 
 mark {
-	background: @orange400;
-	color: @grey900;
+  background: @orange400;
+  color: @grey900;
 }
 
-small {font-size: 80%; line-height: 80%;}
-
-sub, sup {
-	font-size: 75%;
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
+small {
+  font-size: 80%;
+  line-height: 80%;
 }
-sup {top: -0.5em;}
-sub {bottom: -0.25em;}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
 
 // Code
 
-code, pre, kbd {font-family: @font-family-mono;}
-
-code, kbd {
-	padding: 2px 4px;
-	font-size: @font-size * 0.9;
-    line-height: @font-size * 0.9;
-	color: @red600;
-	white-space: nowrap;
-	background: @grey200;
-	.lh-border-radius(@basic-radius);
+code,
+pre,
+kbd {
+  font-family: @font-family-mono;
 }
 
-kbd {color: @text-color;}
+code, kbd {
+  padding: 2px 4px;
+  font-size: @font-size * 0.9;
+  line-height: @font-size * 0.9;
+  color: @red600;
+  white-space: nowrap;
+  background: @grey200;
+  .lh-border-radius(@basic-radius);
+}
+
+kbd {
+  color: @text-color;
+}
 
 pre {
-	display: block;
-	padding: 0 16px;
-	font-size: @font-size * 0.9;
-	color: @grey900;
-	background: @grey200;
-	outline: 1px solid @grey;
-	overflow: auto;
-	word-break: break-all;
-	word-wrap: break-word;
-	white-space: pre;
+  display: block;
+  padding: 0 16px;
+  font-size: @font-size * 0.9;
+  color: @grey900;
+  background: @grey200;
+  outline: 1px solid @grey;
+  overflow: auto;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre;
 
-	code {
-		padding: 0;
-		color: inherit;
-		white-space: pre-wrap;
-		background-color: transparent;
-	}
+  code {
+    padding: 0;
+    color: inherit;
+    white-space: pre-wrap;
+    background-color: transparent;
+  }
 }
 
 // Images
 
 img {
-	border: 0;
-	-ms-interpolation-mode: bicubic;
-	max-width: 100%;
-	height: auto;
-	width: auto\9;
-	display: block;
-	
-	&[class*=polaroid] {
-		background-color: #fff;
-		outline: 1px solid rgba(0, 0, 0, 0.2);
-		outline-offset: 4px;
-	}
-	
-	&[class*=radius] { .lh-border-radius(100%); }
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  max-width: 100%;
+  height: auto;
+  width: auto\9;
+  display: block;
+
+  &[class*=polaroid] {
+    background-color: #fff;
+    outline: 1px solid rgba(0, 0, 0, 0.2);
+    outline-offset: 4px;
+  }
+
+  &[class*=radius] {
+    .lh-border-radius(100%);
+  }
 }
 
-svg:not(:root) {overflow: hidden;}
+svg:not(:root) {
+  overflow: hidden;
+}
 
 // Alignment
 
-.alignleft {float: left !important;}
-.alignright {float: right !important;}
+.alignleft {
+  float: left !important;
+}
+
+.alignright {
+  float: right !important;
+}
+
 .aligncenter {
-	display: block;
-	margin: 0 auto;
-	text-align: center;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
 }
 
 // Clearfix
-.clearfix {.clearfix}
+.clearfix {
+  .clearfix;
+}
 
 // Container
 .container {
-	margin: 0 auto;
-	width: 85%;
-	max-width: 1200px;
-	.clearfix;
+  margin: 0 auto;
+  width: 85%;
+  max-width: 1200px;
+  .clearfix;
 }
 
 // Hide component
-.hidden {display: none;}
+.hidden {
+  display: none;
+}
 
 // Responsive utility classes
 //
@@ -229,45 +371,100 @@ svg:not(:root) {overflow: hidden;}
 // 'hidden-md' Hidden on medium screen (desktop) only
 // 'hidden-lg' Hidden on large screen (wide desktop) only
 
-.visible-xs {display: inherit !important;}
-.visible-sm {display: none !important;}
-.visible-md {display: none !important;}
-.visible-lg {display: none !important;}
+.visible-xs {
+  display: inherit !important;
+}
 
-.hidden-xs {display: none !important;}
+.visible-sm {
+  display: none !important;
+}
+
+.visible-md {
+  display: none !important;
+}
+
+.visible-lg {
+  display: none !important;
+}
+
+.hidden-xs {
+  display: none !important;
+}
 
 // Tablet
 @media (min-width: @screen-sm) {
-	.visible-xs {display: none !important;}
-	.visible-sm {display: inherit !important;}
-	.visible-md {display: none !important;}
-	.visible-lg {display: none !important;}
-	
-	.hidden-xs {display: inherit !important;}
-	.hidden-sm {display: none !important;}
+  .visible-xs {
+    display: none !important;
+  }
+  .visible-sm {
+    display: inherit !important;
+  }
+  .visible-md {
+    display: none !important;
+  }
+  .visible-lg {
+    display: none !important;
+  }
+
+  .hidden-xs {
+    display: inherit !important;
+  }
+  .hidden-sm {
+    display: none !important;
+  }
 }
 
 // Desktop
 @media (min-width: @screen-md) {
-	.visible-xs {display: none !important;}
-	.visible-sm {display: none !important;}
-	.visible-md {display: inherit !important;}
-	.visible-lg {display: none !important;}
-	
-	.hidden-xs {display: inherit !important;}
-	.hidden-sm {display: inherit !important;}
-	.hidden-md {display: none !important;}
+  .visible-xs {
+    display: none !important;
+  }
+  .visible-sm {
+    display: none !important;
+  }
+  .visible-md {
+    display: inherit !important;
+  }
+  .visible-lg {
+    display: none !important;
+  }
+
+  .hidden-xs {
+    display: inherit !important;
+  }
+  .hidden-sm {
+    display: inherit !important;
+  }
+  .hidden-md {
+    display: none !important;
+  }
 }
 
 // Large Desktops
 @media (min-width: @screen-lg) {
-	.visible-xs {display: none !important;}
-	.visible-sm {display: none !important;}
-	.visible-md {display: none !important;}
-	.visible-lg {display: inherit !important;}
-	
-	.hidden-xs {display: inherit !important;}
-	.hidden-sm {display: inherit !important;}
-	.hidden-md {display: inherit !important;}
-	.hidden-lg {display: none !important;}
+  .visible-xs {
+    display: none !important;
+  }
+  .visible-sm {
+    display: none !important;
+  }
+  .visible-md {
+    display: none !important;
+  }
+  .visible-lg {
+    display: inherit !important;
+  }
+
+  .hidden-xs {
+    display: inherit !important;
+  }
+  .hidden-sm {
+    display: inherit !important;
+  }
+  .hidden-md {
+    display: inherit !important;
+  }
+  .hidden-lg {
+    display: none !important;
+  }
 }

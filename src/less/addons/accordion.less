@@ -28,37 +28,36 @@
    ==================================== */
 .accordion {
 
-	// Heading
-	&_heading {
-		margin: 0;
-		display: block;
-		position: relative;
-		z-index: 1;
-	}
+  // Heading
+  &_heading {
+    margin: 0;
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
 
-	// Content
-	&_content {
-		// Hide item content by default
-		visibility: hidden;
-		opacity: 0;
-		height: 0;
-		background: @grey100;
-		.z-depth-1;
-//		.lh-border-radius(@input-radius);
-		.animate(~"visibility, opacity, height");
-	}
+  // Content
+  &_content {
+    // Hide item content by default
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    background: @grey100;
+    .z-depth-1;
+    .animate(~"visibility, opacity, height");
+  }
 
-	// Hide checkboxes and radio-buttons
-	&_trigger {
-		display: none;
+  // Hide checkboxes and radio-buttons
+  &_trigger {
+    display: none;
 
-		// Show item content when trigger is checked
-		&:checked + .accordion_content {
-			visibility: visible;
-			opacity: 1;
-			height: auto;
-			padding: @font-line-height/2;
-		}
-	}
+    // Show item content when trigger is checked
+    &:checked + .accordion_content {
+      visibility: visible;
+      opacity: 1;
+      height: auto;
+      padding: @grid-baseline*2;
+    }
+  }
 
 }

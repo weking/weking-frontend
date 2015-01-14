@@ -172,17 +172,14 @@
 
 // Import font from Google Fonts or use `@font-face` for custom font
 .font-setup() {
-	@import url(http://fonts.googleapis.com/css?family=Roboto:400,700,900&subset=latin,cyrillic);
+	@import url(http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900);
 }
 
 // Font size for text
 @font-size: 14px;
 
 // Line height for text
-@font-line-height: 24px;
-
-// A value of `line-height: normal` for font in `px`
-@font-line-height-normal: 19px;
+@font-line-height: @grid-baseline*3; // 8*3=24px
 
 // Font family for text
 @font-family: Roboto, sans-serif;
@@ -195,6 +192,7 @@
 // Grids variables
 // ==========================================
 @grid-columns: 12;
+@grid-baseline: 8px;
 
 // Form elements variables
 // ==========================================

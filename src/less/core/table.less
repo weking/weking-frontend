@@ -41,46 +41,62 @@
    TABLES
    ==================================== */
 .table {
-	empty-cells: show;
-	margin-bottom: @font-line-height;
-	.table-gen(@table-bg, @table-color);
+  empty-cells: show;
+  margin-bottom: @font-line-height;
+  .table-gen(@table-bg, @table-color);
 
-	&_caption {
-		.font(@font-size*0.85);
-		font-style: italic;
-		padding: @font-line-height 0;
-		text-align: center;
-	}
-	
-	td, th {
-		.font;
-		padding: @font-line-height/2;
-		margin: 0;
-		overflow: visible;
-		
-		&:first-child {border-left-width: 0;}
-	}
-	
-	thead {
-		text-align: left;
-		vertical-align: bottom;
-	}
-	
-	// Condensed table
-	&[class*=condensed] {td, th {padding: 0 @font-line-height/2;}}
-	
-	// Colors
-	&[class*=primary] {.table-gen('primary', @text-color);}
-	&[class*=secondary] {.table-gen('secondary', @text-color);}
-	&[class*=black] {.table-gen('grey', @text-color, 700);}
+  &_caption {
+    .font(@font-size*0.85);
+    font-style: italic;
+    padding: @font-line-height 0;
+    text-align: center;
+  }
+
+  td,
+  th {
+    .font;
+    padding: @font-line-height/2;
+    margin: 0;
+    overflow: visible;
+
+    &:first-child {
+      border-left-width: 0;
+    }
+  }
+
+  thead {
+    text-align: left;
+    vertical-align: bottom;
+  }
+
+  // Condensed table
+  &[class*=condensed] {
+    td,
+    th {
+      padding: 0 @font-line-height/2;
+    }
+  }
+
+  // Colors
+  &[class*=primary] {
+    .table-gen('primary', @text-color);
+  }
+
+  &[class*=secondary] {
+    .table-gen('secondary', @text-color);
+  }
+
+  &[class*=black] {
+    .table-gen('grey', @text-color, 700);
+  }
 }
 
 .table_responsive {
-	width: 100%;
-	overflow-x: auto;
-	margin-bottom: @font-line-height;
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: @font-line-height;
 
-	.table {
-		margin-bottom: 0;
-	}
+  .table {
+    margin-bottom: 0;
+  }
 }

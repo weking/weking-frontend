@@ -10,26 +10,34 @@
 
 .table-gen(@bg, @color, @bg-level: 500) {
 
-	// Make color swatch variables names
-	@headBg: %(~"%s%s", ~'@{bg}', @bg-level);
-	@headColor: %(~"%s%s", ~'@{bg}', 50);
+  // Make color swatch variables names
+  @headBg: %(~"%s%s", ~'@{bg}', @bg-level);
+  @headColor: %(~"%s%s", ~'@{bg}', 50);
 
-	@contentBg: %(~"%s%s", ~'grey', 0);
-	@strippedContentBg: %(~"%s%s", ~'grey', 100);
-	@contentBgHover: %(~"%s%s", ~'@{bg}', 100);
+  @contentBg: %(~"%s%s", ~'grey', 0);
+  @strippedContentBg: %(~"%s%s", ~'grey', 100);
+  @contentBgHover: %(~"%s%s", ~'@{bg}', 100);
 
-	color: @color;
+  color: @color;
 
-	.table_header {background: @@headBg !important; color: @@headColor !important;}
-	tbody {background-color: @@contentBg;}
+  .table_header {
+    background: @@headBg !important;
+    color: @@headColor !important;
+  }
 
-	// Striped & Hover state
-	&.table_odd,
-	&[class*=striped] tbody tr:nth-child(2n-1) {
-		td {background-color: @@strippedContentBg;}
-	}
+  tbody {
+    background-color: @@contentBg;
+  }
 
-	&[class*=hover] tbody tr:hover td {
-		background: @@contentBgHover;
-	}
+  // Striped & Hover state
+  &.table_odd,
+  &[class*=striped] tbody tr:nth-child(2n-1) {
+    td {
+      background-color: @@strippedContentBg;
+    }
+  }
+
+  &[class*=hover] tbody tr:hover td {
+    background: @@contentBgHover;
+  }
 }
