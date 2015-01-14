@@ -25,6 +25,7 @@ module.exports = function (grunt) {
 					"dist/css/weking.css": "src/less/weking.less"
 				}
 			},
+
 			theme: {
 				options: {
 					expand: true,
@@ -43,17 +44,6 @@ module.exports = function (grunt) {
 			}
 		},
 
-		// Beautify compiled files
-		cssbeautifier: {
-			main: ["dist/css/weking.css"],
-			theme: ["dist/css/weking-theme.css"],
-			options : {
-				indent: '	',
-				openbrace: 'end-of-line',
-				autosemicolon: false
-			}
-		},
-
 		//  Minimize compiled files
 		cssmin: {
 			main: {
@@ -63,6 +53,7 @@ module.exports = function (grunt) {
 				dest: 'dist/css/',
 				ext: '.min.css'
 			},
+
 			theme: {
 				expand: true,
 				cwd: 'dist/css/',
@@ -76,7 +67,7 @@ module.exports = function (grunt) {
 		watch: {
 			src: {
 				files: ['src/less/**/*.less'],
-				tasks: ['newer:less', 'cssbeautifier', 'cssmin', 'watch']
+				tasks: ['compile-newer']
 			}
 		}
 
@@ -85,10 +76,16 @@ module.exports = function (grunt) {
 	// Load Grunt modules
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-cssbeautifier');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-newer');
 
 	// Default task: compile weking and theme, format and minify css and watch for next manipulations
-	grunt.registerTask('default', ['less', 'cssbeautifier', 'cssmin'/*, 'watch'*/]);
+	grunt.registerTask('default', ['compile', 'watch']);
+
+	// Compile
+	grunt.registerTask('compile', ['less', 'cssmin']);
+
+	// Compile newer
+	grunt.registerTask('compile-newer', ['newer:less', 'cssmin', 'watch']);
+
 };
