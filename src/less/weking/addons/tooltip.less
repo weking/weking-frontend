@@ -3,35 +3,29 @@
 //                  Popover like tooltips, but showed by click and  uses HTML
 //
 // Blocks:          'tooltip'
-//                  'popover'
 //
-// Elements:        'popover_content'
-//                  'popover_trigger'
-//
-// Modifiers:       'tooltip--top'
-//                  'tooltip--bottom'
-//                  'tooltip--left'
-//                  'tooltip--right'
-//                  'tooltip--primary'
-//                  'tooltip--secondary'
-//                  'tooltip--blue'
-//                  'tooltip--green'
-//                  'tooltip--red'
-//                  'tooltip--orange'
-//                  'tooltip--black'
-//                  'tooltip--always'
-//                  'tooltip--radius'
+// Modifiers:       'tooltip-top'
+//                  'tooltip-bottom'
+//                  'tooltip-left'
+//                  'tooltip-right'
+//                  'tooltip-primary'
+//                  'tooltip-secondary'
+//                  'tooltip-blue'
+//                  'tooltip-green'
+//                  'tooltip-red'
+//                  'tooltip-orange'
+//                  'tooltip-black'
+//                  'tooltip-always'
+//                  'tooltip-radius'
 //
 // Markup:
-// <span class="tooltip tooltip--top" data-tooltip="Tooltip on top">Tooltip on top</span>
-// <span class="tooltip tooltip--right" data-tooltip="Tooltip on right">Tooltip on right</span>
-// <span class="tooltip tooltip--bottom" data-tooltip="Tooltip on bottom">Tooltip on bottom</span>
-// <span class="tooltip tooltip--left" data-tooltip="Tooltip on left">Tooltip on left</span>
+// <span class="tooltip tooltip-top" data-tooltip="Tooltip on top">Tooltip on top</span>
+// <span class="tooltip tooltip-right" data-tooltip="Tooltip on right">Tooltip on right</span>
+// <span class="tooltip tooltip-bottom" data-tooltip="Tooltip on bottom">Tooltip on bottom</span>
+// <span class="tooltip tooltip-left" data-tooltip="Tooltip on left">Tooltip on left</span>
 //
 // ========================================================================
 
-/* TOOLTIP
-   ==================================== */
 .tooltip {
   position: relative;
   display: inline-block;
@@ -47,7 +41,6 @@
     color: @grey900;
     .font(12px);
     visibility: hidden;
-    height: 0;
     .lh-opacity(0);
     .lh-border-radius(@basic-radius);
     .animate(~"opacity, visibility");
@@ -56,36 +49,31 @@
   // Show tooltip on hover
   &:hover:after {
     visibility: visible;
-    height: auto;
     .lh-opacity(1);
   }
 
   // Top
   &[class*=top]:after {
-    margin-left: @font-line-height * -2.5;
     bottom: 100%;
-    left: 50%;
+    left: 0;
   }
 
   // Bottom
   &[class*=bottom]:after {
-    margin-left: @font-line-height * -2.5;
     top: 100%;
-    left: 50%;
+    left: 0;
   }
 
   // Right
   &[class*=right]:after {
-    margin-left: 8px;
     left: 100%;
-    bottom: -25%;
+    top: 0;
   }
 
   // Left
   &[class*=left]:after {
-    margin-right: 8px;
     right: 100%;
-    top: -25%;
+    top: 0;
   }
 
   // Colors
@@ -137,8 +125,39 @@
   }
 }
 
-/* POPOVER
-   ==================================== */
+// Component:       Popover
+// Description:     Define styles for Popovers that shows some content uses HTML on click.
+//
+// Blocks:          'popover'
+//
+// Elements:        'popover_content'
+//                  'popover_trigger'
+//
+// Modifiers:       'popover-top'
+//                  'popover-bottom'
+//                  'popover-left'
+//                  'popover-right'
+//                  'popover-primary'
+//                  'popover-secondary'
+//                  'popover-blue'
+//                  'popover-green'
+//                  'popover-red'
+//                  'popover-orange'
+//                  'popover-black'
+//                  'popover-radius'
+//
+// Markup:
+// <div class="popover popover-top-primary-radius">
+//      <label for="popoverTest">Show popover</label>
+//      <input type="checkbox" id="popoverTest" name="popoverTest" class="popover_trigger"/>
+//      <div class="popover_content">
+//          <h4>Popover heading</h4>
+//          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam beatae, cupiditate</p>
+//      </div>
+// </div>
+//
+// ========================================================================
+
 .popover {
   position: relative;
   display: inline-block;
@@ -152,7 +171,6 @@
     background: @grey;
     color: @grey900;
     visibility: hidden;
-    height: 0;
     .lh-opacity(0);
     .lh-border-radius(@basic-radius);
     .animate(~"opacity, visibility");
@@ -166,36 +184,31 @@
   // Show popover when trigger is checked
   &_trigger:checked + &_content {
     visibility: visible;
-    height: auto;
     .lh-opacity(1);
   }
 
   // Top
   &[class*=top] &_content {
-    margin-left: @font-line-height * -2.5;
     bottom: 100%;
-    left: 50%;
+    left: 0;
   }
 
   // Bottom
   &[class*=bottom] &_content {
-    margin-left: @font-line-height * -2.5;
     top: 100%;
-    left: 50%;
+    left: 0;
   }
 
   // Right
   &[class*=right] &_content {
-    margin-left: 8px;
     left: 100%;
-    bottom: -25%;
+    top: 0;
   }
 
   // Left
   &[class*=left] &_content {
-    margin-right: 8px;
     right: 100%;
-    top: -25%;
+    top: 0;
   }
 
   // Colors

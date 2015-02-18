@@ -3,44 +3,42 @@
 //
 // Component:       'pricing'
 //
-// Element:         'pricing__plan'
-//                  'pricing__plan__header'
-//                  'pricing__plan__heading'
-//                  'pricing__plan__price'
-//                  'pricing__plan__list'
+// Element:         'pricing_plan'
+//                  'pricing_plan_header'
+//                  'pricing_plan_title'
+//                  'pricing_plan_price'
+//                  'pricing_plan_list'
+//                  'pricing_plan_btn'
 //
-// Modifiers:       'pricing__plan--primary'
-//                  'pricing__plan--secondary'
-//                  'pricing__plan--blue'
-//                  'pricing__plan--green'
-//                  'pricing__plan--red'
-//                  'pricing__plan--orange'
-//                  'pricing__plan--black'
-//                  'pricing__plan--optimal'
+// Modifiers:       'pricing_plan[class*=primary]'
+//                  'pricing_plan[class*=secondary]'
+//                  'pricing_plan[class*=blue]'
+//                  'pricing_plan[class*=green]'
+//                  'pricing_plan[class*=red]'
+//                  'pricing_plan[class*=orange]'
+//                  'pricing_plan[class*=black]'
+//                  'pricing_plan[class*=optimal]'
 //
 // Dependencies:    'btn'
 //
 // Markup:
 // <div class="pricing row">
-//
-//   <!-- Default -->
-//   <div class="pricing__plan col__sm-4">
-//     <div class="pricing__plan__header">
-//       <h3 class="pricing__plan__heading">Personal</h3>
-//       <span class="pricing__plan__price">$5 <span>per month</span></span>
-//     </div>
-//
-//     <ul class="pricing__plan__list">
-//       <li>Free setup</li>
-//       <li>Custom sub-domain</li>
-//       <li>Standard customer support</li>
-//       <li>1GB file storage</li>
-//       <li>1 database</li>
-//       <li>Unlimited bandwidth</li>
-//     </ul>
-//
-//     <a href="#" class="btn btn--radius btn--xl">Choose</a>
-//   </div>
+//    <!-- Default -->
+//    <div class="pricing_plan col col_sm4">
+//        <div class="pricing_plan_header">
+//            <h3 class="pricing_plan_title">Personal</h3>
+//            <span class="pricing_plan_price">$5 <span>per month</span></span>
+//        </div>
+//        <ul class="pricing_plan_list">
+//            <li>Free setup</li>
+//            <li>Custom sub-domain</li>
+//            <li>Standard customer support</li>
+//            <li>1GB file storage</li>
+//            <li>1 database</li>
+//            <li>Unlimited bandwidth</li>
+//        </ul>
+//        <a href="#" class="pricing_plan_btn btn btn-default-radius-xl">hoose</a>
+//    </div>
 // </div>
 //
 // ========================================================================
@@ -51,17 +49,17 @@
   margin: 0 auto @font-line-height;
   text-align: center;
 
-  &__plan {
+  &_plan {
     background: @grey100;
 
     // Header
-    &__header {
+    &_header {
       background: @grey;
       color: @white;
     }
 
     // Heading
-    &__heading {
+    &_title {
       margin: 0;
       padding: @font-line-height 0;
       font-weight: normal;
@@ -69,7 +67,7 @@
     }
 
     // Price label
-    &__price {
+    &_price {
       .font(@font-line-height*3);
       display: block;
       padding: @font-line-height 0;
@@ -85,7 +83,7 @@
     }
 
     // List of features
-    &__list {
+    &_list {
       list-style-type: none;
       padding: 0;
       text-align: center;
@@ -97,7 +95,7 @@
     }
 
     // Action button
-    .btn {
+    &_btn {
       margin-left: @font-line-height;
       margin-right: @font-line-height;
     }
@@ -105,84 +103,84 @@
     // Colors
 
     // primary
-    &--primary {
-      .pricing__plan__header {
+    &[class*=primary] {
+      .pricing_plan_header {
         background: @primary;
       }
 
-      .pricing__plan__price {
+      .pricing_plan_price {
         background: @primary700;
       }
     }
 
     // secondary
-    &--secondary {
-      .pricing__plan__header {
+    &[class*=secondary] {
+      .pricing_plan_header {
         background: @secondary;
       }
 
-      .pricing__plan__price {
+      .pricing_plan_price {
         background: @secondary700;
       }
     }
 
     // Blue
-    &--blue {
-      .pricing__plan__header {
+    &[class*=blue] {
+      .pricing_plan_header {
         background: @blue;
       }
 
-      .pricing__plan__price {
+      .pricing_plan_price {
         background: @blue700;
       }
     }
 
     // Green
-    &--green {
-      .pricing__plan__header {
+    &[class*=green] {
+      .pricing_plan_header {
         background: @green;
       }
 
-      .pricing__plan__price {
+      .pricing_plan_price {
         background: @green700;
       }
     }
 
     // Red
-    &--red {
-      .pricing__plan__header {
+    &[class*=red] {
+      .pricing_plan_header {
         background: @red;
       }
 
-      .pricing__plan__price {
+      .pricing_plan_price {
         background: @red700;
       }
     }
 
     // Orange
-    &--orange {
-      .pricing__plan__header {
+    &[class*=orange] {
+      .pricing_plan_header {
         background: @orange;
       }
 
-      .pricing__plan__price {
+      .pricing_plan_price {
         background: @orange700;
       }
     }
 
     // Black
-    &--black {
-      .pricing__plan__header {
+    &[class*=black] {
+      .pricing_plan_header {
         background: @grey800;
       }
 
-      .pricing__plan__price {
+      .pricing_plan_price {
         background: @grey900;
       }
     }
 
     // Optimal plan
-    &--optimal {
+    &[class*=optimal] {
       .lh-transform(~"scale(1.05)");
     }
   }

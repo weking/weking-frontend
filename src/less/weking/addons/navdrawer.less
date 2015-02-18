@@ -22,8 +22,6 @@
 //
 // ========================================================================
 
-/* NAVIGATION DRAWER
-   ==================================== */
 .navDrawer {
   position: fixed;
   top: 0;
@@ -50,8 +48,16 @@
     height: 100%;
     left: -100%;
     background: @white;
+    overflow-y: auto;
     .z-depth-1('right');
     .animate(~"opacity, visibility, left, right");
+
+    // Right position
+    &[class*=right] {
+      left: auto;
+      right: -100%;
+      .z-depth-1('left');
+    }
   }
 
   // Trigger
@@ -65,6 +71,12 @@
 
         & .navDrawer_content {
           left: 0;
+
+          // Right position
+          &[class*=right] {
+            left: auto;
+            right: 0;
+          }
         }
 
         & .navDrawer_overlay {

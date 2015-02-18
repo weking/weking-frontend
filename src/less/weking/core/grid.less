@@ -1,0 +1,97 @@
+// Component:       Grid
+// Description:     Provides a responsive, fluid and nestable grid system
+//
+// Blocks:          'row'
+//                  'col_xs*'
+//                  'col_sm*'
+//                  'col_md*'
+//                  'col_lg*'
+//
+// Modifiers:       'col-xsOffsetL*'
+//                  'col-xsOffsetR*'
+//                  'col-smOffsetL*'
+//                  'col-smOffsetR*'
+//                  'col-mdOffsetL*'
+//                  'col-mdOffsetR*'
+//                  'col-lgOffsetL*'
+//                  'col-lgOffsetR*'
+//                  'row-gutters'
+//
+// Markup:
+//
+// <!-- grid -->
+// <div class="row">
+//     <div class="col_xs*"></div>
+//     <div class="col_sm*-smOffsetL*"></div>
+// </div>
+//
+// ========================================================================
+
+// Clearfix
+.clearfix {
+  *zoom: 1;
+
+  &:before,
+  &:after {
+    display: table;
+    content: " ";
+  }
+
+  &:after {clear: both;}
+}
+
+// Rows contain and clear the floats of your columns.
+.row {
+  width: 100%;
+  &:extend(.clearfix all);
+
+  // Add space between columns
+  @media (min-width: @screen-sm) {
+    &[class*=gutters] {
+      .col {
+        padding-left: @grid-baseline;
+        padding-right: @grid-baseline;
+      }
+    }
+  }
+}
+
+// Basic styles for columns
+.col {
+  min-height: @font-line-height;
+  float: left;
+  width: 100%;
+  display: block;
+  margin: 0;
+  &:extend(.clearfix all);
+
+  // Columns & offsets for all screens
+  .make-columns(~"xs");
+  .make-offsets(~"xs");
+
+  // Columns & offsets from small screen (tablets and wider)
+  @media (min-width: @screen-sm) {
+    .make-columns(~"sm");
+    .make-offsets(~"sm");
+  }
+
+  // Columns & offsets from medium screen (desktops and wider)
+  @media (min-width: @screen-md) {
+    .make-columns(~"md");
+    .make-offsets(~"md");
+  }
+
+  // Columns & offsets from large screen (wide desktops)
+  @media (min-width: @screen-lg) {
+    .make-columns(~"lg");
+    .make-offsets(~"lg");
+  }
+}
+
+// Container
+.container {
+  margin: 0 auto;
+  .make-column(@container-size);
+  max-width: @container-max-width;
+  &:extend(.clearfix all);
+}

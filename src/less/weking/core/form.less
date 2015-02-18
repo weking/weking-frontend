@@ -1,47 +1,30 @@
-// Component:       Form, Button
+// Component:       Form
 // Description:     Define styles for forms, form elements and buttons
 //
-// Blocks:          'btn'
-//                  'form'
+// Blocks:          'form'
 //
-// Elements:        'form__control'
+// Elements:        'form_control'
 //
-// Modifiers:       'form--stacked'
-//                  'form--aligned'
-//                  'form__control--disabled'
-//                  'btn--disabled'
-//                  'form__control--xs'
-//                  'btn--xs'
-//                  'form__control--sm'
-//                  'btn--sm'
-//                  'form__control--lg'
-//                  'btn--lg'
-//                  'form__control--xl'
-//                  'btn--xl'
-//                  'form__control--raised'
-//                  'btn--flat'
+// Modifiers:       'form-stacked'
+//                  'form-aligned'
+//                  'form_control-disabled'
+//                  'form_control-xs'
+//                  'form_control-sm'
+//                  'form_control-lg'
+//                  'form_control-xl'
+//                  'form_control-raised'
 //
 // Markup:
 //
 // <!-- FORM -->
 // <form class="form" action="#">
 //   <legend>A compact inline form</legend>
-//
-//   <input class="form__control" type="text" placeholder="Username">
-//   <input class="form__control" type="password" placeholder="Password">
-//
-//   <label>
-//     <input id="default-remember" type="checkbox"> Remember me
-//   </label>
-//
-//   <button type="submit" class="btn btn--primary">Sign in</button>
+//   <input class="form_control" type="text" placeholder="Username">
+//   <input class="form_control" type="password" placeholder="Password">
 // </form>
 //
 // ========================================================================
 
-/* ====================================
-   FORMS
-   ==================================== */
 // Styles shared between `<input>`, `<select>`, `<textarea>` & buttons
 .form_control,
 .btn {
@@ -49,7 +32,8 @@
   font-size: 14px;
   height: @font-line-height*1.5;
   padding: 0;
-  margin: @font-line-height/4 0;
+  margin-top: @font-line-height/4;
+  margin-bottom: @font-line-height/4;
   line-height: normal;
   font-family: @font-family;
   vertical-align: top;
@@ -90,28 +74,32 @@
   &[class*=xs] {
     font-size: 10px;
     height: @font-line-height;
-    margin: @font-line-height/2 0;
+    margin-top: @font-line-height/2;
+    margin-bottom: @font-line-height/2;
   }
 
   // Small
   &[class*=sm] {
     font-size: 12px;
     height: @font-line-height*1.25;
-    margin: @font-line-height*0.75/2 0;
+    margin-top: @font-line-height*0.75/2;
+    margin-bottom: @font-line-height*0.75/2;
   }
 
   // Large
   &[class*=lg] {
     font-size: 18px;
     height: @font-line-height*2;
-    margin: @font-line-height/2 0;
+    margin-top: @font-line-height/2;
+    margin-bottom: @font-line-height/2;
   }
 
   // Extra Large
   &[class*=xl] {
     font-size: 24px;
     height: @font-line-height*2.5;
-    margin: @font-line-height/4 0;
+    margin-top: @font-line-height/4;
+    margin-bottom: @font-line-height/4;
   }
 }
 
@@ -135,6 +123,7 @@
     }
   }
 
+  // Raised input
   &[class*=raised] {
     background: @white;
     border: 2px solid transparent;
@@ -180,7 +169,7 @@ input[type="checkbox"] {
   legend {
     display: block;
     width: 100%;
-    padding: 0 0 @font-line-height/2-1 0;
+    padding-bottom: @font-line-height/2-1;
     margin-bottom: @font-line-height/2;
     font-size: @font-size*1.15;
     font-weight: 700;
@@ -243,18 +232,32 @@ textarea {
   }
 }
 
-/* BUTTONS
-   ==================================== */
+// Component:       Button
+// Description:     Define styles for buttons
+//
+// Blocks:          'btn'
+//
+// Modifiers:       'btn-disabled'
+//                  'btn-xs'
+//                  'btn-sm'
+//                  'btn-lg'
+//                  'btn-xl'
+//                  'btn-flat'
+//                  'btn-ghost'
+//
+// Markup: <button type="submit" class="btn btn-primary-xl">Sign in</button>
+//
+// ========================================================================
 .btn {
   padding: 0 @grid-baseline*2;
   line-height: @font-line-height*1.5;
   text-transform: uppercase;
+  text-align: center;
   cursor: pointer;
   border: 2px solid transparent;
   font-weight: bolder;
   .lh-border-radius(@input-radius);
   .z-depth-1();
-  .btn-gen('grey', @grey900, 200);
 
   // Pressed state
   &:active,
@@ -287,6 +290,10 @@ textarea {
 
 
   // Colors
+  &[class*=default] {
+    .btn-gen('grey', @grey900, 200);
+  }
+
   &[class*=primary] {
     .btn-gen('primary', @white);
   }
@@ -319,7 +326,10 @@ textarea {
   &[class*=ghost] {
     &:not(:hover) {
       background: transparent;
-      color: @grey;
+
+      &[class*=default] {
+        color: @grey;
+      }
 
       &[class*=primary] {
         color: @primary;

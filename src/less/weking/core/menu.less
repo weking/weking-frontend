@@ -4,6 +4,7 @@
 // Blocks:          'menu'
 //
 // Elements:        'menu_ul'
+//                  'menu_ul-dropdown'
 //                  'menu_li'
 //                  'menu_a'
 //                  'menu_active'
@@ -19,15 +20,13 @@
 //                  'menu-secondary'
 //                  'menu-black'
 //                  'menu-flat'
-//                  'menu-fixed-top'
-//                  'menu-fixed-bottom'
-//                  'menu-offset'
-//                  'menu_ul-dropdown'
+//                  'menu-fixedTop'
+//                  'menu-fixedBottom'
 //
 // Markup:
 //
 // <!-- MENU -->
-// <nav class="menu">
+// <nav class="menu menu-fixedTop-primary">
 //   <div class="menu_header">
 //     <a href="#" class="menu_a menu_brand">Brand</a>
 //     <label class="btn menu_burger" for="menu_trigger">Show menu</label>
@@ -60,17 +59,14 @@
 //
 // ========================================================================
 
-/* ====================================
-   MENU
-   ==================================== */
 .menu {
   .z-depth-1;
-  .menu-gen(@menu-bg, @menu-color, @grey300, 100);
-  .clearfix;
+  .menu-gen(@menu-bg, @menu-color, @grey700, 100);
+  &:extend(.clearfix all);
 
   // Menu header
   &_header {
-    .clearfix;
+    &:extend(.clearfix all);
   }
 
   // Brand - Menu Heading
@@ -83,7 +79,7 @@
   // Burger icon
   &_burger {
     float: right;
-    margin-right: 16px;
+    margin-right: @grid-baseline*2;
   }
 
   // Trigger

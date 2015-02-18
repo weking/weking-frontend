@@ -1,0 +1,43 @@
+// Columns generator
+//
+// Looped mixin return columns width
+//
+.make-column(@size) {
+  width: percentage(( @size / @grid-columns));
+}
+
+.make-columns(@suffix: ~"", @i: 1) when (@i <= @grid-columns) {
+
+  &[class*="@{suffix}@{i}"] {
+    .make-column(@i);
+  }
+
+  .make-columns(@suffix, @i+1);
+
+}
+
+// Offset generator
+//
+// Looped mixin return offset for columns
+//
+.make-offsetL(@size) {
+  margin-left: percentage(( @size / @grid-columns ));
+}
+
+.make-offsetR(@size) {
+  margin-right: percentage(( @size / @grid-columns ));
+}
+
+.make-offsets(@suffix: ~"", @i: 1) when (@i < @grid-columns) {
+
+  &[class*="@{suffix}OffsetL@{i}"] {
+    .make-offsetL(@i);
+  }
+
+  &[class*="@{suffix}OffsetR@{i}"] {
+    .make-offsetR(@i);
+  }
+
+  .make-offsets(@suffix, @i+1);
+
+}

@@ -22,11 +22,8 @@
 //
 // ========================================================================
 
-/* GROUPS
-   ==================================== */
 .group {
-  margin-bottom: @font-line-height;
-  .clearfix;
+  &:extend(.clearfix all);
 
   * {
     margin: 0;
@@ -84,7 +81,6 @@
   }
 
   @media (min-width: @screen-sm) {
-    margin-bottom: @font-line-height/2 !important;
 
     // Horizontal grouping
     &[class*=hr] {

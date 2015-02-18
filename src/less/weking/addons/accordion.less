@@ -8,29 +8,25 @@
 //                  'accordion_item_trigger'
 //                  'accordion_item_content'
 //
-// Uses:            Button, Group
+// Uses:            Group
 //
 // Markup:
 // <div class="accordion group">
-//   <div class="accordion_item">
-//     <label class="accordion_item_heading btn" for="accordion_item-1">Panel 1</label>
-//     <input id="accordion_item-1" class="accordion_trigger" name="accordion_trigger" type="radio" />
-//     <div class="accordion_item_content">
-//       ...
-//     </div>
-//   </div>
-// ...
+//  <label class="accordion_heading" for="accordion-1">Panel 1</label>
+//  <input id="accordion-1" class="accordion_trigger" name="accordion_trigger" type="radio" />
+//  <div class="accordion_content">
+//    ...
+//  </div>
+//   ...
 // </div>
 //
 // ========================================================================
 
-/* ACCORDION
-   ==================================== */
 .accordion {
 
   // Heading
   &_heading {
-    margin: 0;
+    margin: 0 !important;
     display: block;
     position: relative;
     z-index: 1;
@@ -42,8 +38,6 @@
     visibility: hidden;
     opacity: 0;
     height: 0;
-    background: @grey100;
-    .z-depth-1;
     .animate(~"visibility, opacity, height");
   }
 
@@ -56,8 +50,6 @@
       visibility: visible;
       opacity: 1;
       height: auto;
-      padding: @grid-baseline*2;
     }
   }
-
 }

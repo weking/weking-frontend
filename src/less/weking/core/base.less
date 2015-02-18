@@ -3,9 +3,6 @@
 //
 // ========================================================================
 
-/* ====================================
-   BASE
-   ==================================== */
 .font-setup;
 
 /* CSS-Reset v2 by http://meyerweb.com/eric/tools/css/reset/ */
@@ -66,6 +63,10 @@ body {
 }
 
 // TYPOGRAPHY
+
+[class^=typo] {
+  display: block;
+}
 
 // Display 4
 .typo_display4 {
@@ -154,9 +155,9 @@ blockquote {
 
 hr {
   border: 0;
-  border-top: 1px solid darken(@grey, 15);
+  border-top: 1px solid @grey300;
   border-bottom: 1px solid @white;
-  margin: (@font-line-height - 1px)/2 0;
+  margin: (@font-line-height - 2px)/2 0;
 }
 
 // Reset basic margin for nested lists and set left indent
@@ -311,7 +312,7 @@ img {
   display: block;
 
   &[class*=polaroid] {
-    background-color: #fff;
+    background-color: @white;
     outline: 1px solid rgba(0, 0, 0, 0.2);
     outline-offset: 4px;
   }
@@ -337,134 +338,6 @@ svg:not(:root) {
 
 .aligncenter {
   display: block;
-  margin: 0 auto;
-  text-align: center;
-}
-
-// Clearfix
-.clearfix {
-  .clearfix;
-}
-
-// Container
-.container {
-  margin: 0 auto;
-  width: 85%;
-  max-width: 1200px;
-  .clearfix;
-}
-
-// Hide component
-.hidden {
-  display: none;
-}
-
-// Responsive utility classes
-//
-// 'visible-xs' Visible on extra small screen (phones) only
-// 'visible-sm' Visible on small screen (tablets) only
-// 'visible-md' Visible on medium screen (desktop) only
-// 'visible-lg' Visible on large screen (wide desktop) only
-//
-// 'hidden-xs' Hidden on extra small screen (phones) only
-// 'hidden-sm' Hidden on small screen (tablets) only
-// 'hidden-md' Hidden on medium screen (desktop) only
-// 'hidden-lg' Hidden on large screen (wide desktop) only
-
-.visible-xs {
-  display: inherit !important;
-}
-
-.visible-sm {
-  display: none !important;
-}
-
-.visible-md {
-  display: none !important;
-}
-
-.visible-lg {
-  display: none !important;
-}
-
-.hidden-xs {
-  display: none !important;
-}
-
-// Tablet
-@media (min-width: @screen-sm) {
-  .visible-xs {
-    display: none !important;
-  }
-  .visible-sm {
-    display: inherit !important;
-  }
-  .visible-md {
-    display: none !important;
-  }
-  .visible-lg {
-    display: none !important;
-  }
-
-  .hidden-xs {
-    display: inherit !important;
-  }
-  .hidden-sm {
-    display: none !important;
-  }
-}
-
-// Desktop
-@media (min-width: @screen-md) {
-  .visible-xs {
-    display: none !important;
-  }
-  .visible-sm {
-    display: none !important;
-  }
-  .visible-md {
-    display: inherit !important;
-  }
-  .visible-lg {
-    display: none !important;
-  }
-
-  .hidden-xs {
-    display: inherit !important;
-  }
-  .hidden-sm {
-    display: inherit !important;
-  }
-  .hidden-md {
-    display: none !important;
-  }
-}
-
-// Large Desktops
-@media (min-width: @screen-lg) {
-  .visible-xs {
-    display: none !important;
-  }
-  .visible-sm {
-    display: none !important;
-  }
-  .visible-md {
-    display: none !important;
-  }
-  .visible-lg {
-    display: inherit !important;
-  }
-
-  .hidden-xs {
-    display: inherit !important;
-  }
-  .hidden-sm {
-    display: inherit !important;
-  }
-  .hidden-md {
-    display: inherit !important;
-  }
-  .hidden-lg {
-    display: none !important;
-  }
+  margin-left: auto;
+  margin-right: auto;
 }
