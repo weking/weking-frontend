@@ -47,7 +47,7 @@ module.exports = function (grunt) {
           ' * License: <%= theme.license %>\n' +
           ' */\n',
           sourceMapURL: 'weking-theme.css.map',
-          sourceMapFilename: 'dist/css/weking-theme.css.map',
+          sourceMapFilename: 'dist/css/weking-theme.css.map'
         },
         files: {
           "dist/css/weking-theme.css": "src/less/weking-theme.less"
@@ -98,7 +98,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-newer');
 
   // Default task: compile weking and theme, format and minify css and watch for next manipulations
   grunt.registerTask('default', ['compile', 'watch:full']);
@@ -107,15 +106,15 @@ module.exports = function (grunt) {
 
   // Compile framework
   grunt.registerTask('compile-weking', ['less:main']);
-  grunt.registerTask('compile-weking-newer', ['newer:less:main', 'watch:main']);
+  grunt.registerTask('compile-weking-newer', ['compile-weking', 'watch:main']);
 
   // Compile theme
   grunt.registerTask('compile-theme', ['less:theme']);
-  grunt.registerTask('compile-theme-newer', ['newer:less:theme', 'watch:theme']);
+  grunt.registerTask('compile-theme-newer', ['compile-theme', 'watch:theme']);
 
   // Compile full
   grunt.registerTask('compile', ['compile-weking', 'compile-theme']);
-  grunt.registerTask('compile-newer', ['newer:less:main', 'newer:less:theme', 'watch:full']);
+  grunt.registerTask('compile-newer', ['compile', 'watch:full']);
 
   // Production Tasks
 
