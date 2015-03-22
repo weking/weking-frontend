@@ -49,10 +49,14 @@ table {
 
 // Reset the box-sizing
 
+html {
+  .lh-box-sizing(~"border-box");
+}
+
 *,
 *:before,
 *:after {
-  .lh-box-sizing(~"border-box");
+  .lh-box-sizing(~"inherit");
 }
 
 body {
