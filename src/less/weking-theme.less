@@ -26,98 +26,98 @@
 // Let do some magic
 
 //.menu {
-//	// Rounded corners for menu
-//	.lh-border-radius(@basic-radius;);
+//  // Rounded corners for menu
+//  .lh-border-radius(@basic-radius;);
 //
-//	// Create new color for menu
-//	&[class*=red] {
-//		.menu-gen('red', @white, 300);
-//	}
+//  // Create new color for menu
+//  &[class*=red] {
+//    .menu-gen('red', @white, 300);
+//  }
 //
-//	// Redefine Z position for fixed menus
-//	&-fixedTop {
-//		.z-depth-3;
-//	}
+//  // Redefine Z position for fixed menus
+//  &-fixedTop {
+//    .z-depth-3;
+//  }
 //
-//	&-fixedBottom {
-//		.z-depth-3('top');
-//	}
+//  &-fixedBottom {
+//    .z-depth-3('top');
+//  }
 //}
 
 //.table {
-//	// Add shadow to table header
-//	&_header {
-//		.z-depth-1;
-//	}
+//  // Add shadow to table header
+//  &_header {
+//    .z-depth-1;
+//  }
 //
-//	// Create new color for table
-//	&[class*=red] {
-//		.table-gen('red', @white);
-//	}
+//  // Create new color for table
+//  &[class*=red] {
+//    .table-gen('red', @white);
+//  }
 //}
 
 // Your code begins here
 // =====================
 .paint {
-	background: @grey300;
-	outline: 1px solid @grey400;
+  background: @grey300;
+  outline: 1px solid @grey400;
 
-	&:hover {
-		background-color: @grey200;
-	}
+  &:hover {
+    background-color: @grey200;
+  }
 }
 
 /* GRIDS */
 .show-grid [class*="col"] {
-	.inner {
-		text-align: center;
-		min-height: 48px;
-		line-height: 48px;
-		.paint;
-	}
+  .inner {
+    text-align: center;
+    min-height: 48px;
+    line-height: 48px;
+    .paint;
+  }
 
-	[class*="col"] .inner {
-		background-color: @grey400;
-	}
+  [class*="col"] .inner {
+    background-color: @grey400;
+  }
 
-	[class*="col"] [class*="col"] .inner {
-		background-color: @grey500;
-	}
+  [class*="col"] [class*="col"] .inner {
+    background-color: @grey500;
+  }
 }
 
 /* Debug vertical rythm */
 body {
-	background-image: -moz-linear-gradient(bottom, rgba(240, 162, 196, 0.50) 5%, rgba(240, 162, 196, 0) 5%);
-	background-image: -webkit-linear-gradient(bottom, rgba(240, 162, 196, 0.50) 5%, rgba(240, 162, 196, 0) 5%);
-	background-image: linear-gradient(to top, rgba(240, 162, 196, 0.50) 5%, rgba(240, 162, 196, 0) 5%);
-	-moz-background-size: 100% 24px;
-	-o-background-size: 100% 24px;
-	-webkit-background-size: 100% 24px;
-	background-size: 100% 24px;
-	background-position: left top;
+  background-image: -moz-linear-gradient(bottom, rgba(240, 162, 196, 0.50) 5%, rgba(240, 162, 196, 0) 5%);
+  background-image: -webkit-linear-gradient(bottom, rgba(240, 162, 196, 0.50) 5%, rgba(240, 162, 196, 0) 5%);
+  background-image: linear-gradient(to top, rgba(240, 162, 196, 0.50) 5%, rgba(240, 162, 196, 0) 5%);
+  -moz-background-size: 100% 24px;
+  -o-background-size: 100% 24px;
+  -webkit-background-size: 100% 24px;
+  background-size: 100% 24px;
+  background-position: left top;
 }
 
 .accordion[class*=theme] {
-	.accordion {
-		&_content {
-			background: @grey100;
-			.z-depth-1;
-		}
+  .accordion {
+    &_content {
+      background: @grey100;
+      .z-depth-1;
+    }
 
-		&_trigger {
-			&:checked + .accordion_content {
-				padding: @font-line-height/2 @grid-baseline*2;
-			}
-		}
-	}
+    &_trigger {
+      &:checked + .accordion_content {
+        padding: @font-line-height/2 @grid-baseline*2;
+      }
+    }
+  }
 }
 
 .tabs[class*=theme] {
-	.tabs {
-		&_content {
-			background: @white;
-			padding: @font-line-height/2;
-			.z-depth-1;
-		}
-	}
+  .tabs {
+    &_content {
+      background: @white;
+      padding: @font-line-height/2;
+      .z-depth-1;
+    }
+  }
 }
