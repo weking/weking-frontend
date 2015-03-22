@@ -145,10 +145,12 @@
 @screen-xs:                  480px;
 // Small screen (tablets)
 @screen-sm:                  768px;
-// Medium screen (desktops)
+// Medium screen (small desktops)
 @screen-md:                  992px;
-// Large screen (wide desktops)
+// Large screen (desktops)
 @screen-lg:                  1200px;
+// Extra large screen (wide desktops)
+@screen-xl:                  1600px;
 
 // Base variables
 // ==========================================
@@ -165,14 +167,14 @@
 // Text color for `<a>` on mouseover.
 @link-hover-color:    darken(@link-color, 10%);
 
-// `border-radius` value for rounded corners modifier
+// default `border-radius` value
 @basic-radius:        3px;
 
 // Typography
-
+// ==========================================
 // Import font from Google Fonts or use `@font-face` for custom font
 .font-setup() {
-	@import url(http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900);
+  @import url(http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900);
 }
 
 // Font size for text
@@ -198,16 +200,17 @@
 
 // Form elements variables
 // ==========================================
-// Border color for `<input>`, `<select>`, `<textarea>`
+// `<input>`, `<select>`, `<textarea>` are inputs
+// Border color for inputs
 @input-color:             @grey;
-// Text color for `<input>`, `<select>`, `<textarea>`
+// Text color for inputs
 @input-text-color:        @text-color;
-// Outline color for `<input>`, `<select>`, `<textarea>` of focus
-@input-focus-color:    @secondary;
-// Base color to show error
-@input-error-color:    @red;
-// Border radius for `<input>`, `<select>`, `<textarea>`
-@input-radius:         @basic-radius;
+// Border color for inputs on focus
+@input-focus-color:       @secondary;
+// Border color for inputs on error
+@input-error-color:       @red;
+// Border radius for inputs and buttons
+@input-radius:            @basic-radius;
 
 // Tables variables
 // ==========================================
