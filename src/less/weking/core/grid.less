@@ -47,11 +47,9 @@
 
   // Add space between columns
   @media (min-width: @screen-sm) {
-    &[class*=gutters] {
-      .col {
-        padding-left: @grid-baseline;
-        padding-right: @grid-baseline;
-      }
+    &[class*=gutters] > .col {
+      padding-left: @grid-baseline;
+      padding-right: @grid-baseline;
     }
   }
 }

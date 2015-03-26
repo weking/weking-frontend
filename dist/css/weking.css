@@ -137,6 +137,7 @@ html {
   box-sizing: inherit;
 }
 body {
+  position: relative;
   background-color: #ffffff;
   color: #212121;
   font-size: 14px;
@@ -424,7 +425,7 @@ svg:not(:root) {
   width: 100%;
 }
 @media (min-width: 768px) {
-  .row[class*=gutters] .col {
+  .row[class*=gutters] > .col {
     padding-left: 8px;
     padding-right: 8px;
   }
@@ -4601,7 +4602,7 @@ textarea {
   content: attr(data-tooltip);
   padding: 6px 8px;
   white-space: nowrap;
-  background: #bdbdbd;
+  background: #e0e0e0;
   color: #212121;
   font-size: 12px;
   line-height: 24px;
@@ -4700,9 +4701,9 @@ textarea {
 .popover_content {
   position: absolute;
   z-index: 10;
-  width: 500px;
+  width: 200px;
   padding: 6px 8px;
-  background: #bdbdbd;
+  background: #e0e0e0;
   color: #212121;
   visibility: hidden;
   zoom: 1;
